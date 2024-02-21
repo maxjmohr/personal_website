@@ -17,6 +17,9 @@ fn app() -> Html {
                 <h2>{"Professional experience"}</h2>
                 <p>{"Career steps go here"}</p>
             </div>
+            <div class="bg-red-500 text-white p-4 mt-4" style="width: 90%;">
+                {"This div uses Tailwind CSS classes!"}
+            </div>
         </>
     }
 }
