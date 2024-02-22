@@ -629,7 +629,6 @@ body {
   height: 100%;
   background-color: #fdf4e3;
   scroll-behavior: smooth;
-  /* Enable smooth scrolling */
 }
 
 h1 {
@@ -654,58 +653,6 @@ html {
   height: 100%;
 }
 
-.section {
-  scroll-margin-top: 50px;
-  /* Adjust as needed */
-}
-
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #ffffff;
-  z-index: 1000;
-}
-
-nav a {
-  display: inline-block;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #000000;
-}
-
-nav a:hover {
-  background-color: #cccccc;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200px;
-  /* Adjust the width as needed */
-  height: 100%;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 20px;
-  z-index: 1000;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: black;
-  padding: 10px 20px;
-  margin: 5px 0;
-  transition: background-color 0.3s ease;
-}
-
-.sidebar a:hover {
-  background-color: #f0f0f0;
-}
-
 .sidebar {
   position: fixed;
   top: 50%;
@@ -714,6 +661,8 @@ nav a:hover {
   /* Adjust the space from the left side */
   width: 110px;
   height: auto;
+  padding-top: 7px;
+  padding-bottom: 7px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -721,11 +670,10 @@ nav a:hover {
   -webkit-backdrop-filter: blur(17px);
           backdrop-filter: blur(17px);
   --webkit-backdrop-filter: blur(17px);
-  border-right: 1px solid rgba(255, 255, 255, 0.7);
   transition: width 0.3s ease;
   transform: translateY(-50%);
   /* Adjust to center vertically */
-  border-radius: 15px;
+  border-radius: 28px;
   /* Rounded corners */
 }
 
@@ -734,39 +682,20 @@ nav a:hover {
   /* Adjust the width expansion to the right */
 }
 
-.sidebar .logo {
-  color: #000;
-  display: flex;
-  align-items: center;
-  padding: 25px 10px 15px;
-}
-
-.logo img {
-  width: 43px;
-  border-radius: 50%;
-}
-
-.logo h2 {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin-left: 15px;
-  display: none;
-}
-
-.sidebar:hover .logo h2 {
-  display: block;
-}
-
 .sidebar .links {
   list-style: none;
   margin-top: none;
-  overflow-y: auto;
+  overflow-y: none;
   scrollbar-width: none;
   height: calc(100% - 140px);
 }
 
 .sidebar .links::-webkit-scrollbar {
   display: none;
+}
+
+.sidebar:hover .links li a {
+  display: block;
 }
 
 .links li {
@@ -777,27 +706,8 @@ nav a:hover {
 
 .links li:hover {
   cursor: pointer;
-  background: #fff;
-}
-
-.links h4 {
-  color: #222;
-  font-weight: 500;
-  display: none;
-  margin-bottom: 10px;
-}
-
-.sidebar:hover .links h4 {
-  display: block;
-}
-
-.links hr {
-  margin: 10px 8px;
-  border: 1px solid #4c4c4c;
-}
-
-.sidebar:hover .links hr {
-  border-color: transparent;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 28px;
 }
 
 .links li span {
@@ -813,10 +723,17 @@ nav a:hover {
   text-decoration: none;
 }
 
-.sidebar:hover .links li a {
-  display: block;
+.links li img {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  opacity: 0.6;
+  padding: 7px;
 }
 
-.links .logout-link {
-  margin-top: 20px;
+.links li:hover img {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
 }
