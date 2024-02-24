@@ -6,4 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+comrak = "0.21.0"
+gloo-utils = "0.2.0"
+include_dir = "0.7.3"
 yew = { git = "https://github.com/yewstack/yew/", features = ["csr"] }

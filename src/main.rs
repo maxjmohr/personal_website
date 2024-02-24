@@ -1,7 +1,15 @@
+use crate::safehtml::SafeHtml;
+use comrak::{markdown_to_html, Options};
+use include_dir::{include_dir, Dir};
 use yew::prelude::*;
+
+mod safehtml;
 
 #[function_component(App)]
 fn app() -> Html {
+    // Get content
+    let content_aboutme = markdown_to_html( &include_str!("./../res/content/aboutme/aboutme.md"), &Options::default() );
+
     html! {
         <>
         // Sidebar
@@ -37,9 +45,7 @@ fn app() -> Html {
         // Main content
         <div id="aboutme" class="bg-blue-500 text-white p-4 mt-4 float-right" style="width: 100%; height: 100vh">
             <div style="padding-left: 10%;">
-                <h2>{"About me"}</h2>
-                <p>{"Hey, I'm Max."}</p>
-                <p>{"I am currently studying data science."}</p>
+                <SafeHtml html={content_aboutme} />
             </div>
         </div>
         <div id="profexper" class="bg-green-500 text-white p-4 mt-4 float-right" style="width: 90%; height: 100vh">
@@ -52,6 +58,7 @@ fn app() -> Html {
         </>
     }
 }
+
 
 fn main() {
     yew::Renderer::<App>::new().render();
