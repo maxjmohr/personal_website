@@ -16,7 +16,8 @@ pub fn safe_html(props: &Props) -> Html {
 
     // Apply the provided class if it exists
     if let Some(class) = &props.class {
-        div.set_attribute("class", class).expect("Failed to set class attribute");
+        div.set_attribute("class", class)
+            .expect("Failed to set class attribute");
     }
 
     Html::VRef(div.into())
