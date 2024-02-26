@@ -1050,6 +1050,7 @@ dependencies = [
  "comrak",
  "gloo-utils 0.2.0",
  "include_dir",
+ "web-sys",
  "yew",
 ]
 

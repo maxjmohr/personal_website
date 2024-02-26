@@ -2,34 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    height: 100%;
+}
 body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #fdf4e3;
+    background-color: rgb(214 211 209); /* stone 300*/
     scroll-behavior: smooth;
 }
-
-h1 {
-    font-size: 40px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 900;
-    color: blue;
-}
-
 div {
     font-family: "Roboto", sans-serif;
-    font-weight: 800;
 }
-
-p {
-    font-size: 20px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
+.manual_h1 {
+    @apply antialiased font-extrabold pr-5 mb-4 text-gray-700 dark:text-stone-400;
 }
-
-html {
-    height: 100%;
+.manual_p {
+    @apply antialiased text-3xl font-medium text-stone-600 dark:text-neutral-400;
 }
 
 .sidebar {
@@ -76,7 +66,7 @@ html {
 .links li:hover {
     cursor: pointer;
     background: rgba(255, 255, 255, 0.4);
-    border-radius: 28px;
+    border-radius: 13px;
 }
 .links li span {
     padding: 12px 10px;
@@ -93,7 +83,6 @@ html {
     display: flex;
     width: 60px;
     height: 60px;
-    border-radius: 15px;
     opacity: 0.6;
     padding: 7px;
 }
