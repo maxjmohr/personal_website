@@ -1,4 +1,3 @@
-use web_sys::Element;
 use yew::{function_component, Html, Properties};
 
 #[derive(Properties, PartialEq)]
@@ -10,7 +9,7 @@ pub struct Props {
 #[function_component(SafeHtml)]
 pub fn safe_html(props: &Props) -> Html {
     let div = gloo_utils::document().create_element("div").unwrap();
-    let div: Element = div.into();
+    let div = div;
 
     // Set the inner HTML
     div.set_inner_html(&props.html);

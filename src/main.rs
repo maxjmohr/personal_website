@@ -7,12 +7,12 @@ mod safehtml;
 #[function_component(App)]
 fn app() -> Html {
     // Get content
-    let content_aboutme = markdown_to_html( &include_str!("./../res/content/aboutme.md"), &Options::default() );
-    let content_profexper = markdown_to_html( &include_str!("./../res/content/profexper.md"), &Options::default() );
-    let content_educ = markdown_to_html( &include_str!("./../res/content/educ.md"), &Options::default() );
-    let content_projects = markdown_to_html( &include_str!("./../res/content/projects.md"), &Options::default() );
-    let content_techskills = markdown_to_html( &include_str!("./../res/content/techskills.md"), &Options::default() );
-    let content_langs = markdown_to_html( &include_str!("./../res/content/langs.md"), &Options::default() );
+    let content_aboutme = markdown_to_html( include_str!("./../res/content/aboutme.md"), &Options::default() );
+    let content_profexper = markdown_to_html( include_str!("./../res/content/profexper.md"), &Options::default() );
+    let content_educ = markdown_to_html( include_str!("./../res/content/educ.md"), &Options::default() );
+    let content_projects = markdown_to_html( include_str!("./../res/content/projects.md"), &Options::default() );
+    let content_techskills = markdown_to_html( include_str!("./../res/content/techskills.md"), &Options::default() );
+    let content_langs = markdown_to_html( include_str!("./../res/content/langs.md"), &Options::default() );
 
     html! {
         <>

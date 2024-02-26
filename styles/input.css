@@ -9,7 +9,6 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: rgb(214 211 209); /* stone 300*/
     scroll-behavior: smooth;
 }
 div {
