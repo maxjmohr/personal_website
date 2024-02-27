@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   purge: [
@@ -6,30 +8,20 @@ module.exports = {
   ],
   content: [],
   theme: {
-    extend: {
-        keyframes: {
-          typing: {
-            "0%": {
-              width: "0%",
-              visibility: "hidden"
-            },
-            "100%": {
-              width: "100%"
-            }
-          },
-          blink: {
-            "50%": {
-              borderColor: "transparent"
-            },
-            "100%": {
-              borderColor: "white"
-            }  
-          }
-        },
-        animation: {
-          typing: "typing 4s steps(40) forwards, blink .7s"
-        }
-      },
+    extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-typewriter')({
+        wordsets: {
+            aboutme: {
+              words: [fs.readFileSync('res/content/aboutme.md', 'utf8')],
+              writeSpeed: 0.05,
+              pauseBetween: 1,
+              repeat: 0,
+              eraseSpeed: 0,
+              caretWidth: '3px'
+            }
+        }
+    })
+  ],
 }

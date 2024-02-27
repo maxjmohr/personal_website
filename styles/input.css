@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Text */
 html {
     height: 100%;
 }
@@ -18,9 +19,10 @@ div {
     @apply antialiased font-extrabold pr-5 mb-4 text-gray-700 dark:text-stone-400;
 }
 .manual_p {
-    @apply antialiased text-3xl font-medium text-stone-600 dark:text-neutral-400;
+    @apply antialiased text-3xl font-medium leading-snug tracking-normal text-wrap text-stone-600 dark:text-neutral-400;
 }
 
+/* Sidebar */
 .sidebar {
     position: fixed;
     top: 50%; /* Center vertically */
@@ -42,7 +44,6 @@ div {
 .sidebar:hover {
     width: calc(300px - 20px); /* Adjust the width expansion to the right */
 }
-
 .sidebar .links {
     list-style: none;
     margin-top: none;
@@ -56,7 +57,6 @@ div {
 .sidebar:hover .links li a {
     display: block;
 }
-
 .links li {
     display: flex;
     border-radius: 4px;
@@ -74,6 +74,7 @@ div {
     padding: 10px;
     color: #000;
     display: none;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     white-space: nowrap;
     text-decoration: none;
