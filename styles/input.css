@@ -11,8 +11,6 @@ body {
     padding: 0;
     height: 100%;
     scroll-behavior: smooth;
-}
-div {
     font-family: "Roboto", sans-serif;
 }
 .manual_h1 {
@@ -24,70 +22,27 @@ div {
 
 /* Sidebar */
 .sidebar {
-    position: fixed;
-    top: 50%; /* Center vertically */
-    left: 20px; /* Adjust the space from the left side */
-    width: 110px;
-    height: auto;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(17px);
-    --webkit-backdrop-filter: blur(17px);
-    transition: width 0.3s ease;
-    transform: translateY(-50%); /* Adjust to center vertically */
-    border-radius: 28px; /* Rounded corners */
+    @apply fixed top-1/2 left-4 w-28 h-auto pt-2 pb-2 flex items-center flex-col bg-white bg-opacity-20 dark:bg-opacity-5 backdrop-blur-lg transform -translate-y-1/2 rounded-3xl;
 }
 .sidebar:hover {
-    width: calc(300px - 20px); /* Adjust the width expansion to the right */
+    @apply w-[21rem] duration-300;
 }
-.sidebar .links {
-    list-style: none;
-    margin-top: none;
-    overflow-y: none;
-    scrollbar-width: none;
+.sidebar_links {
+    @apply list-none overflow-y-hidden;
     height: calc(100% - 140px);
 }
-.sidebar .links::-webkit-scrollbar {
+.sidebar_links::-webkit-scrollbar {
     display: none;
 }
-.sidebar:hover .links li a {
-    display: block;
+.sidebar_links li {
+    @apply flex items-center;
 }
-.links li {
-    display: flex;
-    border-radius: 4px;
-    align-items: center;
+.sidebar_links li:hover {
+    @apply cursor-pointer bg-white bg-opacity-80 dark:bg-opacity-10 rounded-lg w-[20rem];
 }
-.links li:hover {
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 13px;
+.sidebar_svg {
+    @apply flex w-16 h-16 p-2 fill-gray-700 dark:fill-stone-400;
 }
-.links li span {
-    padding: 12px 10px;
-}
-.links li a {
-    padding: 10px;
-    color: #000;
-    display: none;
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    white-space: nowrap;
-    text-decoration: none;
-}
-.links li img {
-    display: flex;
-    width: 60px;
-    height: 60px;
-    opacity: 0.6;
-    padding: 7px;
-}
-.links li:hover img {
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
+.sidebar_span {
+    @apply antialiased align-middle text-xl font-semibold pl-1 text-stone-600 dark:text-neutral-400;
 }
