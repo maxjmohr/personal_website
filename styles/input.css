@@ -22,7 +22,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-    @apply fixed top-1/2 left-4 w-28 h-auto pt-2 pb-2 flex items-center flex-col bg-white bg-opacity-20 dark:bg-opacity-5 backdrop-blur-lg transform -translate-y-1/2 rounded-3xl;
+    @apply z-50 fixed top-1/2 left-4 w-28 h-auto pt-2 pb-2 flex items-center flex-col bg-white bg-opacity-20 dark:bg-black dark:bg-opacity-20 backdrop-blur-lg transform -translate-y-1/2 rounded-3xl;
 }
 .sidebar:hover {
     @apply w-[21rem] duration-300;
@@ -38,7 +38,7 @@ body {
     @apply flex items-center;
 }
 .sidebar_links li:hover {
-    @apply cursor-pointer bg-white bg-opacity-80 dark:bg-opacity-10 rounded-lg w-[20rem];
+    @apply cursor-pointer bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-25 rounded-lg w-[20rem];
 }
 .sidebar_svg {
     @apply flex w-16 h-16 p-2 fill-gray-700 dark:fill-stone-400;

@@ -4,7 +4,8 @@ const fs = require('fs');
 module.exports = {
   purge: [
     './**/*.html',
-    './**/*.rs'
+    './**/*.rs',
+    './**/*.md'
   ],
   content: [],
   theme: {
