@@ -1,31 +1,35 @@
 use crate::safehtml::SafeHtml;
-use comrak::{markdown_to_html, Options};
+use comrak::{markdown_to_html, ComrakOptions};
 use yew::prelude::*;
 
 mod safehtml;
 
 #[function_component(App)]
 fn app() -> Html {
+    // Render settings
+    let mut options = ComrakOptions::default();
+    options.render.unsafe_ = true;
+
     // Get content
     let content_profexper = markdown_to_html(
         include_str!("./../res/content/profexper.md"),
-        &Options::default(),
+        &options,
     );
     let content_educ = markdown_to_html(
         include_str!("./../res/content/educ.md"),
-        &Options::default(),
+        &options,
     );
     let content_projects = markdown_to_html(
         include_str!("./../res/content/projects.md"),
-        &Options::default(),
+        &options,
     );
     let content_techskills = markdown_to_html(
         include_str!("./../res/content/techskills.md"),
-        &Options::default(),
+        &options,
     );
     let content_langs = markdown_to_html(
         include_str!("./../res/content/langs.md"),
-        &Options::default(),
+        &options,
     );
 
     html! {
