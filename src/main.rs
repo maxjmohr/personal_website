@@ -34,9 +34,6 @@ fn app() -> Html {
 
     html! {
         <>
-        // Dark mode toggle
-        
-
         // Sidebar
         <aside id="sidebar" class="group sidebar">
             <ul class="sidebar_links">
@@ -94,7 +91,7 @@ fn app() -> Html {
         // Main content
         // About me
         <div id="aboutme" class="flex flex-col justify-center bg-gradient-to-b from-stone-300 to-gray-300 dark:from-stone-600 dark:to-gray-700
-        pl-44 w-full h-full">
+        pl-44 pr-20 w-full h-full">
             <h1 class="text-8xl manual_h1">{"Max Mohr"}</h1>
             <div class="flex mb-4">
                 <a href="https://www.linkedin.com/in/maxjmohr/" target="_blank" class="mr-4">
@@ -118,35 +115,35 @@ fn app() -> Html {
 
         // Professional experience
         <div id="profexper" class="bg-gradient-to-b from-gray-300 to-green-100 dark:from-gray-700 dark:to-green-900
-        pt-28 pb-10 pl-44 w-full">
+        pt-28 pb-10 pl-44 pr-20">
             <h1 class="text-7xl manual_h1">{"Professional experience"}</h1>
             <SafeHtml html={content_profexper} class="manual_p"/>
         </div>
 
         // Education
         <div id="educ" class="bg-gradient-to-b from-green-100 to-teal-200 dark:from-green-900 dark:to-teal-900
-        pt-28 pb-14 pl-44 w-full">
+        pt-28 pb-14 pl-44 pr-20">
         <h1 class="text-7xl manual_h1">{"Education"}</h1>
             <SafeHtml html={content_educ} class="manual_p"/>
         </div>
 
         // Projects
         <div id="projects" class="bg-gradient-to-b from-teal-200 to-cyan-200 dark:from-teal-900 dark:to-cyan-900
-        pt-28 pb-14 pl-44 w-full">
+        pt-28 pb-14 pl-44 pr-20">
             <h1 class="text-7xl manual_h1">{"Projects"}</h1>
             <SafeHtml html={content_projects} class="manual_p"/>
         </div>
 
         // Technical skills
         <div id="techskills" class="bg-gradient-to-b from-cyan-200 to-indigo-300 dark:from-cyan-900 dark:to-indigo-900
-        pt-28 pb-14 pl-44 w-full">
+        pt-28 pb-14 pl-44 pr-20">
             <h1 class="text-7xl manual_h1">{"Technical skills"}</h1>
             <SafeHtml html={content_techskills} class="manual_p"/>
         </div>
 
         // Languages
         <div id="langs" class="bg-gradient-to-b from-indigo-300 to-stone-300 dark:from-indigo-900 dark:to-stone-600
-        pt-28 pb-14 pl-44 w-full">
+        pt-28 pb-14 pl-44 pr-20">
             <h1 class="text-7xl manual_h1">{"Languages"}</h1>
             <SafeHtml html={content_langs} class="manual_p"/>
         </div>

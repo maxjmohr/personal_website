@@ -14,7 +14,7 @@ body {
     font-family: "Roboto", sans-serif;
 }
 .manual_h1 {
-    @apply antialiased font-extrabold pr-5 mb-4 text-gray-700 dark:text-stone-400;
+    @apply antialiased font-extrabold mb-6 text-gray-700 dark:text-stone-400;
 }
 .manual_p {
     @apply antialiased text-3xl font-medium leading-snug tracking-normal text-wrap text-stone-600 dark:text-neutral-400;
@@ -44,5 +44,19 @@ body {
     @apply flex w-16 h-16 p-2 fill-gray-700 dark:fill-stone-400;
 }
 .sidebar_span {
-    @apply antialiased align-middle text-xl font-semibold pl-1 text-stone-600 dark:text-neutral-400;
+    @apply antialiased align-middle text-xl font-semibold pl-1 text-gray-700 dark:text-stone-400;
+}
+
+/*Content specific classes*/
+.educ_title {
+    @apply text-gray-700 dark:text-stone-400 text-opacity-90 text-4xl font-semibold mb-2 sm:mb-0;
+}
+.educ_time {
+    @apply sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center uppercase w-40 h-6 mb-3 sm:mb-0 text-stone-600 dark:text-neutral-400 text-sm font-semibold bg-white bg-opacity-50 rounded-2xl;
+}
+.educ_desc {
+    @apply text-stone-600 dark:text-neutral-400 text-xl;
+}
+.educ_skills {
+    @apply max-w-fit pl-1 pr-1 mr-1 mb-1 text-stone-600 dark:text-neutral-400 text-base font-semibold bg-white bg-opacity-50 uppercase text-center rounded-md;
 }
