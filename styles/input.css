@@ -48,6 +48,9 @@ body {
 }
 
 /*Content specific classes*/
+.list_icons {
+    @apply flex-shrink-0 w-5 h-5 text-stone-600 dark:text-neutral-400 text-opacity-95 mt-1;
+}
 .educ_title {
     @apply text-gray-700 dark:text-stone-400 text-opacity-90 text-4xl font-semibold mb-2 sm:mb-0;
 }

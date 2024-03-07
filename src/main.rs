@@ -116,35 +116,35 @@ fn app() -> Html {
         // Professional experience
         <div id="profexper" class="bg-gradient-to-b from-gray-300 to-green-100 dark:from-gray-700 dark:to-green-900
         pt-28 pb-10 pl-44 pr-20">
-            <h1 class="text-7xl manual_h1">{"Professional experience"}</h1>
-            <SafeHtml html={content_profexper} class="manual_p"/>
+            <h1 class="text-7xl manual_h1" data-aos="fade">{"Professional experience"}</h1>
+            <SafeHtml html={content_profexper}/>
         </div>
 
         // Education
         <div id="educ" class="bg-gradient-to-b from-green-100 to-teal-200 dark:from-green-900 dark:to-teal-900
         pt-28 pb-14 pl-44 pr-20">
-        <h1 class="text-7xl manual_h1">{"Education"}</h1>
-            <SafeHtml html={content_educ} class="manual_p"/>
+        <h1 class="text-7xl manual_h1" data-aos="fade">{"Education"}</h1>
+            <SafeHtml html={content_educ}/>
         </div>
 
         // Projects
         <div id="projects" class="bg-gradient-to-b from-teal-200 to-cyan-200 dark:from-teal-900 dark:to-cyan-900
         pt-28 pb-14 pl-44 pr-20">
-            <h1 class="text-7xl manual_h1">{"Projects"}</h1>
+            <h1 class="text-7xl manual_h1" data-aos="fade">{"Projects"}</h1>
             <SafeHtml html={content_projects} class="manual_p"/>
         </div>
 
         // Technical skills
         <div id="techskills" class="bg-gradient-to-b from-cyan-200 to-indigo-300 dark:from-cyan-900 dark:to-indigo-900
         pt-28 pb-14 pl-44 pr-20">
-            <h1 class="text-7xl manual_h1">{"Technical skills"}</h1>
+            <h1 class="text-7xl manual_h1" data-aos="fade">{"Technical skills"}</h1>
             <SafeHtml html={content_techskills} class="manual_p"/>
         </div>
 
         // Languages
         <div id="langs" class="bg-gradient-to-b from-indigo-300 to-stone-300 dark:from-indigo-900 dark:to-stone-600
         pt-28 pb-14 pl-44 pr-20">
-            <h1 class="text-7xl manual_h1">{"Languages"}</h1>
+            <h1 class="text-7xl manual_h1" data-aos="fade">{"Languages"}</h1>
             <SafeHtml html={content_langs} class="manual_p"/>
         </div>
         </>
