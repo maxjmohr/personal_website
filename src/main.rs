@@ -12,11 +12,11 @@ fn app() -> Html {
 
     // Get content
     let content_profexper =
-        markdown_to_html(include_str!("./../res/content/profexper.md"),&options,);
-    let content_educ = markdown_to_html(include_str!("./../res/content/educ.md"),&options,);
-    let content_projects = markdown_to_html(include_str!("./../res/content/projects.md"),&options,);
+        markdown_to_html(include_str!("./../res/content/profexper.md"), &options,);
+    let content_educ = markdown_to_html(include_str!("./../res/content/educ.md"), &options,);
+    let content_projects = markdown_to_html(include_str!("./../res/content/projects.md"), &options,);
     let content_techskills =
-        markdown_to_html(include_str!("./../res/content/techskills.md"),&options,);
+        markdown_to_html(include_str!("./../res/content/techskills.md"), &options,);
 
     html! {
         <>
