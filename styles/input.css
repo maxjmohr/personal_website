@@ -14,7 +14,7 @@ body {
     font-family: "Roboto", sans-serif;
 }
 .manual_h1 {
-    @apply antialiased font-extrabold mb-6 text-gray-700 dark:text-stone-400;
+    @apply antialiased font-extrabold mb-6 text-gray-700 dark:text-stone-300;
 }
 .manual_p {
     @apply antialiased text-3xl font-medium leading-snug tracking-normal text-wrap text-stone-600 dark:text-neutral-400;
@@ -22,7 +22,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-    @apply z-50 fixed top-1/2 left-4 w-28 h-auto pt-2 pb-2 flex items-center flex-col bg-white bg-opacity-20 dark:bg-black dark:bg-opacity-20 backdrop-blur-lg transform -translate-y-1/2 rounded-3xl;
+    @apply z-50 fixed top-1/2 left-4 w-28 h-auto pt-2 pb-2 flex items-center flex-col bg-white bg-opacity-20 dark:bg-black dark:bg-opacity-25 backdrop-blur-lg transform -translate-y-1/2 rounded-3xl;
 }
 .sidebar:hover {
     @apply w-[21rem] duration-300;
@@ -41,25 +41,25 @@ body {
     @apply cursor-pointer bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-25 rounded-lg w-[20rem];
 }
 .sidebar_svg {
-    @apply flex w-16 h-16 p-2 fill-gray-700 dark:fill-stone-400;
+    @apply flex w-16 h-16 p-2 fill-gray-700 dark:fill-stone-300;
 }
 .sidebar_span {
-    @apply antialiased align-middle text-xl font-semibold pl-1 text-gray-700 dark:text-stone-400;
+    @apply antialiased align-middle text-xl font-semibold pl-1 text-gray-700 dark:text-stone-300;
 }
 
 /*Content specific classes*/
 .list_icons {
-    @apply flex-shrink-0 w-5 h-5 text-stone-600 dark:text-neutral-400 text-opacity-95 mt-1;
+    @apply flex-shrink-0 w-5 h-5 text-stone-600 dark:text-neutral-400 text-opacity-95 dark:text-opacity-95 mt-1;
 }
-.educ_title {
-    @apply text-gray-700 dark:text-stone-400 text-opacity-90 text-4xl font-semibold mb-2 sm:mb-0;
+.timeline_title {
+    @apply text-gray-700 dark:text-stone-300 text-opacity-90 dark:text-opacity-90 text-4xl font-semibold mb-2 sm:mb-0;
 }
-.educ_time {
-    @apply sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center uppercase w-40 h-6 mb-3 sm:mb-0 text-stone-600 dark:text-neutral-400 text-sm font-semibold bg-white bg-opacity-50 rounded-2xl;
+.timeline_time {
+    @apply sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center uppercase w-40 h-6 mb-3 sm:mb-0 text-stone-600 dark:text-neutral-400 text-sm font-semibold bg-white bg-opacity-50 dark:bg-black dark:bg-opacity-25 rounded-2xl;
 }
-.educ_desc {
+.timeline_desc {
     @apply text-stone-600 dark:text-neutral-400 text-xl;
 }
-.educ_skills {
-    @apply max-w-fit pl-1 pr-1 mr-1 mb-1 text-stone-600 dark:text-neutral-400 text-base font-semibold bg-white bg-opacity-50 uppercase text-center rounded-md;
+.timeline_skills {
+    @apply max-w-fit pl-1 pr-1 mr-1 mb-1 text-stone-600 dark:text-neutral-400 text-base font-semibold bg-white bg-opacity-50 dark:bg-black dark:bg-opacity-25 uppercase text-center rounded-md;
 }

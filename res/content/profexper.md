@@ -1,16 +1,16 @@
 <div>
     <div class="relative pl-8 sm:pl-52 py-6 group" data-aos="fade-up">
-        <div class="educ_title">Working Student</div>
-        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[11.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-4 after:h-4 after:bg-sky-700 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[11.5rem] after:-translate-x-1/2 after:translate-y-0.5">
-            <time class="educ_time">Oct, 2022 - present</time>
-            <a href="https://www.bearingpoint.com/en/?noRedirect=1" target="_blank" class="educ_desc italic">BearingPoint GmbH, Munich (Germany)</a>
+        <div class="timeline_title">Working Student</div>
+        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 dark:before:bg-neutral-500 sm:before:ml-[11.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-4 after:h-4 after:bg-sky-700 after:border-4 after:box-content after:border-slate-50 dark:after:border-neutral-300 after:rounded-full sm:after:ml-[11.5rem] after:-translate-x-1/2 after:translate-y-0.5">
+            <time class="timeline_time">Oct, 2022 - present</time>
+            <a href="https://www.bearingpoint.com/en/?noRedirect=1" target="_blank" class="timeline_desc italic">BearingPoint GmbH, Munich (Germany)</a>
         </div>
         <div class="flex flex-wrap">
-          <div class="educ_skills">Data Analytics</div>
-          <div class="educ_skills">Data Engineering</div>
-          <div class="educ_skills">Artificial Intelligence</div>
+          <div class="timeline_skills">Data Analytics</div>
+          <div class="timeline_skills">Data Engineering</div>
+          <div class="timeline_skills">Artificial Intelligence</div>
         </div>
-        <div class="educ_desc mt-2">
+        <div class="timeline_desc mt-2">
             <ul class="space-y-2 text-left">
                 <li class="flex items-start space-x-1.5">
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -28,17 +28,17 @@
         </div>
     </div>
     <div class="relative pl-8 sm:pl-52 py-6 group" data-aos="fade-up">
-        <div class="educ_title">Business Analayst</div>
-        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[11.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-4 after:h-4 after:bg-sky-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[11.5rem] after:-translate-x-1/2 after:translate-y-0.5">
-            <time class="educ_time">Jun, 2021 - Sep, 2022</time>
-            <a href="https://www.bearingpoint.com/en/?noRedirect=1" target="_blank" class="educ_desc italic">BearingPoint GmbH, Munich (Germany)</a>
+        <div class="timeline_title">Business Analayst</div>
+        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 dark:before:bg-neutral-500 sm:before:ml-[11.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-4 after:h-4 after:bg-sky-600 after:border-4 after:box-content after:border-slate-50 dark:after:border-neutral-300 after:rounded-full sm:after:ml-[11.5rem] after:-translate-x-1/2 after:translate-y-0.5">
+            <time class="timeline_time">Jun, 2021 - Sep, 2022</time>
+            <a href="https://www.bearingpoint.com/en/?noRedirect=1" target="_blank" class="timeline_desc italic">BearingPoint GmbH, Munich (Germany)</a>
         </div>
         <div class="flex flex-wrap">
-          <div class="educ_skills">Data Analytics</div>
-          <div class="educ_skills">Data Engineering</div>
-          <div class="educ_skills">Event Streaming</div>
+          <div class="timeline_skills">Data Analytics</div>
+          <div class="timeline_skills">Data Engineering</div>
+          <div class="timeline_skills">Event Streaming</div>
         </div>
-        <div class="educ_desc mt-2">
+        <div class="timeline_desc mt-2">
             <ul class="space-y-2 text-left">
                 <li class="flex items-start space-x-1.5">
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -74,27 +74,27 @@
         </div>
     </div>
     <div class="relative pl-8 sm:pl-52 py-6 group" data-aos="fade-up">
-        <div class="educ_title">Self-employed Consultant</div>
-        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[11.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-4 after:h-4 after:bg-sky-500 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[11.5rem] after:-translate-x-1/2 after:translate-y-0.5">
-            <time class="educ_time">Aug, 2020 - Sep, 2020</time>
-            <a href="https://commercial-advisory.de" target="_blank" class="educ_desc italic">supporting CA Strategy Consultants GmbH, Munich (Germany)</a>
+        <div class="timeline_title">Self-employed Consultant</div>
+        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 dark:before:bg-neutral-500 sm:before:ml-[11.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-4 after:h-4 after:bg-sky-500 after:border-4 after:box-content after:border-slate-50 dark:after:border-neutral-300 after:rounded-full sm:after:ml-[11.5rem] after:-translate-x-1/2 after:translate-y-0.5">
+            <time class="timeline_time">Aug, 2020 - Sep, 2020</time>
+            <a href="https://commercial-advisory.de" target="_blank" class="timeline_desc italic">supporting CA Strategy Consultants GmbH, Munich (Germany)</a>
         </div>
         <div class="flex flex-wrap">
-          <div class="educ_skills">Commercial Due Diligence</div>
+          <div class="timeline_skills">Commercial Due Diligence</div>
         </div>
-        <div class="educ_desc mt-2"></div>
+        <div class="timeline_desc mt-2"></div>
     </div>
     <div class="relative pl-8 sm:pl-52 py-6 group" data-aos="fade-up">
-        <div class="educ_title">Intern Transactions</div>
-        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[11.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-4 after:h-4 after:bg-sky-400 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[11.5rem] after:-translate-x-1/2 after:translate-y-0.5">
-            <time class="educ_time">Jan, 2020 - Mar, 2020</time>
-            <a href="https://commercial-advisory.de" target="_blank" class="educ_desc italic">CA Strategy Consultants GmbH, Munich (Germany)</a>
+        <div class="timeline_title">Intern Transactions</div>
+        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 dark:before:bg-neutral-500 sm:before:ml-[11.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-4 after:h-4 after:bg-sky-400 after:border-4 after:box-content after:border-slate-50 dark:after:border-neutral-300 after:rounded-full sm:after:ml-[11.5rem] after:-translate-x-1/2 after:translate-y-0.5">
+            <time class="timeline_time">Jan, 2020 - Mar, 2020</time>
+            <a href="https://commercial-advisory.de" target="_blank" class="timeline_desc italic">CA Strategy Consultants GmbH, Munich (Germany)</a>
         </div>
         <div class="flex flex-wrap">
-          <div class="educ_skills">Commercial Due Diligence</div>
-          <div class="educ_skills">Market Entry Strategy</div>
+          <div class="timeline_skills">Commercial Due Diligence</div>
+          <div class="timeline_skills">Market Entry Strategy</div>
         </div>
-        <div class="educ_desc mt-2">
+        <div class="timeline_desc mt-2">
             <ul class="space-y-2 text-left">
                 <li class="flex items-start space-x-1.5">
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -112,15 +112,15 @@
         </div>
     </div>
     <div class="relative pl-8 sm:pl-52 py-6 group" data-aos="fade-up">
-        <div class="educ_title">Student Consultant</div>
-        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[11.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-4 after:h-4 after:bg-sky-300 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[11.5rem] after:-translate-x-1/2 after:translate-y-0.5">
-            <time class="educ_time">Oct, 2018 - Apr, 2019</time>
-            <a href="https://www.jbb-ev.de" target="_blank" class="educ_desc italic">Junior Beratung Bayreuth e.V., Bayreuth (Germany)</a>
+        <div class="timeline_title">Student Consultant</div>
+        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 dark:before:bg-neutral-500 sm:before:ml-[11.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-4 after:h-4 after:bg-sky-300 after:border-4 after:box-content after:border-slate-50 dark:after:border-neutral-300 after:rounded-full sm:after:ml-[11.5rem] after:-translate-x-1/2 after:translate-y-0.5">
+            <time class="timeline_time">Oct, 2018 - Apr, 2019</time>
+            <a href="https://www.jbb-ev.de" target="_blank" class="timeline_desc italic">Junior Beratung Bayreuth e.V., Bayreuth (Germany)</a>
         </div>
         <div class="flex flex-wrap">
-          <div class="educ_skills">Market and competitors analysis</div>
+          <div class="timeline_skills">Market and competitors analysis</div>
         </div>
-        <div class="educ_desc mt-2">
+        <div class="timeline_desc mt-2">
             <ul class="space-y-2 text-left">
                 <li class="flex items-start space-x-1.5">
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
