@@ -11,11 +11,12 @@ fn app() -> Html {
     options.render.unsafe_ = true;
 
     // Get content
-    let content_profexper = markdown_to_html(include_str!("./../res/content/profexper.md"),&options,);
+    let content_profexper =
+        markdown_to_html(include_str!("./../res/content/profexper.md"),&options,);
     let content_educ = markdown_to_html(include_str!("./../res/content/educ.md"),&options,);
     let content_projects = markdown_to_html(include_str!("./../res/content/projects.md"),&options,);
-    let content_techskills = markdown_to_html(include_str!("./../res/content/techskills.md"),&options,);
-    let content_langs = markdown_to_html(include_str!("./../res/content/langs.md"),&options,);
+    let content_techskills =
+        markdown_to_html(include_str!("./../res/content/techskills.md"),&options,);
 
     html! {
         <>
@@ -130,7 +131,33 @@ fn app() -> Html {
         <div id="langs" class="bg-gradient-to-b from-indigo-300 to-stone-300 dark:from-indigo-900 dark:to-stone-600
         pt-28 pb-14 pl-44 pr-20">
             <h1 class="text-7xl manual_h1" data-aos="fade">{"Languages"}</h1>
-            <SafeHtml html={content_langs} class="manual_p"/>
+            <div class="flex flex-wrap justify-center">
+                <div class="flex flex-col items-center m-6 group">
+                    <img src="res/images/langs/germany.png" alt="German Flag" class="langs_flag" />
+                    <p class="langs_title">{"German"}</p>
+                    <p class="langs_level">{"C2"}</p>
+                </div>
+                <div class="flex flex-col items-center m-6 group">
+                    <img src="res/images/langs/uk.png" alt="UK Flag" class="langs_flag" />
+                    <p class="langs_title">{"English"}</p>
+                    <p class="langs_level">{"C1"}</p>
+                </div>
+                <div class="flex flex-col items-center m-6 group">
+                    <img src="res/images/langs/france.png" alt="German Flag" class="langs_flag" />
+                    <p class="langs_title">{"French"}</p>
+                    <p class="langs_level">{"B1"}</p>
+                </div>
+                <div class="flex flex-col items-center m-6 group">
+                    <img src="res/images/langs/italy.png" alt="German Flag" class="langs_flag" />
+                    <p class="langs_title">{"Italian"}</p>
+                    <p class="langs_level">{"A2"}</p>
+                </div>
+                <div class="flex flex-col items-center m-6 group">
+                    <img src="res/images/langs/spain.png" alt="German Flag" class="langs_flag" />
+                    <p class="langs_title">{"Spanish"}</p>
+                    <p class="langs_level">{"A1"}</p>
+                </div>
+            </div>
         </div>
 
         // Footer
