@@ -22,20 +22,16 @@ body {
 
 /* Sidebar */
 .sidebar {
-    @apply z-50 fixed top-1/2 left-4 w-28 h-auto pt-2 pb-2 flex items-center flex-col bg-white bg-opacity-20 dark:bg-black dark:bg-opacity-25 backdrop-blur-lg transform -translate-y-1/2 rounded-3xl;
+    @apply z-50 fixed top-1/2 transform -translate-y-1/2 left-4 w-28 h-auto pt-2 pb-2 flex flex-col items-center bg-white bg-opacity-20 dark:bg-black dark:bg-opacity-25 backdrop-blur-lg rounded-3xl;
 }
 .sidebar:hover {
     @apply w-[21rem] duration-300;
 }
 .sidebar_links {
-    @apply list-none overflow-y-hidden;
-    height: calc(100% - 140px);
+    @apply list-none overflow-y-hidden h-max;
 }
 .sidebar_links::-webkit-scrollbar {
     display: none;
-}
-.sidebar_links li {
-    @apply flex items-center;
 }
 .sidebar_links li:hover {
     @apply cursor-pointer bg-white bg-opacity-80 dark:bg-black dark:bg-opacity-25 rounded-lg w-[20rem];
@@ -46,6 +42,18 @@ body {
 .sidebar_span {
     @apply antialiased align-middle text-xl font-semibold pl-1 text-gray-700 dark:text-stone-300;
 }
+
+/* Bottombar */
+.bottombar {
+    @apply z-50 fixed inset-x-0 bottom-0 w-auto h-36 px-2 mb-8 mx-8 flex flex-row justify-center items-center bg-white bg-opacity-20 dark:bg-black dark:bg-opacity-25 backdrop-blur-lg rounded-3xl;
+}
+.bottombar_svg {
+    @apply flex w-20 h-20 p-2 fill-gray-700 dark:fill-stone-300;
+}
+.bottombar_span {
+    @apply antialiased pt-1 align-middle text-center text-xl font-medium text-gray-700 dark:text-stone-300;
+}
+
 
 /*Content specific classes*/
 .list_icons {

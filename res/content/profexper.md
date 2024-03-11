@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="relative pl-8 sm:pl-52 py-6 group" data-aos="fade-up">
-        <div class="timeline_title">Business Analayst</div>
+        <div class="timeline_title">Business Analyst</div>
         <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 dark:before:bg-neutral-500 sm:before:ml-[11.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-4 after:h-4 after:bg-sky-600 after:border-4 after:box-content after:border-slate-50 dark:after:border-neutral-300 after:rounded-full sm:after:ml-[11.5rem] after:-translate-x-1/2 after:translate-y-0.5">
             <time class="timeline_time">Jun, 2021 - Sep, 2022</time>
             <a href="https://www.bearingpoint.com/en/?noRedirect=1" target="_blank" class="timeline_desc italic">BearingPoint GmbH, Munich (Germany)</a>
