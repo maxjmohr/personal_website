@@ -64,7 +64,7 @@ body {
     @apply max-w-fit pl-1 pr-1 mr-1 mb-1 text-stone-600 dark:text-neutral-400 text-base font-semibold bg-white bg-opacity-50 dark:bg-black dark:bg-opacity-25 uppercase text-center rounded-md;
 }
 .langs_flag {
-    @apply h-32 w-32 rounded-lg contrast-50 group-hover:contrast-100 transition duration-300 ease-in-out;
+    @apply h-32 w-40 rounded-lg contrast-50 group-hover:contrast-100 transition duration-300 ease-in-out;
 }
 .langs_title {
     @apply text-center antialiased text-3xl group-hover:font-extrabold mt-3 mb-2 text-gray-700 dark:text-stone-300 transition duration-300 ease-in-out;

@@ -1,1 +1,1 @@
-Hey, I'm Max. I am currently studying data science and working at BearingPoint in data analytics & engineering.
+Hey, I'm Max. I am currently studying data science in Tübingen and working at BearingPoint in data analytics & engineering.

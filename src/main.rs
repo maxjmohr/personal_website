@@ -1,5 +1,5 @@
 use crate::safehtml::SafeHtml;
-use comrak::{format_html, markdown_to_html, ComrakOptions};
+use comrak::{markdown_to_html, ComrakOptions};
 use std::fs;
 use yew::prelude::*;
 
