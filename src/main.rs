@@ -157,7 +157,7 @@ fn app() -> Html {
                     </svg>
                 </a>
             </div>
-            <span class="type-aboutme antialiased text-4xl lg:text-3xl font-medium leading-snug tracking-normal text-wrap text-stone-600 dark:text-neutral-400"></span>
+            <span class="type-aboutme antialiased text-5xl lg:text-3xl font-medium leading-snug tracking-normal text-wrap text-stone-600 dark:text-neutral-400"></span>
         </div>
 
         // Professional experience

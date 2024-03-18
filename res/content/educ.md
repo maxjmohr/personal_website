@@ -3,9 +3,9 @@
         <a href="https://uni-tuebingen.de/en/study/finding-a-course/degree-programs-available/detail/course/data-science-in-business-and-economics-master/" target="_blank" class="timeline_title">M.Sc. Data Science in Business and Economics</a>
         <div class="flex flex-col lg:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 lg:before:left-0 before:h-full before:px-px before:bg-slate-300 dark:before:bg-neutral-500 before:ml-3.5 lg:before:ml-[11.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 lg:after:left-0 after:w-6 after:h-6 lg:after:w-4 lg:after:h-4 after:bg-purple-700 after:border-8 lg:after:border-4 after:box-content after:border-slate-50 dark:after:border-neutral-300 after:rounded-full after:ml-3.5 lg:after:ml-[11.5rem] after:-translate-x-1/2 after:translate-y-0.5">
             <time class="timeline_time">Oct, 2022 - present</time>
-            <a href="https://uni-tuebingen.de/en/" target="_blank" class="timeline_desc italic pt-2 lg:pt-0">Eberhard Karls Universität Tübingen, Germany</a>
+            <a href="https://uni-tuebingen.de/en/" target="_blank" class="timeline_desc italic pt-3 lg:pt-0">Eberhard Karls Universität Tübingen, Germany</a>
         </div>
-        <div class="flex flex-wrap mt-2 lg:mt-0">
+        <div class="flex flex-wrap mt-3 lg:mt-0">
           <div class="timeline_skills">Machine Learning</div>
           <div class="timeline_skills">Deep Learning</div>
           <div class="timeline_skills">Cloud Computing</div>
@@ -52,9 +52,9 @@
         <a href="https://www.uni-bayreuth.de/en/bachelor/business-administration" target="_blank" class="timeline_title">B.Sc. Business Administration</a>
         <div class="flex flex-col lg:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 lg:before:left-0 before:h-full before:px-px before:bg-slate-300 dark:before:bg-neutral-500 before:ml-3.5 lg:before:ml-[11.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 lg:after:left-0 after:w-6 after:h-6 lg:after:w-4 lg:after:h-4 after:bg-purple-600 after:border-8 lg:after:border-4 after:box-content after:border-slate-50 dark:after:border-neutral-300 after:rounded-full after:ml-3.5 lg:after:ml-[11.5rem] after:-translate-x-1/2 after:translate-y-0.5">
             <time class="timeline_time">Oct, 2017 - Mar, 2021</time>
-            <a href="https://www.uni-bayreuth.de/en" target="_blank" class="timeline_desc italic pt-2 lg:pt-0">University Bayreuth, Germany</a>
+            <a href="https://www.uni-bayreuth.de/en" target="_blank" class="timeline_desc italic pt-3 lg:pt-0">University Bayreuth, Germany</a>
         </div>
-        <div class="flex flex-wrap mt-2 lg:mt-0">
+        <div class="flex flex-wrap mt-3 lg:mt-0">
           <div class="timeline_skills">Business Informatics</div>
           <div class="timeline_skills">Finance</div>
           <div class="timeline_skills">Crypto</div>
@@ -92,9 +92,9 @@
         <a class="timeline_title">Semester abroad</a>
         <div class="flex flex-col lg:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 lg:before:left-0 before:h-full before:px-px before:bg-slate-300 dark:before:bg-neutral-500 before:ml-3.5 lg:before:ml-[11.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 lg:after:left-0 after:w-6 after:h-6 lg:after:w-4 lg:after:h-4 after:bg-purple-500 after:border-8 lg:after:border-4 after:box-content after:border-slate-50 dark:after:border-neutral-300 after:rounded-full after:ml-3.5 lg:after:ml-[11.5rem] after:-translate-x-1/2 after:translate-y-0.5">
             <time class="timeline_time">Sep, 2019 - Dec, 2019</time>
-            <a href="https://www.dbs.ie" target="_blank" class="timeline_desc italic pt-2 lg:pt-0">Dublin Business School, Ireland</a>
+            <a href="https://www.dbs.ie" target="_blank" class="timeline_desc italic pt-3 lg:pt-0">Dublin Business School, Ireland</a>
         </div>
-        <div class="flex flex-wrap mt-2 lg:mt-0">
+        <div class="flex flex-wrap mt-3 lg:mt-0">
           <div class="timeline_skills">IT</div>
           <div class="timeline_skills">Management</div>
           <div class="timeline_skills">Psychology</div>
@@ -105,9 +105,9 @@
         <a class="timeline_title">Abitur</a>
         <div class="flex flex-col lg:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 lg:before:left-0 before:h-full before:px-px before:bg-slate-300 dark:before:bg-neutral-500 before:ml-3.5 lg:before:ml-[11.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 lg:after:left-0 after:w-6 after:h-6 lg:after:w-4 lg:after:h-4 after:bg-purple-400 after:border-8 lg:after:border-4 after:box-content after:border-slate-50 dark:after:border-neutral-300 after:rounded-full after:ml-3.5 lg:after:ml-[11.5rem] after:-translate-x-1/2 after:translate-y-0.5">
             <time class="timeline_time">Sep, 2009 - Jun, 2017</time>
-            <a href="https://www.opg-pullach.de" target="_blank" class="timeline_desc italic pt-2 lg:pt-0">Otfried-Preußler-Gymnasium Pullach, Germany</a>
+            <a href="https://www.opg-pullach.de" target="_blank" class="timeline_desc italic pt-3 lg:pt-0">Otfried-Preußler-Gymnasium Pullach, Germany</a>
         </div>
-        <div class="flex flex-wrap mt-2 lg:mt-0">
+        <div class="flex flex-wrap mt-3 lg:mt-0">
           <div class="timeline_skills">business@school</div>
           <div class="timeline_skills">Supersonic Flight</div>
         </div>
