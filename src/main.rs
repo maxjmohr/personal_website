@@ -192,7 +192,7 @@ fn app() -> Html {
         <div id="langs" class="bg-gradient-to-b from-indigo-300 to-stone-300 dark:from-indigo-900 dark:to-stone-600
         pt-28 pb-14 pl-12 lg:pl-44 pr-20">
             <h1 class="text-8xl lg:text-7xl manual_h1" data-aos="fade">{"Languages"}</h1>
-            <div class="flex flex-wrap justify-center">
+            <div class="flex flex-wrap justify-center" data-aos="fade">
                 <div class="flex flex-col items-center m-6 group">
                     <img src="res/images/langs/germany.png" alt="German Flag" class="langs_flag" />
                     <p class="langs_title">{"German"}</p>
@@ -203,6 +203,9 @@ fn app() -> Html {
                     <p class="langs_title">{"English"}</p>
                     <p class="langs_level">{"C1"}</p>
                 </div>
+            </div>
+            <p class="type-langs manual_p text-center" data-aos="fade"></p>
+            <div class="flex flex-wrap justify-center" data-aos="fade">
                 <div class="flex flex-col items-center m-6 group">
                     <img src="res/images/langs/france.png" alt="German Flag" class="langs_flag" />
                     <p class="langs_title">{"French"}</p>
