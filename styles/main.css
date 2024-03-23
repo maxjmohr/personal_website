@@ -1497,6 +1497,75 @@ video {
   color: rgb(87 83 78 / var(--tw-text-opacity));
 }
 
+.text-\[\#008de4\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 141 228 / var(--tw-text-opacity));
+}
+
+.text-\[\#0088DA\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 136 218 / var(--tw-text-opacity));
+}
+
+.text-\[\#0088da\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 136 218 / var(--tw-text-opacity));
+}
+
+.text-\[\#2681FF\] {
+  --tw-text-opacity: 1;
+  color: rgb(38 129 255 / var(--tw-text-opacity));
+}
+
+.text-\[\#\#2965f1\] {
+  color: ##2965f1;
+}
+
+.text-\[\#2965f1\] {
+  --tw-text-opacity: 1;
+  color: rgb(41 101 241 / var(--tw-text-opacity));
+}
+
+.text-\[\#f1502f\] {
+  --tw-text-opacity: 1;
+  color: rgb(241 80 47 / var(--tw-text-opacity));
+}
+
+.text-\[\#4285f4\] {
+  --tw-text-opacity: 1;
+  color: rgb(66 133 244 / var(--tw-text-opacity));
+}
+
+.text-\[\#f06529\] {
+  --tw-text-opacity: 1;
+  color: rgb(240 101 41 / var(--tw-text-opacity));
+}
+
+.text-\[\#e9b51c\] {
+  --tw-text-opacity: 1;
+  color: rgb(233 181 28 / var(--tw-text-opacity));
+}
+
+.text-\[\#c74634\] {
+  --tw-text-opacity: 1;
+  color: rgb(199 70 52 / var(--tw-text-opacity));
+}
+
+.text-\[\#336791\] {
+  --tw-text-opacity: 1;
+  color: rgb(51 103 145 / var(--tw-text-opacity));
+}
+
+.text-\[\#589632\] {
+  --tw-text-opacity: 1;
+  color: rgb(88 150 50 / var(--tw-text-opacity));
+}
+
+.text-\[\#38bdf8\] {
+  --tw-text-opacity: 1;
+  color: rgb(56 189 248 / var(--tw-text-opacity));
+}
+
 .text-opacity-90 {
   --tw-text-opacity: 0.9;
 }
@@ -3089,6 +3158,14 @@ body {
   background-color: rgb(3 105 161 / var(--tw-bg-opacity));
 }
 
+.hover\:fill-gray-800:hover {
+  fill: #1f2937;
+}
+
+.hover\:fill-white:hover {
+  fill: #fff;
+}
+
 .group:last-child .group-last\:before\:hidden::before {
   content: var(--tw-content);
   display: none;
@@ -3224,6 +3301,11 @@ body {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .lg\:font-medium {
@@ -3365,6 +3447,75 @@ body {
     background-color: rgb(59 130 246 / var(--tw-bg-opacity));
   }
 
+  .lg\:hover\:bg-\[\#008de4\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 141 228 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#0088da\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 136 218 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#2681FF\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(38 129 255 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#\#2965f1\]:hover {
+    background-color: ##2965f1;
+  }
+
+  .lg\:hover\:bg-\[\#2965f1\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(41 101 241 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#f1502f\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(241 80 47 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#4285f4\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(66 133 244 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#f06529\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(240 101 41 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#e9b51c\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(233 181 28 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#c74634\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(199 70 52 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#cc5745\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(204 87 69 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#336791\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(51 103 145 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#589632\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(88 150 50 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#38bdf8\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(56 189 248 / var(--tw-bg-opacity));
+  }
+
   .lg\:hover\:font-bold:hover {
     font-weight: 700;
   }
@@ -3379,9 +3530,22 @@ body {
     transition-duration: 300ms;
   }
 
+  .group:hover .lg\:group-hover\:fill-gray-800 {
+    fill: #1f2937;
+  }
+
+  .group:hover .lg\:group-hover\:fill-white {
+    fill: #fff;
+  }
+
   .group:hover .lg\:group-hover\:text-white {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:text-gray-800 {
+    --tw-text-opacity: 1;
+    color: rgb(31 41 55 / var(--tw-text-opacity));
   }
 
   .group:hover .lg\:group-hover\:text-opacity-100 {
