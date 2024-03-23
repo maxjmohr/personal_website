@@ -157,7 +157,7 @@ fn app() -> Html {
                     </svg>
                 </a>
             </div>
-            <span class="type-aboutme antialiased text-5xl lg:text-3xl font-medium leading-snug tracking-normal text-wrap text-stone-600 dark:text-neutral-400"></span>
+            <span class="type-aboutme antialiased text-5xl lg:text-3xl font-medium leading-snug tracking-normal text-wrap text-stone-600 dark:text-neutral-300 leading-tight lg:leading-snug"></span>
         </div>
 
         // Professional experience
@@ -185,7 +185,7 @@ fn app() -> Html {
         <div id="techskills" class="bg-gradient-to-b from-cyan-200 to-indigo-300 dark:from-cyan-900 dark:to-indigo-900
         pt-28 pb-14 pl-12 lg:pl-44 pr-20">
             <h1 class="text-8xl lg:text-7xl manual_h1" data-aos="fade">{"Technical skills"}</h1>
-            <SafeHtml html={content_techskills} class="antialiased text-3xl font-medium leading-snug tracking-normal text-wrap text-stone-600 dark:text-neutral-400"/>
+            <SafeHtml html={content_techskills}/>
         </div>
 
         // Languages
@@ -204,7 +204,7 @@ fn app() -> Html {
                     <p class="langs_level">{"C1"}</p>
                 </div>
             </div>
-            <p class="type-langs manual_p text-center" data-aos="fade"></p>
+            <p class="type-langs antialiased text-4xl lg:text-3xl font-medium leading-snug tracking-normal text-wrap text-stone-600 dark:text-neutral-300 text-center" data-aos="fade"></p>
             <div class="flex flex-wrap justify-center" data-aos="fade">
                 <div class="flex flex-col items-center m-6 group">
                     <img src="res/images/langs/france.png" alt="German Flag" class="langs_flag" />
@@ -248,7 +248,7 @@ fn app() -> Html {
                     </svg>
                 </a>
             </div>
-            <p class="antialiased text-xl lg:text-md text-gray-700 dark:text-stone-300 text-center font-medium px-20">{"I constructed this website on the basis of the "}
+            <p class="antialiased text-xl lg:text-md text-gray-700 dark:text-stone-200 text-center font-lg lg:font-medium pt-4 lg:pt-0 px-20">{"I constructed this website on the basis of the "}
                 <a href="https://yew.rs" target="_blank" class="italic lg:hover:font-bold">{"yew.rs"}</a>
                     {" framework. It is in constant development. For more technical insights feel free to access the "}
                         <a href="https://github.com/maxjmohr/personal_website" target="_blank" class="italic lg:hover:font-bold">{"GitHub repository"}</a>

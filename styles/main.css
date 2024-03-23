@@ -665,11 +665,6 @@ video {
   margin-right: 1rem;
 }
 
-.mx-6 {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
 .mx-8 {
   margin-left: 2rem;
   margin-right: 2rem;
@@ -730,10 +725,6 @@ video {
 
 .mt-4 {
   margin-top: 1rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
 }
 
 .mt-8 {
@@ -804,17 +795,8 @@ video {
   height: 13rem;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
 .h-\[48rem\] {
   height: 48rem;
-}
-
-.h-fit {
-  height: -moz-fit-content;
-  height: fit-content;
 }
 
 .h-full {
@@ -842,21 +824,12 @@ video {
   width: 13rem;
 }
 
-.w-96 {
-  width: 24rem;
-}
-
 .w-\[41rem\] {
   width: 41rem;
 }
 
 .w-auto {
   width: auto;
-}
-
-.w-fit {
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 .w-full {
@@ -921,14 +894,6 @@ video {
 
 .resize {
   resize: both;
-}
-
-.snap-x {
-  scroll-snap-type: x var(--tw-scroll-snap-strictness);
-}
-
-.snap-center {
-  scroll-snap-align: center;
 }
 
 .appearance-auto {
@@ -1314,16 +1279,8 @@ video {
   padding-left: 1rem;
 }
 
-.pl-6 {
-  padding-left: 1.5rem;
-}
-
 .pl-8 {
   padding-left: 2rem;
-}
-
-.pr-2 {
-  padding-right: 0.5rem;
 }
 
 .pr-20 {
@@ -1467,8 +1424,17 @@ video {
   line-height: 1.375;
 }
 
+.leading-tight {
+  line-height: 1.25;
+}
+
 .tracking-normal {
   letter-spacing: 0em;
+}
+
+.text-\[\#0081fb\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 129 251 / var(--tw-text-opacity));
 }
 
 .text-\[\#195f92\] {
@@ -1486,6 +1452,21 @@ video {
   color: rgb(69 132 182 / var(--tw-text-opacity));
 }
 
+.text-\[\#F97700\] {
+  --tw-text-opacity: 1;
+  color: rgb(249 119 0 / var(--tw-text-opacity));
+}
+
+.text-\[\#e15919\] {
+  --tw-text-opacity: 1;
+  color: rgb(225 89 25 / var(--tw-text-opacity));
+}
+
+.text-\[\#ee4c2c\] {
+  --tw-text-opacity: 1;
+  color: rgb(238 76 44 / var(--tw-text-opacity));
+}
+
 .text-\[\#f06e3e\] {
   --tw-text-opacity: 1;
   color: rgb(240 110 62 / var(--tw-text-opacity));
@@ -1494,6 +1475,11 @@ video {
 .text-\[\#f80000\] {
   --tw-text-opacity: 1;
   color: rgb(248 0 0 / var(--tw-text-opacity));
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-gray-700 {
@@ -1509,36 +1495,6 @@ video {
 .text-stone-600 {
   --tw-text-opacity: 1;
   color: rgb(87 83 78 / var(--tw-text-opacity));
-}
-
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.text-\[\#e15919\] {
-  --tw-text-opacity: 1;
-  color: rgb(225 89 25 / var(--tw-text-opacity));
-}
-
-.text-\[\#f9d100\] {
-  --tw-text-opacity: 1;
-  color: rgb(249 209 0 / var(--tw-text-opacity));
-}
-
-.text-\[\#F97700\] {
-  --tw-text-opacity: 1;
-  color: rgb(249 119 0 / var(--tw-text-opacity));
-}
-
-.text-\[\#0081fb\] {
-  --tw-text-opacity: 1;
-  color: rgb(0 129 251 / var(--tw-text-opacity));
-}
-
-.text-\[\#ee4c2c\] {
-  --tw-text-opacity: 1;
-  color: rgb(238 76 44 / var(--tw-text-opacity));
 }
 
 .text-opacity-90 {
@@ -1571,12 +1527,6 @@ video {
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.shadow-none {
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1700,383 +1650,387 @@ video {
     content: "Hey, I'm Max. I am currently studying data science in Tübingen and working at BearingPoint in data analytics & engineering.";
   }
 
-  0.35% {
+  0.23% {
     content: "H";
   }
 
-  1.36% {
+  1.11% {
     content: "He";
   }
 
-  2.58% {
+  2.36% {
     content: "Hey";
   }
 
-  2.44% {
+  2.3% {
     content: "Hey,";
   }
 
-  3.16% {
+  3.17% {
     content: "Hey, ";
   }
 
-  3.9% {
+  3.85% {
     content: "Hey, I";
   }
 
-  4.8% {
+  5.18% {
     content: "Hey, I'";
   }
 
-  5.37% {
+  5.9% {
     content: "Hey, I'm";
   }
 
-  6.71% {
+  6.31% {
     content: "Hey, I'm ";
   }
 
-  7.48% {
+  7.22% {
     content: "Hey, I'm M";
   }
 
-  8.06% {
+  8.11% {
     content: "Hey, I'm Ma";
   }
 
-  7.98% {
+  8.42% {
     content: "Hey, I'm Max";
   }
 
-  9.55% {
+  9.4% {
     content: "Hey, I'm Max.";
   }
 
-  9.89% {
+  10.18% {
     content: "Hey, I'm Max. ";
   }
 
-  10.21% {
+  10.56% {
     content: "Hey, I'm Max. I";
   }
 
-  11.22% {
+  10.88% {
     content: "Hey, I'm Max. I ";
   }
 
-  11.42% {
+  12.29% {
     content: "Hey, I'm Max. I a";
   }
 
-  12.52% {
+  13% {
     content: "Hey, I'm Max. I am";
   }
 
-  12.96% {
+  13.3% {
     content: "Hey, I'm Max. I am ";
   }
 
-  13.75% {
+  13.52% {
     content: "Hey, I'm Max. I am c";
   }
 
-  15.14% {
+  14.55% {
     content: "Hey, I'm Max. I am cu";
   }
 
-  15.79% {
+  15.88% {
     content: "Hey, I'm Max. I am cur";
   }
 
-  16.25% {
+  16.08% {
     content: "Hey, I'm Max. I am curr";
   }
 
-  16.94% {
+  16.68% {
     content: "Hey, I'm Max. I am curre";
   }
 
-  17.5% {
+  16.99% {
     content: "Hey, I'm Max. I am curren";
   }
 
-  18.12% {
+  18.28% {
     content: "Hey, I'm Max. I am current";
   }
 
-  18.78% {
+  19.01% {
     content: "Hey, I'm Max. I am currentl";
   }
 
-  20.01% {
+  19.82% {
     content: "Hey, I'm Max. I am currently";
   }
 
-  20.35% {
+  20.13% {
     content: "Hey, I'm Max. I am currently ";
   }
 
-  20.49% {
+  21.08% {
     content: "Hey, I'm Max. I am currently s";
   }
 
-  21.55% {
+  21.62% {
     content: "Hey, I'm Max. I am currently st";
   }
 
-  22.74% {
+  22.45% {
     content: "Hey, I'm Max. I am currently stu";
   }
 
-  23.28% {
+  22.7% {
     content: "Hey, I'm Max. I am currently stud";
   }
 
-  23.83% {
+  24.08% {
     content: "Hey, I'm Max. I am currently study";
   }
 
-  24.43% {
+  24.97% {
     content: "Hey, I'm Max. I am currently studyi";
   }
 
-  24.95% {
+  24.89% {
     content: "Hey, I'm Max. I am currently studyin";
   }
 
-  26.3% {
+  25.5% {
     content: "Hey, I'm Max. I am currently studying";
   }
 
-  27.06% {
+  26.78% {
+    content: "Hey, I'm Max. I am currently studying ";
+  }
+
+  27.48% {
     content: "Hey, I'm Max. I am currently studying d";
   }
 
-  28.16% {
+  28.29% {
     content: "Hey, I'm Max. I am currently studying da";
   }
 
-  28.42% {
+  29.16% {
     content: "Hey, I'm Max. I am currently studying dat";
   }
 
-  29.44% {
+  29.07% {
     content: "Hey, I'm Max. I am currently studying data";
   }
 
-  29.9% {
+  30.37% {
     content: "Hey, I'm Max. I am currently studying data ";
   }
 
-  30.35% {
+  30.29% {
     content: "Hey, I'm Max. I am currently studying data s";
   }
 
-  31.24% {
+  31.68% {
     content: "Hey, I'm Max. I am currently studying data sc";
   }
 
-  32.01% {
+  32.13% {
     content: "Hey, I'm Max. I am currently studying data sci";
   }
 
-  32.83% {
+  32.5% {
     content: "Hey, I'm Max. I am currently studying data scie";
   }
 
-  33.79% {
+  33.27% {
     content: "Hey, I'm Max. I am currently studying data scien";
   }
 
-  34.64% {
+  33.97% {
     content: "Hey, I'm Max. I am currently studying data scienc";
   }
 
-  34.69% {
+  35.21% {
     content: "Hey, I'm Max. I am currently studying data science";
   }
 
-  35.28% {
+  35.59% {
     content: "Hey, I'm Max. I am currently studying data science ";
   }
 
-  36.46% {
+  36.17% {
     content: "Hey, I'm Max. I am currently studying data science i";
   }
 
-  36.7% {
+  36.73% {
     content: "Hey, I'm Max. I am currently studying data science in";
   }
 
-  38.1% {
+  38.19% {
     content: "Hey, I'm Max. I am currently studying data science in ";
   }
 
-  38.21% {
+  38.5% {
     content: "Hey, I'm Max. I am currently studying data science in T";
   }
 
-  39.66% {
+  39.42% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC";
   }
 
-  40.31% {
+  39.93% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC b";
   }
 
-  40.22% {
+  40.1% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bi";
   }
 
-  41.61% {
+  40.93% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bin";
   }
 
-  42.17% {
+  42.06% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bing";
   }
 
-  42.72% {
+  42.92% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC binge";
   }
 
-  43.09% {
+  43.28% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen";
   }
 
-  44.24% {
+  44.14% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen ";
   }
 
-  44.71% {
+  44.47% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen a";
   }
 
-  45.58% {
+  45.76% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen an";
   }
 
-  45.89% {
+  46.64% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and";
   }
 
-  46.56% {
+  47.33% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and ";
   }
 
-  47.82% {
+  47.98% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and w";
   }
 
-  47.84% {
+  48.05% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and wo";
   }
 
-  48.93% {
+  49% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and wor";
   }
 
-  49.31% {
+  49.72% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and work";
   }
 
-  50.07% {
+  50.65% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and worki";
   }
 
-  51.49% {
+  50.68% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and workin";
   }
 
-  52.01% {
+  51.79% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working";
   }
 
-  52.42% {
+  52.14% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working ";
   }
 
-  53.15% {
+  53.63% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working a";
   }
 
-  54.02% {
+  53.94% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at";
   }
 
-  54.05% {
+  54.72% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at ";
   }
 
-  54.88% {
+  55.45% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at B";
   }
 
-  56.01% {
+  55.68% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at Be";
   }
 
-  56.92% {
+  56.3% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at Bea";
   }
 
-  57.82% {
+  57.19% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at Bear";
   }
 
-  58.13% {
+  58.42% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at Beari";
   }
 
-  58.64% {
+  59.13% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at Bearin";
   }
 
-  59.58% {
+  59.32% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at Bearing";
   }
 
-  59.69% {
+  59.79% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingP";
   }
 
-  60.84% {
+  60.44% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPo";
   }
 
-  61.82% {
+  61.59% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoi";
   }
 
-  62.05% {
+  61.83% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoin";
   }
 
-  63.22% {
+  62.52% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint";
   }
 
-  63.85% {
+  63.64% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint ";
   }
 
-  64.41% {
+  64.47% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint i";
   }
 
-  65.06% {
+  65.5% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in";
   }
 
-  66.22% {
+  65.39% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in ";
   }
 
-  66.37% {
+  66.88% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in d";
   }
 
-  67.31% {
+  67.36% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in da";
   }
 
@@ -2084,107 +2038,107 @@ video {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in dat";
   }
 
-  68.37% {
+  68.23% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data";
   }
 
-  68.91% {
+  69.18% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data ";
   }
 
-  69.67% {
+  69.66% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data a";
   }
 
-  70.99% {
+  71.09% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data an";
   }
 
-  70.88% {
+  71.33% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data ana";
   }
 
-  72.24% {
+  71.84% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data anal";
   }
 
-  73.18% {
+  72.47% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analy";
   }
 
-  73.28% {
+  72.96% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analyt";
   }
 
-  74.52% {
+  74.61% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analyti";
   }
 
-  74.84% {
+  75.31% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytic";
   }
 
-  75.57% {
+  75.69% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics";
   }
 
-  75.99% {
+  76.4% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics ";
   }
 
-  76.85% {
+  77.22% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics &";
   }
 
-  77.53% {
+  77.19% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & ";
   }
 
-  78.59% {
+  78.49% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & e";
   }
 
-  79.48% {
+  79.51% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & en";
   }
 
-  79.72% {
+  79.48% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & eng";
   }
 
-  80.34% {
+  80.58% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engi";
   }
 
-  81.49% {
+  81.53% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engin";
   }
 
-  81.96% {
+  82.24% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engine";
   }
 
-  82.64% {
+  82.26% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & enginee";
   }
 
-  83.66% {
+  82.78% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engineer";
   }
 
-  83.94% {
+  83.74% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engineeri";
   }
 
-  84.54% {
+  84.91% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engineerin";
   }
 
-  85.81% {
+  84.93% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engineering";
   }
 
-  86.14%, 100.12% {
+  86.25%, 100.24% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engineering.";
   }
 }
@@ -2198,259 +2152,259 @@ video {
     content: "";
   }
 
-  0.58% {
+  1.21% {
     content: "\E9";
   }
 
-  1.47% {
+  1.68% {
     content: "\E9t";
   }
 
-  2.1% {
+  2.78% {
     content: "\E9t ";
   }
 
-  3.47% {
+  3% {
     content: "\E9t u";
   }
 
-  3.92% {
+  3.4% {
     content: "\E9t un";
   }
 
-  4.73% {
+  4.99% {
     content: "\E9t un ";
   }
 
-  5.07% {
+  4.9% {
     content: "\E9t un p";
   }
 
-  5.86% {
+  6.09% {
     content: "\E9t un pe";
   }
 
-  7.4% {
+  7.28% {
     content: "\E9t un peu";
   }
 
-  7.68% {
+  7.8% {
     content: "\E9t un peu.";
   }
 
-  8.46% {
+  8.44% {
     content: "\E9t un peu..";
   }
 
-  8.82%, 24.2% {
+  9.28%, 24.67% {
     content: "\E9t un peu...";
   }
 
-  24.97% {
+  25.44% {
     content: "\E9t un peu..";
   }
 
-  25.74% {
+  26.21% {
     content: "\E9t un peu.";
   }
 
-  26.51% {
+  26.97% {
     content: "\E9t un peu";
   }
 
-  27.28% {
+  27.74% {
     content: "\E9t un pe";
   }
 
-  28.05% {
+  28.51% {
     content: "\E9t un p";
   }
 
-  28.82% {
+  29.28% {
     content: "\E9t un ";
   }
 
-  29.59% {
+  30.05% {
     content: "\E9t un";
   }
 
-  30.36% {
+  30.82% {
     content: "\E9t u";
   }
 
-  31.13% {
+  31.59% {
     content: "\E9t ";
   }
 
-  31.9% {
+  32.36% {
     content: "\E9t";
   }
 
-  32.66% {
+  33.13% {
     content: "\E9";
   }
 
-  33.43% {
+  33.9% {
     content: "";
   }
 
-  34% {
+  34.77% {
     content: "e";
   }
 
-  34.89% {
+  35.41% {
     content: "e ";
   }
 
-  36.02% {
+  36.17% {
     content: "e u";
   }
 
-  36.15% {
+  36.82% {
     content: "e un";
   }
 
-  37.32% {
+  37.46% {
     content: "e un ";
   }
 
-  38.41% {
+  38.57% {
     content: "e un p";
   }
 
-  38.76% {
+  39.38% {
     content: "e un po";
   }
 
-  39.95% {
+  40.36% {
     content: "e un po'";
   }
 
-  40.17% {
+  41.31% {
     content: "e un po'.";
   }
 
-  41.43% {
+  41.89% {
     content: "e un po'..";
   }
 
-  41.81%, 57.19% {
+  42.08%, 57.47% {
     content: "e un po'...";
   }
 
-  57.96% {
+  58.24% {
     content: "e un po'..";
   }
 
-  58.73% {
+  59% {
     content: "e un po'.";
   }
 
-  59.5% {
+  59.77% {
     content: "e un po'";
   }
 
-  60.27% {
+  60.54% {
     content: "e un po";
   }
 
-  61.04% {
+  61.31% {
     content: "e un p";
   }
 
-  61.81% {
+  62.08% {
     content: "e un ";
   }
 
-  62.58% {
+  62.85% {
     content: "e un";
   }
 
-  63.35% {
+  63.62% {
     content: "e u";
   }
 
-  64.12% {
+  64.39% {
     content: "e ";
   }
 
-  64.89% {
+  65.16% {
     content: "e";
   }
 
-  65.66% {
+  65.93% {
     content: "";
   }
 
-  66.35% {
+  67.02% {
     content: "y";
   }
 
-  67.25% {
+  67.56% {
     content: "y ";
   }
 
-  68.17% {
+  68.65% {
     content: "y u";
   }
 
-  68.46% {
+  69.03% {
     content: "y un";
   }
 
-  69.04% {
+  69.84% {
     content: "y un ";
   }
 
-  70.51% {
+  70.97% {
     content: "y un p";
   }
 
-  70.81% {
+  71.24% {
     content: "y un po";
   }
 
-  71.57% {
+  72.3% {
     content: "y un poc";
   }
 
-  73.01% {
+  72.43% {
     content: "y un poco";
   }
 
-  73.33% {
+  73.64% {
     content: "y un poco.";
   }
 
-  74.02% {
+  74.06% {
     content: "y un poco..";
   }
 
-  74.9%, 90.28% {
+  74.91%, 90.29% {
     content: "y un poco...";
   }
 
-  91.05% {
+  91.06% {
     content: "y un poco..";
   }
 
-  91.82% {
+  91.83% {
     content: "y un poco.";
   }
 
-  92.59% {
+  92.6% {
     content: "y un poco";
   }
 
-  93.36% {
+  93.37% {
     content: "y un poc";
   }
 
-  94.13% {
+  94.14% {
     content: "y un po";
   }
 
-  94.9% {
+  94.91% {
     content: "y un p";
   }
 
@@ -2470,11 +2424,11 @@ video {
     content: "y ";
   }
 
-  98.74% {
+  98.75% {
     content: "y";
   }
 
-  99.51% {
+  99.52% {
     content: "";
   }
 }
@@ -2521,7 +2475,7 @@ body {
 @media (prefers-color-scheme: dark) {
   .manual_h1 {
     --tw-text-opacity: 1;
-    color: rgb(214 211 209 / var(--tw-text-opacity));
+    color: rgb(231 229 228 / var(--tw-text-opacity));
   }
 }
 
@@ -2541,7 +2495,7 @@ body {
 @media (prefers-color-scheme: dark) {
   .manual_p {
     --tw-text-opacity: 1;
-    color: rgb(163 163 163 / var(--tw-text-opacity));
+    color: rgb(212 212 212 / var(--tw-text-opacity));
   }
 }
 
@@ -2617,7 +2571,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   .sidebar_svg {
-    fill: #d6d3d1;
+    fill: #e7e5e4;
   }
 }
 
@@ -2636,7 +2590,7 @@ body {
 @media (prefers-color-scheme: dark) {
   .sidebar_span {
     --tw-text-opacity: 1;
-    color: rgb(214 211 209 / var(--tw-text-opacity));
+    color: rgb(231 229 228 / var(--tw-text-opacity));
   }
 }
 
@@ -2684,7 +2638,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   .bottombar_svg {
-    fill: #d6d3d1;
+    fill: #e7e5e4;
   }
 }
 
@@ -2704,7 +2658,7 @@ body {
 @media (prefers-color-scheme: dark) {
   .bottombar_span {
     --tw-text-opacity: 1;
-    color: rgb(214 211 209 / var(--tw-text-opacity));
+    color: rgb(231 229 228 / var(--tw-text-opacity));
   }
 }
 
@@ -2728,7 +2682,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   .list_icons {
-    color: rgb(163 163 163 / var(--tw-text-opacity));
+    color: rgb(212 212 212 / var(--tw-text-opacity));
     --tw-text-opacity: 0.95;
   }
 }
@@ -2755,7 +2709,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   .timeline_title {
-    color: rgb(214 211 209 / var(--tw-text-opacity));
+    color: rgb(231 229 228 / var(--tw-text-opacity));
     --tw-text-opacity: 0.9;
   }
 }
@@ -2796,7 +2750,7 @@ body {
     background-color: rgb(0 0 0 / var(--tw-bg-opacity));
     --tw-bg-opacity: 0.25;
     --tw-text-opacity: 1;
-    color: rgb(163 163 163 / var(--tw-text-opacity));
+    color: rgb(212 212 212 / var(--tw-text-opacity));
   }
 }
 
@@ -2817,7 +2771,7 @@ body {
 @media (prefers-color-scheme: dark) {
   .timeline_desc {
     --tw-text-opacity: 1;
-    color: rgb(163 163 163 / var(--tw-text-opacity));
+    color: rgb(212 212 212 / var(--tw-text-opacity));
   }
 }
 
@@ -2854,7 +2808,7 @@ body {
     background-color: rgb(0 0 0 / var(--tw-bg-opacity));
     --tw-bg-opacity: 0.25;
     --tw-text-opacity: 1;
-    color: rgb(163 163 163 / var(--tw-text-opacity));
+    color: rgb(212 212 212 / var(--tw-text-opacity));
   }
 }
 
@@ -2916,7 +2870,7 @@ body {
 @media (prefers-color-scheme: dark) {
   .langs_title {
     --tw-text-opacity: 1;
-    color: rgb(214 211 209 / var(--tw-text-opacity));
+    color: rgb(231 229 228 / var(--tw-text-opacity));
   }
 }
 
@@ -2954,7 +2908,7 @@ body {
 @media (prefers-color-scheme: dark) {
   .langs_level {
     --tw-text-opacity: 1;
-    color: rgb(163 163 163 / var(--tw-text-opacity));
+    color: rgb(212 212 212 / var(--tw-text-opacity));
   }
 }
 
@@ -3135,22 +3089,6 @@ body {
   background-color: rgb(3 105 161 / var(--tw-bg-opacity));
 }
 
-.hover\:scale-105:hover {
-  --tw-scale-x: 1.05;
-  --tw-scale-y: 1.05;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.hover\:shadow-md:hover {
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.hover\:duration-300:hover {
-  transition-duration: 300ms;
-}
-
 .group:last-child .group-last\:before\:hidden::before {
   content: var(--tw-content);
   display: none;
@@ -3278,14 +3216,22 @@ body {
     line-height: 1;
   }
 
+  .lg\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
 
-  .lg\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+  .lg\:font-medium {
+    font-weight: 500;
+  }
+
+  .lg\:leading-snug {
+    line-height: 1.375;
   }
 
   .lg\:text-white {
@@ -3344,6 +3290,21 @@ body {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
+  .lg\:hover\:bg-\[\#0081fb\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 129 251 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#009a5b\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(0 154 91 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#07bed3\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(7 190 211 / var(--tw-bg-opacity));
+  }
+
   .lg\:hover\:bg-\[\#195f92\]:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(25 95 146 / var(--tw-bg-opacity));
@@ -3359,6 +3320,26 @@ body {
     background-color: rgb(69 132 182 / var(--tw-bg-opacity));
   }
 
+  .lg\:hover\:bg-\[\#9b4600\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(155 70 0 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#F97700\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(249 119 0 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#e15919\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(225 89 25 / var(--tw-bg-opacity));
+  }
+
+  .lg\:hover\:bg-\[\#ee4c2c\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(238 76 44 / var(--tw-bg-opacity));
+  }
+
   .lg\:hover\:bg-\[\#f06e3e\]:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(240 110 62 / var(--tw-bg-opacity));
@@ -3369,9 +3350,9 @@ body {
     background-color: rgb(248 0 0 / var(--tw-bg-opacity));
   }
 
-  .lg\:hover\:bg-blue-500:hover {
+  .lg\:hover\:bg-\[\#ffd21e\]:hover {
     --tw-bg-opacity: 1;
-    background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+    background-color: rgb(255 210 30 / var(--tw-bg-opacity));
   }
 
   .lg\:hover\:bg-black:hover {
@@ -3379,69 +3360,9 @@ body {
     background-color: rgb(0 0 0 / var(--tw-bg-opacity));
   }
 
-  .lg\:hover\:bg-\[\#e15919\]:hover {
+  .lg\:hover\:bg-blue-500:hover {
     --tw-bg-opacity: 1;
-    background-color: rgb(225 89 25 / var(--tw-bg-opacity));
-  }
-
-  .lg\:hover\:bg-\[\#f9d100\]:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(249 209 0 / var(--tw-bg-opacity));
-  }
-
-  .lg\:hover\:bg-\[\#F97700\]:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(249 119 0 / var(--tw-bg-opacity));
-  }
-
-  .lg\:hover\:bg-gray-800:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-  }
-
-  .lg\:hover\:bg-\[\#6B7280\]:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(107 114 128 / var(--tw-bg-opacity));
-  }
-
-  .lg\:hover\:bg-\[\#0081fb\]:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(0 129 251 / var(--tw-bg-opacity));
-  }
-
-  .lg\:hover\:bg-\[\#ffd21e\]:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 210 30 / var(--tw-bg-opacity));
-  }
-
-  .lg\:hover\:bg-\[\#40e0d0\]:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(64 224 208 / var(--tw-bg-opacity));
-  }
-
-  .lg\:hover\:bg-\[\#07bed3\]:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(7 190 211 / var(--tw-bg-opacity));
-  }
-
-  .lg\:hover\:bg-\[\#ee4c2c\]:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(238 76 44 / var(--tw-bg-opacity));
-  }
-
-  .lg\:hover\:bg-\[\#9b4600\]:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(155 70 0 / var(--tw-bg-opacity));
-  }
-
-  .lg\:hover\:bg-\[\#b3e1ce\]:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(179 225 206 / var(--tw-bg-opacity));
-  }
-
-  .lg\:hover\:bg-\[\#009a5b\]:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(0 154 91 / var(--tw-bg-opacity));
+    background-color: rgb(59 130 246 / var(--tw-bg-opacity));
   }
 
   .lg\:hover\:font-bold:hover {
@@ -3477,11 +3398,6 @@ body {
   .dark\:bg-stone-600 {
     --tw-bg-opacity: 1;
     background-color: rgb(87 83 78 / var(--tw-bg-opacity));
-  }
-
-  .dark\:bg-gray-700 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
   .dark\:bg-opacity-70 {
@@ -3552,24 +3468,24 @@ body {
     fill: #d6d3d1;
   }
 
+  .dark\:text-gray-400 {
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-neutral-300 {
+    --tw-text-opacity: 1;
+    color: rgb(212 212 212 / var(--tw-text-opacity));
+  }
+
   .dark\:text-neutral-400 {
     --tw-text-opacity: 1;
     color: rgb(163 163 163 / var(--tw-text-opacity));
   }
 
-  .dark\:text-stone-300 {
+  .dark\:text-stone-200 {
     --tw-text-opacity: 1;
-    color: rgb(214 211 209 / var(--tw-text-opacity));
-  }
-
-  .dark\:text-gray-500 {
-    --tw-text-opacity: 1;
-    color: rgb(107 114 128 / var(--tw-text-opacity));
-  }
-
-  .dark\:text-gray-400 {
-    --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
+    color: rgb(231 229 228 / var(--tw-text-opacity));
   }
 
   .dark\:text-opacity-90 {

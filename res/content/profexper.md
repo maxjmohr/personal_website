@@ -16,13 +16,13 @@
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z" fill-rule="nonzero"/>
                     </svg>
-                    <span>Further customer projects in the areas of database management and optimization, data analytics, data governance as well as compliance in banking & capital markets</span>
+                    <span class="leading-tight lg:leading-snug">Further customer projects in the areas of database management and optimization, data analytics, data governance as well as compliance in banking & capital markets</span>
                 </li>
                 <li class="flex items-start space-x-1.5">
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z" fill-rule="nonzero"/>
                     </svg>
-                    <span>Internal project exploiting potential AI use cases (e.g. Data Quality with AI)</span>
+                    <span class="leading-tight lg:leading-snug">Internal project exploiting potential AI use cases (e.g. Data Quality with AI)</span>
                 </li>
             </ul>
         </div>
@@ -44,31 +44,31 @@
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z" fill-rule="nonzero"/>
                     </svg>
-                    <span>Customer projects in the areas of database management and optimization and data analytics in banking & capital markets</span>
+                    <span class="leading-tight lg:leading-snug">Customer projects in the areas of database management and optimization and data analytics in banking & capital markets</span>
                 </li>
                 <li class="flex items-start space-x-1.5">
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z" fill-rule="nonzero"/>
                     </svg>
-                    <span>Organization of internal communities regarding the operationalization of innovative technologies in order to exploit customer potentials</span>
+                    <span class="leading-tight lg:leading-snug">Organization of internal communities regarding the operationalization of innovative technologies in order to exploit customer potentials</span>
                 </li>
                 <li class="flex items-start space-x-1.5">
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z" fill-rule="nonzero"/>
                     </svg>
-                    <span>Support in the preparation of proposals and participation in relevant customer meetings</span>
+                    <span class="leading-tight lg:leading-snug">Support in the preparation of proposals and participation in relevant customer meetings</span>
                 </li>
                 <li class="flex items-start space-x-1.5">
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z" fill-rule="nonzero"/>
                     </svg>
-                    <span>Regular trainings and courses on programming/programming languages, database technologies as well as soft skills</span>
+                    <span class="leading-tight lg:leading-snug">Regular trainings and courses on programming/programming languages, database technologies as well as soft skills</span>
                 </li>
                 <li class="flex items-start space-x-1.5">
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z" fill-rule="nonzero"/>
                     </svg>
-                    <span>Support in the realization of recruiting workshops and career fairs</span>
+                    <span class="leading-tight lg:leading-snug">Support in the realization of recruiting workshops and career fairs</span>
                 </li>
             </ul>
         </div>
@@ -100,13 +100,13 @@
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z" fill-rule="nonzero"/>
                     </svg>
-                    <span>Commercial due diligences on IT- and SAP-consultancy and IT-system house</span>
+                    <span class="leading-tight lg:leading-snug">Commercial due diligences on IT- and SAP-consultancy and IT-system house</span>
                 </li>
                 <li class="flex items-start space-x-1.5">
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z" fill-rule="nonzero"/>
                     </svg>
-                    <span>Market entry strategy for furniture manufacturer</span>
+                    <span class="leading-tight lg:leading-snug">Market entry strategy for furniture manufacturer</span>
                 </li>
             </ul>
         </div>
@@ -126,19 +126,19 @@
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z" fill-rule="nonzero"/>
                     </svg>
-                    <span>Market and competitors analysis as well as validation of the pricing strategy of a German IT tool</span>
+                    <span class="leading-tight lg:leading-snug">Market and competitors analysis as well as validation of the pricing strategy of a German IT tool</span>
                 </li>
                 <li class="flex items-start space-x-1.5">
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z" fill-rule="nonzero"/>
                     </svg>
-                    <span>Workshops with Horváth & Partners, conference with Ebner Stolz</span>
+                    <span class="leading-tight lg:leading-snug">Workshops with Horváth & Partners, conference with Ebner Stolz</span>
                 </li>
                 <li class="flex items-start space-x-1.5">
                     <svg class="list_icons" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"  fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z" fill-rule="nonzero"/>
                     </svg>
-                    <span>Trainings on e.g. presentation techniques, project management and finance & law</span>
+                    <span class="leading-tight lg:leading-snug">Trainings on e.g. presentation techniques, project management and finance & law</span>
                 </li>
             </ul>
         </div>
