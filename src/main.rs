@@ -1,9 +1,12 @@
-use crate::safehtml::SafeHtml;
-use comrak::{markdown_to_html, ComrakOptions};
-//use std::fs;
-use yew::prelude::*;
-
+mod components {
+    pub mod icons;
+}
 mod safehtml;
+
+use comrak::{markdown_to_html, ComrakOptions};
+use crate::components::icons::Icons;
+use crate::safehtml::SafeHtml;
+use yew::prelude::*;
 
 #[function_component(App)]
 fn app() -> Html {
@@ -16,9 +19,6 @@ fn app() -> Html {
         markdown_to_html(include_str!("./../res/content/profexper.md"), &options);
     let content_educ = markdown_to_html(include_str!("./../res/content/educ.md"), &options);
     let content_projects = markdown_to_html(include_str!("./../res/content/projects.md"), &options);
-    //let content_projects = fs::read_to_string("./../res/content/projects.html").unwrap();
-    let content_techskills =
-        markdown_to_html(include_str!("./../res/content/techskills.md"), &options);
 
     html! {
         <>
@@ -185,7 +185,46 @@ fn app() -> Html {
         <div id="techskills" class="bg-gradient-to-b from-cyan-200 to-indigo-300 dark:from-cyan-900 dark:to-indigo-900
         pt-28 pb-14 pl-12 lg:pl-44 pr-20">
             <h1 class="text-8xl lg:text-7xl manual_h1" data-aos="fade">{"Technical skills"}</h1>
-            <SafeHtml html={content_techskills}/>
+            //<SafeHtml html={content_techskills}/>
+            <div class="flex flex-col items-center">
+                <span class="text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-7xl lg:text-5xl font-semibold mb-6 lg:mb-4 text-center" data-aos="fade">{"Programming languages"}</span>
+                <Icons icons={vec![
+                    "matlab".to_string(),
+                    "python".to_string(),
+                    "r".to_string(),
+                    "sql".to_string(),
+                    "stata".to_string()
+                ]}/>
+                <span class="text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-7xl lg:text-5xl font-semibold mt-10 lg:mt-6 mb-6 lg:mb-4 text-center" data-aos="fade">{"Frameworks & libraries"}</span>
+                <Icons icons={vec![
+                    "arrow".to_string(),
+                    "dash".to_string(),
+                    "detectron".to_string(),
+                    "gradio".to_string(),
+                    "huggingface".to_string(),
+                    "kafka".to_string(),
+                    "llamaindex".to_string(),
+                    "pytorch".to_string(),
+                    "scikitlearn".to_string(),
+                    "shiny".to_string(),
+                    "spark".to_string(),
+                    "yew".to_string()
+                ]}/>
+                <span class="text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-7xl lg:text-5xl font-semibold mt-10 lg:mt-6 mb-6 lg:mb-4 text-center" data-aos="fade">{"Tools"}</span>
+                <Icons icons={vec![
+                    "atlassian".to_string(),
+                    "css".to_string(),
+                    "earthengine".to_string(),
+                    "git".to_string(),
+                    "html".to_string(),
+                    "informatica".to_string(),
+                    "powerbi".to_string(),
+                    "oracledb".to_string(),
+                    "postgresql".to_string(),
+                    "qgis".to_string(),
+                    "tailwind".to_string()
+                ]}/>
+            </div>
         </div>
 
         // Languages
