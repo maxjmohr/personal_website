@@ -13,7 +13,10 @@ pub struct IconsProps {
 pub fn Icons(props: &IconsProps) -> Html {
     // Convert to lowercase and trim to get icons
     let icons_str: Vec<&str> = props.icons.iter().map(|s| s.trim()).collect();
-    let icons: Vec<Html> = icons_str.iter().filter_map(|icon_str| get_icons(icon_str)).collect();
+    let icons: Vec<Html> = icons_str
+        .iter()
+        .filter_map(|icon_str| get_icons(icon_str))
+        .collect();
     let scale = props.scale.unwrap_or(100);
 
     // If icons found, render
@@ -64,7 +67,7 @@ pub fn get_icons(name: &str) -> Option<Html> {
         "qgis" => Some(html! {<QGIS />}),
         "tailwind" => Some(html! {<Tailwind />}),
         _ => None,
-    }
+    };
 }
 
 #[function_component]
@@ -77,7 +80,7 @@ pub fn Bullet() -> Html {
 }
 
 #[function_component]
-pub fn Matlab () -> Html {
+pub fn Matlab() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#f06e3e] rounded-xl transition duration-300" href="https://www.mathworks.com/products/matlab.html" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#f06e3e] lg:group-hover:text-white transition duration-300" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000">
@@ -91,7 +94,7 @@ pub fn Matlab () -> Html {
 }
 
 #[function_component]
-pub fn Python () -> Html {
+pub fn Python() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#4584b6] rounded-xl transition duration-300" href="https://www.python.org/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#4584b6] lg:group-hover:text-white transition duration-300" wxmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -103,7 +106,7 @@ pub fn Python () -> Html {
 }
 
 #[function_component]
-pub fn R () -> Html {
+pub fn R() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#276dc2] rounded-xl transition duration-300" href="https://www.r-project.org/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#276dc2] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="724" height="561" viewBox="0 0 724 561">
@@ -116,7 +119,7 @@ pub fn R () -> Html {
 }
 
 #[function_component]
-pub fn SQL () -> Html {
+pub fn SQL() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#f80000] rounded-xl transition duration-300" href="https://www.reddit.com/r/SQL/comments/doukj2/is_sql_considered_codingprogramming/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#f80000] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -128,7 +131,7 @@ pub fn SQL () -> Html {
 }
 
 #[function_component]
-pub fn Stata () -> Html {
+pub fn Stata() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#195f92] rounded-xl transition duration-300" href="https://www.stata.com/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#195f92] lg:group-hover:text-white transition duration-300" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
@@ -140,7 +143,7 @@ pub fn Stata () -> Html {
 }
 
 #[function_component]
-pub fn Arrow () -> Html {
+pub fn Arrow() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-black rounded-xl transition duration-300" href="https://arrow.apache.org/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-black dark:text-gray-400 lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1350.00 1181.25">
@@ -154,7 +157,7 @@ pub fn Arrow () -> Html {
 }
 
 #[function_component]
-pub fn Dash () -> Html {
+pub fn Dash() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#008de4] rounded-xl transition duration-300" href="https://dash.plotly.com/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#008de4] dark:text-gray-400 lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513.4 416.8">
@@ -167,7 +170,7 @@ pub fn Dash () -> Html {
 }
 
 #[function_component]
-pub fn Detectron () -> Html {
+pub fn Detectron() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#0081fb] rounded-xl transition duration-300" href="https://ai.meta.com/tools/detectron2/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#0081fb] lg:group-hover:text-white transition duration-300" viewBox="56.329999999999984 457.15000000000003 2387.3400000000006 1585.74" xmlns="http://www.w3.org/2000/svg">
@@ -181,7 +184,7 @@ pub fn Detectron () -> Html {
 }
 
 #[function_component]
-pub fn Gradio () -> Html {
+pub fn Gradio() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#F97700] rounded-xl transition duration-300" href="https://www.gradio.app/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#F97700] lg:group-hover:text-white transition duration-300" viewBox="0 0 256 224" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
@@ -197,7 +200,7 @@ pub fn Gradio () -> Html {
 }
 
 #[function_component]
-pub fn HuggingFace () -> Html {
+pub fn HuggingFace() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#ffd21e] rounded-xl transition duration-300" href="https://huggingface.co/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 transition duration-300" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -214,7 +217,7 @@ pub fn HuggingFace () -> Html {
 }
 
 #[function_component]
-pub fn Kafka () -> Html {
+pub fn Kafka() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-black rounded-xl transition duration-300" href="https://kafka.apache.org/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-black dark:text-gray-400 lg:group-hover:text-white transition duration-300" width="800px" height="800px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
@@ -226,7 +229,7 @@ pub fn Kafka () -> Html {
 }
 
 #[function_component]
-pub fn LlamaIndex () -> Html {
+pub fn LlamaIndex() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#07bed3] rounded-xl transition duration-300" href="https://www.llamaindex.ai/" target="_blank">
             <img class="pt-4 px-2 w-36 h-36 lg:w-24 lg:h-24 transition duration-300" src="res/images/icons/llamaindex.png" />
@@ -236,7 +239,7 @@ pub fn LlamaIndex () -> Html {
 }
 
 #[function_component]
-pub fn PyTorch () -> Html {
+pub fn PyTorch() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#ee4c2c] rounded-xl transition duration-300" href="https://pytorch.org/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#ee4c2c] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0.6 1067.9 90.3 109.1" enable-background="new 0.6 1067.9 90.3 109.1">
@@ -251,7 +254,7 @@ pub fn PyTorch () -> Html {
 }
 
 #[function_component]
-pub fn ScikitLearn () -> Html {
+pub fn ScikitLearn() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#9b4600] rounded-xl transition duration-300" href="https://scikit-learn.org/stable/" target="_blank">
             <svg
@@ -312,7 +315,7 @@ pub fn ScikitLearn () -> Html {
 }
 
 #[function_component]
-pub fn Shiny () -> Html {
+pub fn Shiny() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#0088da] rounded-xl transition duration-300" href="https://shiny.posit.co/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#0088da] lg:group-hover:text-white transition duration-300" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 2521 2911" style="enable-background:new 0 0 2521 2911;">
@@ -330,7 +333,7 @@ pub fn Shiny () -> Html {
 }
 
 #[function_component]
-pub fn Spark () -> Html {
+pub fn Spark() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#e15919] rounded-xl transition duration-300" href="https://spark.apache.org/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#e15919] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
@@ -342,7 +345,7 @@ pub fn Spark () -> Html {
 }
 
 #[function_component]
-pub fn Yew () -> Html {
+pub fn Yew() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#009a5b] rounded-xl transition duration-300" href="https://yew.rs/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28" viewBox="0 0 75 82" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -358,7 +361,7 @@ pub fn Yew () -> Html {
 }
 
 #[function_component]
-pub fn Atlassian () -> Html {
+pub fn Atlassian() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#2681FF] rounded-xl transition duration-300" href="https://www.atlassian.com/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#2681FF] lg:group-hover:text-white transition duration-300" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
@@ -371,7 +374,7 @@ pub fn Atlassian () -> Html {
 }
 
 #[function_component]
-pub fn CSS () -> Html {
+pub fn CSS() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#2965f1] rounded-xl transition duration-300" href="https://www.w3schools.com/css/default.asp" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#2965f1] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -383,7 +386,7 @@ pub fn CSS () -> Html {
 }
 
 #[function_component]
-pub fn EarthEngine () -> Html {
+pub fn EarthEngine() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#4285f4] rounded-xl transition duration-300" href="https://earthengine.google.com/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#4285f4] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -418,7 +421,7 @@ pub fn EarthEngine () -> Html {
 }
 
 #[function_component]
-pub fn Git () -> Html {
+pub fn Git() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#f1502f] rounded-xl transition duration-300" href="https://git-scm.com/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#f1502f] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
@@ -430,7 +433,7 @@ pub fn Git () -> Html {
 }
 
 #[function_component]
-pub fn HTML () -> Html {
+pub fn HTML() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#f06529] rounded-xl transition duration-300" href="https://www.w3schools.com/html/default.asp" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#f06529] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -442,7 +445,7 @@ pub fn HTML () -> Html {
 }
 
 #[function_component]
-pub fn Informatica () -> Html {
+pub fn Informatica() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#f06529] rounded-xl transition duration-300" href="https://www.informatica.com/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#f06529] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
@@ -485,7 +488,7 @@ pub fn Informatica () -> Html {
 }
 
 #[function_component]
-pub fn PowerBI () -> Html {
+pub fn PowerBI() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#e9b51c] rounded-xl transition duration-300" href="https://www.microsoft.com/en-us/power-platform/products/power-bi" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#e9b51c] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
@@ -499,7 +502,7 @@ pub fn PowerBI () -> Html {
 }
 
 #[function_component]
-pub fn OracleDB () -> Html {
+pub fn OracleDB() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#cc5745] rounded-xl transition duration-300" href="https://www.oracle.com/database/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#c74634] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 560 400" style="enable-background:new 0 0 560 400;">
@@ -511,7 +514,7 @@ pub fn OracleDB () -> Html {
 }
 
 #[function_component]
-pub fn PostgreSQL () -> Html {
+pub fn PostgreSQL() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#336791] rounded-xl transition duration-300" href="https://www.postgresql.org/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#336791] lg:group-hover:text-white transition duration-300" viewBox="0 0 432.071 445.383" xmlns="http://www.w3.org/2000/svg">
@@ -537,7 +540,7 @@ pub fn PostgreSQL () -> Html {
 }
 
 #[function_component]
-pub fn QGIS () -> Html {
+pub fn QGIS() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#589632] rounded-xl transition duration-300" href="https://www.qgis.org/en/site/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#589632] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 128 128" enable-background="new 0 0 128 128">
@@ -551,7 +554,7 @@ pub fn QGIS () -> Html {
 }
 
 #[function_component]
-pub fn Tailwind () -> Html {
+pub fn Tailwind() -> Html {
     html! {
         <a class="group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#38bdf8] rounded-xl transition duration-300" href="https://tailwindcss.com/" target="_blank">
             <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#38bdf8] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33">

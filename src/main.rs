@@ -3,9 +3,9 @@ mod components {
 }
 mod safehtml;
 
-use comrak::{markdown_to_html, ComrakOptions};
 use crate::components::icons::Icons;
 use crate::safehtml::SafeHtml;
+use comrak::{markdown_to_html, ComrakOptions};
 use yew::prelude::*;
 
 #[function_component(App)]
