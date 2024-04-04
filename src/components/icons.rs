@@ -1,5 +1,4 @@
 use yew::prelude::*;
-use yew::{function_component, Html, Properties};
 
 // Properties to get icons and scale them
 #[derive(Debug, PartialEq, Properties)]
