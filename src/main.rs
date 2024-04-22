@@ -26,7 +26,8 @@ fn app() -> Html {
 
     // Iterate over each timeline entry and create TimelineProps
     // Professional experience
-    let content_profexper_entries: Vec<TimelineEntry> = serde_yaml::from_str(content_profexper).unwrap();
+    let content_profexper_entries: Vec<TimelineEntry> =
+        serde_yaml::from_str(content_profexper).unwrap();
     let content_profexper_timeline: Vec<Html> = content_profexper_entries
         .iter()
         .map(|entry| {
