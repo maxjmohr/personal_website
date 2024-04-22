@@ -35,6 +35,7 @@ fn app() -> Html {
                 <Timeline
                     title={entry.title.clone()}
                     place={entry.place.clone()}
+                    place_url={entry.place_url.clone()}
                     time={entry.time.clone()}
                     skills={entry.skills.clone()}
                     color={entry.color.clone()}
@@ -52,6 +53,7 @@ fn app() -> Html {
                 <Timeline
                     title={entry.title.clone()}
                     place={entry.place.clone()}
+                    place_url={entry.place_url.clone()}
                     time={entry.time.clone()}
                     skills={entry.skills.clone()}
                     color={entry.color.clone()}

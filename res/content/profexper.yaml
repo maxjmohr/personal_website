@@ -1,5 +1,6 @@
 - title: Working Student
   place: BearingPoint GmbH, Munich (Germany)
+  place_url: https://www.bearingpoint.com/en/?noRedirect=1
   time: Oct, 2022 - present
   skills: [Data Analytics, Data Engineering, Artificial Intelligence]
   color: bg-sky-700
@@ -9,6 +10,7 @@
 
 - title: Business Analyst
   place: BearingPoint GmbH, Munich (Germany)
+  place_url: https://www.bearingpoint.com/en/?noRedirect=1
   time: Jun, 2021 - Sep, 2022
   skills: [Data Analytics, Data Engineering, Event Streaming]
   color: bg-sky-600
@@ -21,6 +23,7 @@
 
 - title: Self-employed Consultant
   place: supporting CA Strategy Consultants GmbH, Munich (Germany)
+  place_url: https://commercial-advisory.de/?lang=en
   time: Aug, 2020 - Sep, 2020
   skills: [Commercial Due Diligence]
   color: bg-sky-500
@@ -28,6 +31,7 @@
 
 - title: Intern Transactions
   place: CA Strategy Consultants GmbH, Munich (Germany)
+  place_url: https://commercial-advisory.de/?lang=en
   time: Jan, 2020 - Mar, 2020
   skills: [Commercial Due Diligence, Market Entry Strategy]
   color: bg-sky-400
@@ -37,6 +41,7 @@
 
 - title: Student Consultant
   place: Junior Beratung Bayreuth e.V., Bayreuth (Germany)
+  place_url: https://www.jbb-ev.de
   time: Oct, 2018 - Apr, 2019
   skills: [Market and competitors analysis]
   color: bg-sky-300

@@ -1,5 +1,6 @@
 - title: M.Sc. Data Science in Business and Economics
   place: Eberhard Karls Universität Tübingen, Germany
+  place_url: https://uni-tuebingen.de/en/study/finding-a-course/degree-programs-available/detail/course/data-science-in-business-and-economics-master/
   time: Oct, 2022 - present
   skills: [Machine Learning, Deep Learning, Cloud Computing, Efficient Computing, Time Series, Causal Inference]
   color: bg-purple-700
@@ -12,6 +13,7 @@
 
 - title: B.Sc. Business Administration
   place: University Bayreuth, Germany
+  place_url: https://www.uni-bayreuth.de/en/bachelor/business-administration
   time: Oct, 2017 - Mar, 2021
   skills: [Business Informatics, Finance, Crypto]
   color: bg-purple-600
@@ -22,16 +24,18 @@
     Participated in workshops as part of the CareerDays with PwC, BrandTrust and RAPS
 
 - title: Semester abroad
-  time: Sep, 2019 - Dec, 2019
   place: Dublin Business School, Ireland
+  place_url: https://www.dbs.ie
+  time: Sep, 2019 - Dec, 2019
   skills: [IT, Management, Psychology]
   color: bg-purple-500
   content: |
     Used the semester abroad to expand knowledge in areas that were not highlighted as much in Bayreuth
 
 - title: Abitur
-  time: Sep, 2009 - Jun, 2017
   place: Otfried-Preußler-Gymnasium Pullach, Germany
+  place_url: https://www.opg-pullach.de
+  time: Sep, 2009 - Jun, 2017
   skills: [business@school, Supersonic Flight]
   color: bg-purple-400
   content: |
