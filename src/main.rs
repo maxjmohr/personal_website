@@ -21,23 +21,44 @@ fn app() -> Html {
 
     // Get content
     let content_profexper = include_str!("./../res/content/profexper.yaml");
-    let content_educ = markdown_to_html(include_str!("./../res/content/educ.md"), &options);
+    let content_educ = include_str!("./../res/content/educ.yaml");
     let content_projects = markdown_to_html(include_str!("./../res/content/projects.md"), &options);
 
     // Iterate over each timeline entry and create TimelineProps
+    // Professional experience
     let content_profexper_entries: Vec<TimelineEntry> = serde_yaml::from_str(content_profexper).unwrap();
-    let content_profexper_timeline: Vec<Html> = content_profexper_entries.iter().map(|entry| {
-        html! {
-            <Timeline
-                title={entry.title.clone()}
-                place={entry.place.clone()}
-                time={entry.time.clone()}
-                skills={entry.skills.clone()}
-                color={entry.color.clone()}
-                content={entry.content.clone()}
-            />
-        }
-    }).collect();
+    let content_profexper_timeline: Vec<Html> = content_profexper_entries
+        .iter()
+        .map(|entry| {
+            html! {
+                <Timeline
+                    title={entry.title.clone()}
+                    place={entry.place.clone()}
+                    time={entry.time.clone()}
+                    skills={entry.skills.clone()}
+                    color={entry.color.clone()}
+                    content={entry.content.clone()}
+                />
+            }
+        })
+        .collect();
+    // Education
+    let content_educ_entries: Vec<TimelineEntry> = serde_yaml::from_str(content_educ).unwrap();
+    let content_educ_timeline: Vec<Html> = content_educ_entries
+        .iter()
+        .map(|entry| {
+            html! {
+                <Timeline
+                    title={entry.title.clone()}
+                    place={entry.place.clone()}
+                    time={entry.time.clone()}
+                    skills={entry.skills.clone()}
+                    color={entry.color.clone()}
+                    content={entry.content.clone()}
+                />
+            }
+        })
+        .collect();
 
     html! {
         <>
@@ -84,8 +105,8 @@ fn app() -> Html {
         // Education
         <div id="educ" class="bg-gradient-to-b from-green-100 to-teal-200 dark:from-emerald-900 dark:to-teal-800
         pt-28 pb-14 pl-12 lg:pl-44 pr-20">
-        <h1 class="text-8xl lg:text-7xl manual_h1" data-aos="fade">{"Education"}</h1>
-            <SafeHtml html={content_educ}/>
+            <h1 class="text-8xl lg:text-7xl manual_h1" data-aos="fade">{"Education"}</h1>
+            { for content_educ_timeline.iter().cloned() }
         </div>
 
         // Projects

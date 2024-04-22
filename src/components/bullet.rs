@@ -18,14 +18,17 @@ pub fn Bullet(props: &BulletProps) -> Html {
     let scale = props.scale.unwrap_or(100);
 
     // Generate list items for each content string
-    let list_items: Vec<Html> = content.iter().map(|&item| {
-        html! {
-            <li class="flex items-start space-x-1.5">
-                <Icons icons={vec!["bullet".to_string()]} scale={scale}/>
-                <span class="leading-tight lg:leading-snug">{ item }</span>
-            </li>
-        }
-    }).collect();
+    let list_items: Vec<Html> = content
+        .iter()
+        .map(|&item| {
+            html! {
+                <li class="flex items-start space-x-1.5">
+                    <Icons icons={vec!["bullet".to_string()]} scale={scale}/>
+                    <span class="leading-tight lg:leading-snug">{ item }</span>
+                </li>
+            }
+        })
+        .collect();
 
     // If content found, render
     if !content.is_empty() {

@@ -16,12 +16,12 @@ pub struct TimelineEntry {
 // Properties to get content and return as bullet for list
 #[derive(Debug, PartialEq, Properties)]
 pub struct TimelineProps {
-	pub title: String,
-	pub place: String,
-	pub time: String,
-	pub skills: Vec<String>,
-	pub color: String,
-	pub content: String,
+    pub title: String,
+    pub place: String,
+    pub time: String,
+    pub skills: Vec<String>,
+    pub color: String,
+    pub content: String,
 }
 
 // Timeline entry formatting
