@@ -1,0 +1,46 @@
+- title: Working Student
+  place: BearingPoint GmbH, Munich (Germany)
+  time: Oct, 2022 - present
+  skills: [Data Analytics, Data Engineering, Artificial Intelligence]
+  color: bg-sky-700
+  content: |
+    Further customer projects in the areas of database management and optimization, data analytics, data governance as well as compliance in banking & capital markets;
+    Internal project exploiting potential AI use cases (e.g. Data Quality with AI)
+
+- title: Business Analyst
+  place: BearingPoint GmbH, Munich (Germany)
+  time: Jun, 2021 - Sep, 2022
+  skills: [Data Analytics, Data Engineering, Event Streaming]
+  color: bg-sky-600
+  content: |
+    Customer projects in the areas of database management and optimization and data analytics in banking & capital markets;
+    Organization of internal communities regarding the operationalization of innovative technologies in order to exploit customer potentials;
+    Support in the preparation of proposals and participation in relevant customer meetings;
+    Regular trainings and courses on programming/programming languages, database technologies as well as soft skills;
+    Support in the realization of recruiting workshops and career fairs
+
+- title: Self-employed Consultant
+  place: supporting CA Strategy Consultants GmbH, Munich (Germany)
+  time: Aug, 2020 - Sep, 2020
+  skills: [Commercial Due Diligence]
+  color: bg-sky-500
+  content: ""
+
+- title: Intern Transactions
+  place: CA Strategy Consultants GmbH, Munich (Germany)
+  time: Jan, 2020 - Mar, 2020
+  skills: [Commercial Due Diligence, Market Entry Strategy]
+  color: bg-sky-400
+  content: |
+    Commercial due diligences on IT- and SAP-consultancy and IT-system house;
+    Market entry strategy for furniture manufacturer
+
+- title: Student Consultant
+  place: Junior Beratung Bayreuth e.V., Bayreuth (Germany)
+  time: Oct, 2018 - Apr, 2019
+  skills: [Market and competitors analysis]
+  color: bg-sky-300
+  content: |
+    Market and competitors analysis as well as validation of the pricing strategy of a German IT tool;
+    Workshops with Horváth & Partners, conference with Ebner Stolz;
+    Trainings on e.g. presentation techniques, project management and finance & law

@@ -1,11 +1,14 @@
 mod components {
+    pub mod bullet;
     pub mod icons;
     pub mod navbar;
+    pub mod timeline;
 }
 mod safehtml;
 
 use crate::components::icons::Icons;
 use crate::components::navbar::Navbar;
+use crate::components::timeline::{Timeline, TimelineEntry};
 use crate::safehtml::SafeHtml;
 use comrak::{markdown_to_html, ComrakOptions};
 use yew::prelude::*;
@@ -17,10 +20,24 @@ fn app() -> Html {
     options.render.unsafe_ = true;
 
     // Get content
-    let content_profexper =
-        markdown_to_html(include_str!("./../res/content/profexper.md"), &options);
+    let content_profexper = include_str!("./../res/content/profexper.yaml");
     let content_educ = markdown_to_html(include_str!("./../res/content/educ.md"), &options);
     let content_projects = markdown_to_html(include_str!("./../res/content/projects.md"), &options);
+
+    // Iterate over each timeline entry and create TimelineProps
+    let content_profexper_entries: Vec<TimelineEntry> = serde_yaml::from_str(content_profexper).unwrap();
+    let content_profexper_timeline: Vec<Html> = content_profexper_entries.iter().map(|entry| {
+        html! {
+            <Timeline
+                title={entry.title.clone()}
+                place={entry.place.clone()}
+                time={entry.time.clone()}
+                skills={entry.skills.clone()}
+                color={entry.color.clone()}
+                content={entry.content.clone()}
+            />
+        }
+    }).collect();
 
     html! {
         <>
@@ -61,7 +78,7 @@ fn app() -> Html {
         <div id="profexper" class="bg-gradient-to-b from-gray-300 to-green-100 dark:from-gray-700 dark:to-emerald-900
         pt-28 pb-10 pl-12 lg:pl-44 pr-20">
             <h1 class="text-8xl lg:text-7xl manual_h1" data-aos="fade">{"Professional experience"}</h1>
-            <SafeHtml html={content_profexper}/>
+            { for content_profexper_timeline.iter().cloned() }
         </div>
 
         // Education

@@ -787,6 +787,10 @@ video {
   height: 5rem;
 }
 
+.h-36 {
+  height: 9rem;
+}
+
 .h-48 {
   height: 12rem;
 }
@@ -812,20 +816,16 @@ video {
   height: max-content;
 }
 
-.h-40 {
-  height: 10rem;
-}
-
-.h-36 {
-  height: 9rem;
-}
-
 .w-16 {
   width: 4rem;
 }
 
 .w-28 {
   width: 7rem;
+}
+
+.w-36 {
+  width: 9rem;
 }
 
 .w-48 {
@@ -850,14 +850,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-40 {
-  width: 10rem;
-}
-
-.w-36 {
-  width: 9rem;
 }
 
 .max-w-none {
@@ -958,10 +950,6 @@ video {
   align-content: normal;
 }
 
-.content-center {
-  align-content: center;
-}
-
 .content-baseline {
   align-content: baseline;
 }
@@ -996,11 +984,6 @@ video {
 
 .justify-stretch {
   justify-content: stretch;
-}
-
-.gap-x-2 {
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
 }
 
 .space-x-0 > :not([hidden]) ~ :not([hidden]) {
@@ -1747,83 +1730,83 @@ video {
     content: "Hey, I'm Max. I am currently studying data science in Tübingen and working at BearingPoint in data analytics & engineering.";
   }
 
-  1.16% {
+  0.72% {
     content: "H";
   }
 
-  1.41% {
+  1.53% {
     content: "He";
   }
 
-  2.43% {
+  1.95% {
     content: "Hey";
   }
 
-  3.08% {
+  3.02% {
     content: "Hey,";
   }
 
-  3.97% {
+  3.32% {
     content: "Hey, ";
   }
 
-  4.65% {
+  4.51% {
     content: "Hey, I";
   }
 
-  4.95% {
+  5.07% {
     content: "Hey, I'";
   }
 
-  5.68% {
+  5.67% {
     content: "Hey, I'm";
   }
 
-  6.15% {
+  5.89% {
     content: "Hey, I'm ";
   }
 
-  6.52% {
+  6.81% {
     content: "Hey, I'm M";
   }
 
-  7.69% {
+  7.22% {
     content: "Hey, I'm Ma";
   }
 
-  8.87% {
+  8.2% {
     content: "Hey, I'm Max";
   }
 
-  9.45% {
+  9.43% {
     content: "Hey, I'm Max.";
   }
 
-  10.13% {
+  9.31% {
     content: "Hey, I'm Max. ";
   }
 
-  10.48% {
+  10.28% {
     content: "Hey, I'm Max. I";
   }
 
-  11.32% {
+  11.05% {
     content: "Hey, I'm Max. I ";
   }
 
-  11.99% {
+  11.67% {
     content: "Hey, I'm Max. I a";
   }
 
-  12.1% {
+  12.75% {
     content: "Hey, I'm Max. I am";
   }
 
-  13.14% {
+  13.06% {
     content: "Hey, I'm Max. I am ";
   }
 
-  13.91% {
+  13.55% {
     content: "Hey, I'm Max. I am c";
   }
 
@@ -1831,203 +1814,203 @@ video {
     content: "Hey, I'm Max. I am cu";
   }
 
-  15.83% {
+  15.62% {
     content: "Hey, I'm Max. I am cur";
   }
 
-  15.87% {
+  16.55% {
     content: "Hey, I'm Max. I am curr";
   }
 
-  16.53% {
+  16.29% {
     content: "Hey, I'm Max. I am curre";
   }
 
-  17.43% {
+  17.95% {
     content: "Hey, I'm Max. I am curren";
   }
 
-  17.98% {
+  17.74% {
     content: "Hey, I'm Max. I am current";
   }
 
-  18.86% {
+  18.45% {
     content: "Hey, I'm Max. I am currentl";
   }
 
-  19.59% {
+  19.31% {
     content: "Hey, I'm Max. I am currently";
   }
 
-  20.37% {
+  20.75% {
     content: "Hey, I'm Max. I am currently ";
   }
 
-  20.92% {
+  20.73% {
     content: "Hey, I'm Max. I am currently s";
   }
 
-  22.09% {
+  21.29% {
     content: "Hey, I'm Max. I am currently st";
   }
 
-  22.07% {
+  22.57% {
     content: "Hey, I'm Max. I am currently stu";
   }
 
-  23.01% {
+  22.9% {
     content: "Hey, I'm Max. I am currently stud";
   }
 
-  23.92% {
+  23.37% {
     content: "Hey, I'm Max. I am currently study";
   }
 
-  24.24% {
+  24.41% {
     content: "Hey, I'm Max. I am currently studyi";
   }
 
-  24.72% {
+  25.08% {
     content: "Hey, I'm Max. I am currently studyin";
   }
 
-  26.36% {
+  25.99% {
     content: "Hey, I'm Max. I am currently studying";
   }
 
-  26.2% {
+  26.34% {
     content: "Hey, I'm Max. I am currently studying ";
   }
 
-  26.84% {
+  26.85% {
     content: "Hey, I'm Max. I am currently studying d";
   }
 
-  27.99% {
+  28.23% {
     content: "Hey, I'm Max. I am currently studying da";
   }
 
-  28.38% {
+  28.75% {
     content: "Hey, I'm Max. I am currently studying dat";
   }
 
-  29.18% {
+  29.5% {
     content: "Hey, I'm Max. I am currently studying data";
   }
 
-  29.87% {
+  30% {
     content: "Hey, I'm Max. I am currently studying data ";
   }
 
-  30.79% {
+  30.38% {
     content: "Hey, I'm Max. I am currently studying data s";
   }
 
-  31.33% {
+  31.01% {
     content: "Hey, I'm Max. I am currently studying data sc";
   }
 
-  31.81% {
+  32.61% {
     content: "Hey, I'm Max. I am currently studying data sci";
   }
 
-  32.73% {
+  32.93% {
     content: "Hey, I'm Max. I am currently studying data scie";
   }
 
-  33.96% {
+  33.89% {
     content: "Hey, I'm Max. I am currently studying data scien";
   }
 
-  34.6% {
+  34.72% {
     content: "Hey, I'm Max. I am currently studying data scienc";
   }
 
-  34.55% {
+  35.21% {
     content: "Hey, I'm Max. I am currently studying data science";
   }
 
-  36.16% {
+  35.46% {
     content: "Hey, I'm Max. I am currently studying data science ";
   }
 
-  36.62% {
+  36.26% {
     content: "Hey, I'm Max. I am currently studying data science i";
   }
 
-  37.22% {
+  37.53% {
     content: "Hey, I'm Max. I am currently studying data science in";
   }
 
-  38.07% {
+  37.71% {
     content: "Hey, I'm Max. I am currently studying data science in ";
   }
 
-  38.06% {
+  38.58% {
     content: "Hey, I'm Max. I am currently studying data science in T";
   }
 
-  39.52% {
+  39.4% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC";
   }
 
-  39.44% {
+  39.51% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC b";
   }
 
-  40.5% {
+  40.22% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bi";
   }
 
-  41.73% {
+  41.25% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bin";
   }
 
-  41.96% {
+  41.63% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bing";
   }
 
-  42.5% {
+  42.58% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC binge";
   }
 
-  43.77% {
+  42.97% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen";
   }
 
-  43.61% {
+  44.5% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen ";
   }
 
-  44.87% {
+  44.7% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen a";
   }
 
-  45.49% {
+  45.3% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen an";
   }
 
-  46.35% {
+  45.96% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and";
   }
 
-  47.18% {
+  47.05% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and ";
   }
 
-  47.07% {
+  47.97% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and w";
   }
 
-  48.16% {
+  48.25% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and wo";
   }
 
-  48.75% {
+  48.52% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and wor";
   }
 
-  49.16% {
+  49.72% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and work";
   }
 
@@ -2035,103 +2018,103 @@ video {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and worki";
   }
 
-  51.16% {
+  50.78% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and workin";
   }
 
-  51.56% {
+  51.54% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working";
   }
 
-  52.62% {
+  52.79% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working ";
   }
 
-  52.71% {
+  53.35% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working a";
   }
 
-  53.88% {
+  53.42% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at";
   }
 
-  54.88% {
+  54.36% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at ";
   }
 
-  54.75% {
+  55.59% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at B";
   }
 
-  55.94% {
+  56.36% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at Be";
   }
 
-  56.59% {
+  56.65% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at Bea";
   }
 
-  57.44% {
+  57.69% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at Bear";
   }
 
-  58.51% {
+  57.81% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at Beari";
   }
 
-  58.56% {
+  58.99% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at Bearin";
   }
 
-  59.08% {
+  59.19% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at Bearing";
   }
 
-  60.19% {
+  59.88% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingP";
   }
 
-  60.47% {
+  61.12% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPo";
   }
 
-  61.12% {
+  61.82% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoi";
   }
 
-  61.75% {
+  62.01% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoin";
   }
 
-  62.75% {
+  62.6% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint";
   }
 
-  63.61% {
+  63.96% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint ";
   }
 
-  64.62% {
+  64.11% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint i";
   }
 
-  64.68% {
+  65.51% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in";
   }
 
-  65.67% {
+  65.91% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in ";
   }
 
-  66.91% {
+  66.11% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in d";
   }
 
-  66.9% {
+  67.07% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in da";
   }
 
-  67.75% {
+  67.41% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in dat";
   }
 
@@ -2139,103 +2122,103 @@ video {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data";
   }
 
-  68.81% {
+  69.13% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data ";
   }
 
-  70.11% {
+  69.71% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data a";
   }
 
-  70.98% {
+  70.9% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data an";
   }
 
-  71.14% {
+  71.8% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data ana";
   }
 
-  71.69% {
+  71.86% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data anal";
   }
 
-  72.41% {
+  72.3% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analy";
   }
 
-  73.88% {
+  73.39% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analyt";
   }
 
-  74.02% {
+  74.04% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analyti";
   }
 
-  74.99% {
+  74.49% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytic";
   }
 
-  75.16% {
+  75.14% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics";
   }
 
-  76.58% {
+  75.8% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics ";
   }
 
-  76.71% {
+  77.26% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics &";
   }
 
-  77.4% {
+  77.51% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & ";
   }
 
-  78.53% {
+  78.48% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & e";
   }
 
-  78.87% {
+  79.31% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & en";
   }
 
-  79.67% {
+  79.41% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & eng";
   }
 
-  80.69% {
+  80.62% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engi";
   }
 
-  80.95% {
+  81.03% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engin";
   }
 
-  81.76% {
+  81.98% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engine";
   }
 
-  82.12% {
+  82.58% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & enginee";
   }
 
-  83% {
+  83.68% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engineer";
   }
 
-  83.58% {
+  83.53% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engineeri";
   }
 
-  85.03% {
+  84.25% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engineerin";
   }
 
-  85.05% {
+  85.67% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engineering";
   }
 
-  86.12%, 100.11% {
+  86.18%, 100.17% {
     content: "Hey, I'm Max. I am currently studying data science in T\FC bingen and working at BearingPoint in data analytics & engineering.";
   }
 }
@@ -2249,211 +2232,211 @@ video {
     content: "";
   }
 
-  0.94% {
+  0.92% {
     content: "\E9";
   }
 
-  1.41% {
+  1.37% {
     content: "\E9t";
   }
 
-  2.45% {
+  1.96% {
     content: "\E9t ";
   }
 
-  3.2% {
+  3.29% {
     content: "\E9t u";
   }
 
-  4.25% {
+  3.71% {
     content: "\E9t un";
   }
 
-  4.34% {
+  4.3% {
     content: "\E9t un ";
   }
 
-  5.11% {
+  5.64% {
     content: "\E9t un p";
   }
 
-  6.29% {
+  5.98% {
     content: "\E9t un pe";
   }
 
-  7.24% {
+  7.04% {
     content: "\E9t un peu";
   }
 
-  7.79% {
+  8.17% {
     content: "\E9t un peu.";
   }
 
-  8.64% {
+  8.76% {
     content: "\E9t un peu..";
   }
 
-  9.48%, 24.86% {
+  9.07%, 24.46% {
     content: "\E9t un peu...";
   }
 
-  25.63% {
+  25.23% {
     content: "\E9t un peu..";
   }
 
-  26.4% {
+  26% {
     content: "\E9t un peu.";
   }
 
-  27.17% {
+  26.76% {
     content: "\E9t un peu";
   }
 
-  27.94% {
+  27.53% {
     content: "\E9t un pe";
   }
 
-  28.71% {
+  28.3% {
     content: "\E9t un p";
   }
 
-  29.48% {
+  29.07% {
     content: "\E9t un ";
   }
 
-  30.25% {
+  29.84% {
     content: "\E9t un";
   }
 
-  31.02% {
+  30.61% {
     content: "\E9t u";
   }
 
-  31.79% {
+  31.38% {
     content: "\E9t ";
   }
 
-  32.55% {
+  32.15% {
     content: "\E9t";
   }
 
-  33.32% {
+  32.92% {
     content: "\E9";
   }
 
-  34.09% {
+  33.69% {
     content: "";
   }
 
-  34.41% {
+  34.59% {
     content: "e";
   }
 
-  35.61% {
+  35.39% {
     content: "e ";
   }
 
-  36.68% {
+  36.09% {
     content: "e u";
   }
 
-  37.52% {
+  36.65% {
     content: "e un";
   }
 
-  38.02% {
+  37.18% {
     content: "e un ";
   }
 
-  38.27% {
+  38.6% {
     content: "e un p";
   }
 
-  39.8% {
+  39.33% {
     content: "e un po";
   }
 
-  40.38% {
+  39.92% {
     content: "e un po'";
   }
 
-  40.66% {
+  40.29% {
     content: "e un po'.";
   }
 
-  41.61% {
+  41.73% {
     content: "e un po'..";
   }
 
-  42.29%, 57.67% {
+  41.76%, 57.14% {
     content: "e un po'...";
   }
 
-  58.44% {
+  57.91% {
     content: "e un po'..";
   }
 
-  59.21% {
+  58.68% {
     content: "e un po'.";
   }
 
-  59.98% {
+  59.45% {
     content: "e un po'";
   }
 
-  60.75% {
+  60.22% {
     content: "e un po";
   }
 
-  61.52% {
+  60.99% {
     content: "e un p";
   }
 
-  62.29% {
+  61.76% {
     content: "e un ";
   }
 
-  63.06% {
+  62.53% {
     content: "e un";
   }
 
-  63.83% {
+  63.3% {
     content: "e u";
   }
 
-  64.6% {
+  64.07% {
     content: "e ";
   }
 
-  65.37% {
+  64.84% {
     content: "e";
   }
 
-  66.14% {
+  65.61% {
     content: "";
   }
 
-  66.86% {
+  66.21% {
     content: "y";
   }
 
-  68.01% {
+  67.02% {
     content: "y ";
   }
 
-  68.39% {
+  68.21% {
     content: "y u";
   }
 
-  69.62% {
+  68.25% {
     content: "y un";
   }
 
-  69.87% {
+  69.51% {
     content: "y un ";
   }
 
-  70.85% {
+  70.34% {
     content: "y un p";
   }
 
@@ -2461,71 +2444,71 @@ video {
     content: "y un po";
   }
 
-  72.51% {
+  71.87% {
     content: "y un poc";
   }
 
-  73.22% {
+  72.25% {
     content: "y un poco";
   }
 
-  73.39% {
+  73.76% {
     content: "y un poco.";
   }
 
-  74.93% {
+  74.41% {
     content: "y un poco..";
   }
 
-  75.09%, 90.48% {
+  74.9%, 90.29% {
     content: "y un poco...";
   }
 
-  91.25% {
+  91.06% {
     content: "y un poco..";
   }
 
-  92.01% {
+  91.83% {
     content: "y un poco.";
   }
 
-  92.78% {
+  92.59% {
     content: "y un poco";
   }
 
-  93.55% {
+  93.36% {
     content: "y un poc";
   }
 
-  94.32% {
+  94.13% {
     content: "y un po";
   }
 
-  95.09% {
+  94.9% {
     content: "y un p";
   }
 
-  95.86% {
+  95.67% {
     content: "y un ";
   }
 
-  96.63% {
+  96.44% {
     content: "y un";
   }
 
-  97.4% {
+  97.21% {
     content: "y u";
   }
 
-  98.17% {
+  97.98% {
     content: "y ";
   }
 
-  98.94% {
+  98.75% {
     content: "y";
   }
 
-  99.71% {
+  99.52% {
     content: "";
   }
 }
@@ -3233,6 +3216,10 @@ body {
     margin-top: 1.5rem;
   }
 
+  .lg\:h-24 {
+    height: 6rem;
+  }
+
   .lg\:h-28 {
     height: 7rem;
   }
@@ -3253,12 +3240,8 @@ body {
     height: 24rem;
   }
 
-  .lg\:h-20 {
-    height: 5rem;
-  }
-
-  .lg\:h-24 {
-    height: 6rem;
+  .lg\:w-24 {
+    width: 6rem;
   }
 
   .lg\:w-28 {
@@ -3279,14 +3262,6 @@ body {
 
   .lg\:w-96 {
     width: 24rem;
-  }
-
-  .lg\:w-20 {
-    width: 5rem;
-  }
-
-  .lg\:w-24 {
-    width: 6rem;
   }
 
   .lg\:flex-row {
