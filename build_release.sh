@@ -32,9 +32,6 @@ cargo clean
 # Get current directory
 ROOT_DIR=$(pwd)
 
-# Build the tailwind css file
-npx tailwindcss -i ./styles/input.css -o ./styles/main.css
-
 # Build the main project
 cd $ROOT_DIR
 trunk build --release
