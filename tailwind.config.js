@@ -2,12 +2,9 @@ const fs = require('fs');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: [
-    './**/*.html',
-    './**/*.rs',
-    './**/*.md'
-  ],
-  content: [],
+  content: {
+    files: ['./**/*.{html,md,rs,yaml}']
+  },
   theme: {
     extend: {},
   },

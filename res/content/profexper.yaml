@@ -3,7 +3,7 @@
   place_url: https://www.bearingpoint.com/en/?noRedirect=1
   time: Oct, 2022 - present
   skills: [Data Analytics, Data Engineering, Artificial Intelligence]
-  color: bg-sky-700
+  color: after:bg-sky-700
   content: |
     Further customer projects in the areas of database management and optimization, data analytics, data governance as well as compliance in banking & capital markets;
     Internal project exploiting potential AI use cases (e.g. Data Quality with AI)
@@ -13,7 +13,7 @@
   place_url: https://www.bearingpoint.com/en/?noRedirect=1
   time: Jun, 2021 - Sep, 2022
   skills: [Data Analytics, Data Engineering, Event Streaming]
-  color: bg-sky-600
+  color: after:bg-sky-600
   content: |
     Customer projects in the areas of database management and optimization and data analytics in banking & capital markets;
     Organization of internal communities regarding the operationalization of innovative technologies in order to exploit customer potentials;
@@ -26,7 +26,7 @@
   place_url: https://commercial-advisory.de/?lang=en
   time: Aug, 2020 - Sep, 2020
   skills: [Commercial Due Diligence]
-  color: bg-sky-500
+  color: after:bg-sky-500
   content: ""
 
 - title: Intern Transactions
@@ -34,7 +34,7 @@
   place_url: https://commercial-advisory.de/?lang=en
   time: Jan, 2020 - Mar, 2020
   skills: [Commercial Due Diligence, Market Entry Strategy]
-  color: bg-sky-400
+  color: after:bg-sky-400
   content: |
     Commercial due diligences on IT- and SAP-consultancy and IT-system house;
     Market entry strategy for furniture manufacturer
@@ -44,7 +44,7 @@
   place_url: https://www.jbb-ev.de
   time: Oct, 2018 - Apr, 2019
   skills: [Market and competitors analysis]
-  color: bg-sky-300
+  color: after:bg-sky-300
   content: |
     Market and competitors analysis as well as validation of the pricing strategy of a German IT tool;
     Workshops with Horváth & Partners, conference with Ebner Stolz;

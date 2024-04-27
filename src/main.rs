@@ -2,6 +2,7 @@ mod components {
     pub mod bullet;
     pub mod icons;
     pub mod navbar;
+    pub mod project;
     pub mod timeline;
 }
 mod safehtml;
