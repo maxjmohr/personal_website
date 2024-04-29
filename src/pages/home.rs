@@ -1,8 +1,11 @@
 use crate::components::icons::Icons;
 use crate::components::timeline::{Timeline, TimelineEntry};
-use crate::safehtml::SafeHtml;
-use comrak::{markdown_to_html, ComrakOptions};
+use crate::components::project::ProjectCard;
+use comrak::ComrakOptions;
+use include_dir::{include_dir, Dir};
 use yew::prelude::*;
+
+static CONTENT_PROJECTS: Dir = include_dir!("res/content/projects/");
 
 #[function_component]
 pub fn Home() -> Html {
@@ -13,7 +16,7 @@ pub fn Home() -> Html {
     // Get content
     let content_profexper = include_str!("./../../res/content/profexper.yaml");
     let content_educ = include_str!("./../../res/content/educ.yaml");
-    let content_projects = markdown_to_html(include_str!("./../../res/content/projects.md"), &options);
+    let content_projects = &CONTENT_PROJECTS;
 
     // Iterate over each timeline entry and create TimelineProps
     // Professional experience
@@ -35,6 +38,7 @@ pub fn Home() -> Html {
             }
         })
         .collect();
+
     // Education
     let content_educ_entries: Vec<TimelineEntry> = serde_yaml::from_str(content_educ).unwrap();
     let content_educ_timeline: Vec<Html> = content_educ_entries
@@ -50,6 +54,18 @@ pub fn Home() -> Html {
                     color={entry.color.clone()}
                     content={entry.content.clone()}
                 />
+            }
+        })
+        .collect();
+
+    // Collect each project in the projects directory
+    let mut content_projects_files = content_projects.files().collect::<Vec<_>>();
+    content_projects_files.sort_by(|a, b| b.path().cmp(a.path()));
+    let content_projects_html: Vec<Html> = content_projects_files
+        .iter()
+        .map(|file| {
+            html! {
+                <ProjectCard markdown={file.contents_utf8().unwrap()} />
             }
         })
         .collect();
@@ -104,7 +120,14 @@ pub fn Home() -> Html {
         <div id="projects" class="bg-gradient-to-b from-teal-200 to-cyan-200 dark:from-teal-800 dark:to-cyan-900
         pt-28 pb-14 pl-12 lg:pl-44 pr-20">
             <h1 class="text-8xl lg:text-7xl manual_h1" data-aos="fade">{"Projects"}</h1>
-            <SafeHtml html={content_projects}/>
+            <div class="flex justify-start overflow-x-scroll overflow-y-visible pt-4 pb-4 pl-4 pr-4" data-aos="fade-up">
+                { for content_projects_html.iter().cloned()}
+                // More to come card
+                <div class="w-[41rem] h-[48rem] lg:w-96 lg:h-96 flex-shrink-0 mr-10 bg-white dark:bg-gray-800 bg-opacity-70 dark:bg-opacity-70 rounded-2xl lg:hover:scale-105 shadow-md lg:shadow-none lg:hover:shadow-md transition lg:hover:duration-300 ease-in-out">
+                    <p class="block text-left pl-8 pr-4 mt-8 mb-6 lg:pl-6 lg:pr-2 lg:mt-6 lg:mb-4 text-stone-600 dark:text-neutral-400 text-4xl lg:text-xl">{"In progress"}</p>
+                    <p class="block text-left pl-8 pr-4 lg:pl-6 lg:pr-2 mb-2 antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-3xl leading-[4.2rem]">{"More to come"}</p>
+                </div>
+            </div>
         </div>
 
         // Technical skills
