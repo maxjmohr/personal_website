@@ -19,9 +19,24 @@ use crate::components::navbar::Navbar;
 use router::{switch, Route};
 use yew::prelude::*;
 use yew_router::prelude::*;
+use web_sys::window;
 
 #[function_component(App)]
 fn app() -> Html {
+    use_effect(|| {
+        let window = window().unwrap();
+        let location = window.location();
+        let hash = location.hash().unwrap_or_default();
+        if !hash.is_empty() {
+            let document = window.document().unwrap();
+            let element = document.query_selector(&hash).unwrap();
+            if let Some(element) = element {
+                element.scroll_into_view();
+            }
+        }
+        || ()
+    });
+
     html! {
         <>
         // Navbar
