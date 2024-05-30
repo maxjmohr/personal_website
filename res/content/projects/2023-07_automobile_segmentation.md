@@ -1,5 +1,5 @@
 ---
-name: automobile_segmentation
+name: AutomobileSegmentation
 title: Image Segmentation & Classification
 subtitle: Segment the automobile of an image and score its design modernity.
 image: automobile_segmentation_cover.png

@@ -5,10 +5,12 @@ edition = "2021"
 
 [dependencies]
 comrak = "0.21.0"
+gloo = { version = "0.5" }
 gloo-utils = "0.2.0"
 include_dir = "0.7.3"
 serde = { version = "1.0.197", features = ["derive"] }
 serde_yaml = "0.9.32"
+wasm-bindgen = "0.2"
 web-sys = { version = "0.3.61", features = ["ScrollToOptions", "Window"] }
 yaml-front-matter = "0.1.0"
 yew = { git = "https://github.com/yewstack/yew/", features = ["csr"] }

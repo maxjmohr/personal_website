@@ -7,6 +7,10 @@ mod components {
 }
 mod pages {
     pub mod home;
+    pub mod projects {
+        pub mod fynd;
+        pub mod automobile_segmentation;
+    }
 }
 mod router;
 mod safehtml;
