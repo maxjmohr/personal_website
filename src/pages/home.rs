@@ -3,45 +3,12 @@ use crate::components::project::ProjectCard;
 use crate::components::timeline::{Timeline, TimelineEntry};
 use comrak::ComrakOptions;
 use include_dir::{include_dir, Dir};
-use wasm_bindgen::prelude::*;
-use web_sys::window;
 use yew::prelude::*;
 
 static CONTENT_PROJECTS: Dir = include_dir!("res/content/projects/");
 
-// Define the JavaScript function to scroll to an element by ID using wasm_bindgen
-#[wasm_bindgen(inline_js = r#"
-export function scrollToElement(id) {
-    const element = document.getElementById(id);
-    if (element) {
-        element.scrollIntoView();
-    }
-}
-"#)]
-extern "C" {
-    fn scrollToElement(id: &str);
-}
-
-// Properties to scroll to right home section
-#[derive(Debug, PartialEq, Properties)]
-pub struct HomeProps {
-    #[prop_or_default]
-    pub scroll_to: Option<String>,
-}
-
 #[function_component]
-pub fn Home(props: &HomeProps) -> Html {
-    // Get input properties
-    let scroll_to = props.scroll_to.clone();
-
-    // Use useEffect to scroll to the element when the component mounts or when scroll_to changes
-    use_effect(move || {
-        if let Some(id) = scroll_to {
-            scrollToElement(&id);
-        }
-        || ()
-    });
-
+pub fn Home() -> Html {
     // Render settings
     let mut options = ComrakOptions::default();
     options.render.unsafe_ = true;
