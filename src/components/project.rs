@@ -1,4 +1,5 @@
 use comrak::{format_html, parse_document, Arena, ComrakOptions};
+use crate::components::icons::Icons;
 use crate::router::Route;
 use crate::safehtml::SafeHtml;
 use serde::Deserialize;
@@ -82,7 +83,7 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
     // Get yaml front matter
     let document = YamlFrontMatter::parse::<ProjectMetadata>(&md_str).unwrap();
     let ProjectMetadata {
-        name,
+        name: _,
         title,
         subtitle,
         image,
@@ -109,19 +110,56 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
     let md_content = String::from_utf8(md_content_vec).unwrap();
 
     html! {
-        <>
-        <div class="flex flex-col h-full">
+        <> <div class="flex flex-col h-full">
         <div class="grow bg-gradient-to-b from-teal-200 to-cyan-200 dark:from-teal-800 dark:to-cyan-900
-        flex justify-start pt-4 lg:pt-20 pb-4 lg:pb-20 pl-12 lg:pl-44 pr-4">
-            // Key facts card
-            //<div class=""
+        pt-28 lg:pt-20 pl-12 lg:pl-44 pr-4">
+            // Title and subtitle
+            <div class="w-full">
+                <p class="text-gray-700 dark:text-stone-200 text-7xl font-semibold">{&title}</p>
+                <p class="text-stone-600 dark:text-neutral-400 text-5xl font-normal mt-4 mb-4">{&subtitle}</p>
+            </div>
 
+            // Content cards
+            <div class="flex justify-start overflow-x-scroll overflow-y-visible pt-8 pr-4 lg:h-max">
+                // Key facts card
+                <div class="w-[41rem] h-[48rem] lg:min-w-40 lg:h-max mr-10 bg-white dark:bg-gray-800 rounded-2xl">
+                    <div class="flex-1 flex justify-center items-center pt-24 pb-8 lg:pb-8 px-8 lg:px-20">
+                        <img class="object-scale-down" src = {format!("./../../res/images/projects/{}", &image)}/>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="w-16 h-16 lg:w-20 lg:h-20 fill-gray-700 dark:fill-stone-300 pt-10 pl-8">
+                        <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z"/>
+                    </svg>
+                    <div class = "pt-8 pl-8 pr-4 lg:pt-8 lg:pl-10 lg:pr-2">
+                        <p class="block text-left antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-4xl leading-[4.2rem]">{"Get an overview"}</p>
+                        <div class="flex flex-col">
+                            <div class="flex flex-row bg-gradient-to-b from-stone-200 to-stone-200 rounded-2xl scale-75">
+                                <div class="w-fit">
+                                    <p class="block text-center antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-4xl leading-[4.2rem] pt-5 px-6">{"Time period"}</p>
+                                    <p>{&time}</p>
+                                </div>
+                                <div class="w-fit">
+                                    <p class="block text-center antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-4xl leading-[4.2rem] pt-5 px-6">{"Links"}</p>
+                                    <p>{&time}</p>
+                                </div>
+                                <div class="w-fit">
+                                    <p class="block text-center antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-4xl leading-[4.2rem] pt-5 px-6">{"Contributers"}</p>
+                                    <p>{&time}</p>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-b from-stone-200 to-stone-200 rounded-2xl scale-75">
+                                <p class="block text-left antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-4xl leading-[4.2rem] pt-5 px-6">{"Technical pillars"}</p>
+                                <Icons icons={skills.clone()} scale=90 />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <SafeHtml html={md_content.clone()} />
+            </div>
         </div>
 
         // Footer
         <div class="pb-52 lg:pb-6 bg-gradient-to-b from-cyan-200 to-stone-300 dark:from-cyan-900 dark:to-stone-600">
-            <div class="flex justify-center items-center h-20">
+            <div class="flex justify-center items-center h-16">
                 <a href="https://www.linkedin.com/in/maxjmohr/" target="_blank" class="mr-6 lg:mr-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="w-16 h-16 lg:w-8 lg:h-8 fill-gray-700 dark:fill-stone-300">
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
