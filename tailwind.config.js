@@ -8,7 +8,11 @@ module.exports = {
     './index.html',
   ],
   theme: {
-    extend: {},
+    extend: {
+      scale: {
+        '85': '0.85',
+      }
+    },
   },
   plugins: [
     require('tailwind-typewriter')({

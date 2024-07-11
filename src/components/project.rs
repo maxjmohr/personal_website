@@ -111,8 +111,9 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
 
     html! {
         <> <div class="flex flex-col h-full">
-        <div class="grow bg-gradient-to-b from-teal-200 to-cyan-200 dark:from-teal-800 dark:to-cyan-900
+        <div class="flex-1 bg-gradient-to-b from-teal-200 to-cyan-200 dark:from-teal-800 dark:to-cyan-900
         pt-28 lg:pt-20 pl-12 lg:pl-44 pr-4">
+            <div class="flex flex-col lg:h-full">
             // Title and subtitle
             <div class="w-full">
                 <p class="text-gray-700 dark:text-stone-200 text-7xl font-semibold">{&title}</p>
@@ -120,45 +121,71 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
             </div>
 
             // Content cards
-            <div class="flex justify-start overflow-x-scroll overflow-y-visible pt-8 pr-4 lg:h-max">
+            <div class="flex justify-start overflow-x-scroll overflow-y-visible pt-8 pr-4 lg:h-full">
                 // Key facts card
-                <div class="w-[41rem] h-[48rem] lg:min-w-40 lg:h-max mr-10 bg-white dark:bg-gray-800 rounded-2xl">
-                    <div class="flex-1 flex justify-center items-center pt-24 pb-8 lg:pb-8 px-8 lg:px-20">
-                        <img class="object-scale-down" src = {format!("./../../res/images/projects/{}", &image)}/>
+                <div class="flex-1 w-[41rem] h-[48rem] lg:max-w-[47rem] lg:h-full mr-10 bg-white dark:bg-gray-800 rounded-2xl">
+                    <div class="flex justify-center items-center pt-16 pb-8 lg:pb-8">
+                        <img class="object-scale-down lg:max-h-48" src = {format!("./../../res/images/projects/{}", &image)}/>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="w-16 h-16 lg:w-20 lg:h-20 fill-gray-700 dark:fill-stone-300 pt-10 pl-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="w-16 h-16 lg:w-20 lg:h-20 fill-gray-700 dark:fill-stone-300 pt-4 pl-8">
                         <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z"/>
                     </svg>
-                    <div class = "pt-8 pl-8 pr-4 lg:pt-8 lg:pl-10 lg:pr-2">
+                    <div class = "pt-8 pl-8 pr-8 lg:pt-6 lg:pl-10 lg:pr-10 w-min">
                         <p class="block text-left antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-4xl leading-[4.2rem]">{"Get an overview"}</p>
-                        <div class="flex flex-col">
-                            <div class="flex flex-row bg-gradient-to-b from-stone-200 to-stone-200 rounded-2xl scale-75">
-                                <div class="w-fit">
-                                    <p class="block text-center antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-4xl leading-[4.2rem] pt-5 px-6">{"Time period"}</p>
-                                    <p>{&time}</p>
+                        <div class="flex flex-row h-full pt-4">
+                            <div class="flex flex-col justify-center items-center pr-4">
+                                <div class="bg-gradient-to-b from-stone-100 to-stone-200 rounded-2xl pb-2 mb-4 w-fit">
+                                    <p class="block text-center antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-3xl pt-5 px-6 min-w-56">{"Time period"}</p>
+                                    <p class="block text-center antialiased font-bold text-stone-600 dark:text-neutral-300 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-xl py-2">{&time}</p>
                                 </div>
-                                <div class="w-fit">
-                                    <p class="block text-center antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-4xl leading-[4.2rem] pt-5 px-6">{"Links"}</p>
-                                    <p>{&time}</p>
+                                <div class="bg-gradient-to-b from-stone-100 to-stone-200 rounded-2xl pb-2 mb-4 w-fit">
+                                    <p class="block text-center antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-3xl pt-5 px-6">{"Links"}</p>
+                                    <div class="flex flex-row justify-center py-2">
+                                        <a href={format!("{}", &url_git)} target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="w-16 h-16 lg:w-10 lg:h-10 fill-stone-600 dark:fill-neutral-300">
+                                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                            </svg>
+                                        </a>
+                                        if !url.is_empty() {
+                                            <a href={format!("{}", &url)} target="_blank" class="ml-6 lg:ml-4">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="w-16 h-16 lg:w-10 lg:h-10 fill-stone-600 dark:fill-neutral-300">
+                                                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm10 12c0 .685-.07 1.354-.202 2h-3.853c.121-1.283.129-2.621 0-4h3.853c.132.646.202 1.315.202 2zm-.841-4h-3.5c-.383-1.96-1.052-3.751-1.948-5.278 2.435.977 4.397 2.882 5.448 5.278zm-5.554 0h-2.605v-5.658c1.215 1.46 2.117 3.41 2.605 5.658zm-4.605-5.658v5.658h-2.605c.488-2.248 1.39-4.198 2.605-5.658zm0 7.658v4h-2.93c-.146-1.421-.146-2.577 0-4h2.93zm0 6v5.658c-1.215-1.46-2.117-3.41-2.605-5.658h2.605zm2 5.658v-5.658h2.605c-.488 2.248-1.39 4.198-2.605 5.658zm0-7.658v-4h2.93c.146 1.421.146 2.577 0 4h-2.93zm-4.711-11.278c-.896 1.527-1.565 3.318-1.948 5.278h-3.5c1.051-2.396 3.013-4.301 5.448-5.278zm-6.087 7.278h3.853c-.121 1.283-.129 2.621 0 4h-3.853c-.132-.646-.202-1.315-.202-2s.07-1.354.202-2zm.639 6h3.5c.383 1.96 1.052 3.751 1.948 5.278-2.435-.977-4.397-2.882-5.448-5.278zm12.87 5.278c.896-1.527 1.565-3.318 1.948-5.278h3.5c-1.051 2.396-3.013 4.301-5.448 5.278z"/>
+                                                </svg>
+                                            </a>
+                                        }
+                                    </div>
                                 </div>
-                                <div class="w-fit">
-                                    <p class="block text-center antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-4xl leading-[4.2rem] pt-5 px-6">{"Contributers"}</p>
-                                    <p>{&time}</p>
-                                </div>
+                                if let Some(coauthors) = coauthors {
+                                    <div class="bg-gradient-to-b from-stone-100 to-stone-200 rounded-2xl pb-2 mb-4 w-fit">
+                                        <p class="block text-center antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-3xl pt-5 px-6">{"Contributers"}</p>
+                                        <ul>
+                                            { for coauthors.iter().map(|coauthor| html! {
+                                                <li>
+                                                    <a href={ coauthor.url.clone().unwrap_or_else(|| "#".to_string()) } class="block text-center antialiased font-normal hover:font-bold text-stone-600 dark:text-neutral-300 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-xl py-1">
+                                                        {&coauthor.name}
+                                                    </a>
+                                                </li>
+                                            }) }
+                                        </ul>
+                                    </div>
+                                    }
                             </div>
-                            <div class="bg-gradient-to-b from-stone-200 to-stone-200 rounded-2xl scale-75">
-                                <p class="block text-left antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-4xl leading-[4.2rem] pt-5 px-6">{"Technical pillars"}</p>
-                                <Icons icons={skills.clone()} scale=90 />
+                            <div class="bg-gradient-to-b from-stone-100 to-stone-200 rounded-2xl lg:min-w-[27rem] lg:h-fit lg:mb-2">
+                                <p class="block text-left antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-3xl pt-5 px-6">{"Technical pillars"}</p>
+                                <div class="h-min">
+                                    <Icons icons={skills.clone()} scale=85 />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             <SafeHtml html={md_content.clone()} />
             </div>
+            </div>
         </div>
 
         // Footer
-        <div class="pb-52 lg:pb-6 bg-gradient-to-b from-cyan-200 to-stone-300 dark:from-cyan-900 dark:to-stone-600">
+        <div class="pt-4 pb-52 lg:pb-6 bg-gradient-to-b from-cyan-200 to-stone-300 dark:from-cyan-900 dark:to-stone-600">
             <div class="flex justify-center items-center h-16">
                 <a href="https://www.linkedin.com/in/maxjmohr/" target="_blank" class="mr-6 lg:mr-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="w-16 h-16 lg:w-8 lg:h-8 fill-gray-700 dark:fill-stone-300">
