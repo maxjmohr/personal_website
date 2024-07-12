@@ -185,7 +185,7 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
                 </div>
 
             // Rest of the content
-            //<SafeHtml html={md_content.clone()} />
+            <SafeHtml html={md_content.clone()} />
             </div>
             </div>
         </div>
