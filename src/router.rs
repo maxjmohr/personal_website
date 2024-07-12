@@ -1,6 +1,6 @@
 use crate::pages::home::Home;
-use crate::pages::projects::fynd::Fynd;
 use crate::pages::projects::automobile_segmentation::AutomobileSegmentation;
+use crate::pages::projects::fynd::Fynd;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
@@ -11,10 +11,9 @@ pub enum Route {
     #[at("/fynd")]
     Fynd,
     #[at("/automobile_segmentation")]
-    AutomobileSegmentation
-    //#[not_found]
-    //#[at("/404")]
-    //NotFound,
+    AutomobileSegmentation, //#[not_found]
+                            //#[at("/404")]
+                            //NotFound,
 }
 
 pub fn switch(route: Route) -> Html {

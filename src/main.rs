@@ -8,8 +8,8 @@ mod components {
 mod pages {
     pub mod home;
     pub mod projects {
-        pub mod fynd;
         pub mod automobile_segmentation;
+        pub mod fynd;
     }
 }
 mod router;
@@ -17,9 +17,9 @@ mod safehtml;
 
 use crate::components::navbar::Navbar;
 use router::{switch, Route};
+use web_sys::window;
 use yew::prelude::*;
 use yew_router::prelude::*;
-use web_sys::window;
 
 #[function_component(App)]
 fn app() -> Html {
