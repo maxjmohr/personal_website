@@ -1,6 +1,6 @@
 use crate::components::icons::Icons;
-use crate::components::timeline::{Timeline, TimelineEntry};
 use crate::components::project::ProjectCard;
+use crate::components::timeline::{Timeline, TimelineEntry};
 use comrak::ComrakOptions;
 use include_dir::{include_dir, Dir};
 use yew::prelude::*;

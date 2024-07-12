@@ -1,4 +1,6 @@
 use crate::pages::home::Home;
+use crate::pages::projects::automobile_segmentation::AutomobileSegmentation;
+use crate::pages::projects::fynd::Fynd;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
@@ -6,24 +8,19 @@ use yew_router::prelude::*;
 pub enum Route {
     #[at("/")]
     Home,
-    //#[not_found]
-    //#[at("/404")]
-    //NotFound,
-}
-
-fn scroll_to_top() {
-    if let Some(window) = web_sys::window() {
-        let mut options = web_sys::ScrollToOptions::new();
-        options.top(0.0);
-        window.scroll_with_scroll_to_options(&options);
-    }
+    #[at("/fynd")]
+    Fynd,
+    #[at("/automobile_segmentation")]
+    AutomobileSegmentation, //#[not_found]
+                            //#[at("/404")]
+                            //NotFound,
 }
 
 pub fn switch(route: Route) -> Html {
-    scroll_to_top();
-
     match route {
         Route::Home => html! { <Home /> },
+        Route::Fynd => html! { <Fynd /> },
+        Route::AutomobileSegmentation => html! { <AutomobileSegmentation /> },
         //Route::NotFound => html! { <PageNotFound /> },
     }
 }
