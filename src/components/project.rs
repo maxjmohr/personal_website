@@ -68,7 +68,7 @@ pub fn ProjectCard(props: &ProjectProps) -> Html {
                 <p class="text-left w-full pl-8 pr-4 mt-8 mb-6 lg:pl-6 lg:pr-2 lg:mt-6 lg:mb-4 text-stone-600 dark:text-neutral-400 text-4xl lg:text-xl">{&title}</p>
                 <p class="text-left w-full pl-8 pr-4 lg:pl-6 lg:pr-2 mb-3 antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-3xl leading-[4.2rem]">{&subtitle}</p>
                 <div class="flex-1 flex justify-center items-center mb-8 lg:mb-6 mx-8 lg:mx-6">
-                    <img class="object-scale-down" src = {format!("./../../res/images/projects/{}", &image)}/>
+                    <img class="object-scale-down rounded-xl" src = {format!("./../../res/images/projects/{}", &image)}/>
                 </div>
             </div>
         </Link<Route>>
@@ -123,9 +123,9 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
             // Content cards
             <div class="flex justify-start overflow-x-scroll overflow-y-visible pt-8 pr-4 lg:h-full">
                 // Key facts card
-                <div class="flex-1 w-[41rem] h-[48rem] lg:max-w-[47rem] lg:h-full mr-10 bg-white dark:bg-gray-800 rounded-2xl">
+                <div class="shrink-0 w-[41rem] h-[48rem] lg:w-[47rem] lg:h-full mr-10 bg-white dark:bg-gray-800 rounded-2xl">
                     <div class="flex justify-center items-center pt-16 pb-8 lg:pb-8">
-                        <img class="object-scale-down lg:max-h-48" src = {format!("./../../res/images/projects/{}", &image)}/>
+                        <img class="object-scale-down lg:max-h-48 rounded-xl" src = {format!("./../../res/images/projects/{}", &image)}/>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="w-16 h-16 lg:w-20 lg:h-20 fill-gray-700 dark:fill-stone-300 pt-4 pl-8">
                         <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.834 9.686l-4.166.575 3.032 2.914-.74 4.139 3.708-1.982 3.708 1.983-.74-4.139 3.032-2.915-4.166-.575-1.834-3.784-1.834 3.784z"/>
@@ -134,11 +134,11 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
                         <p class="block text-left antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-4xl leading-[4.2rem]">{"Get an overview"}</p>
                         <div class="flex flex-row h-full pt-4">
                             <div class="flex flex-col justify-center items-center pr-4">
-                                <div class="bg-gradient-to-b from-stone-100 to-stone-200 rounded-2xl pb-2 mb-4 w-fit">
+                                <div class="bg-gradient-to-b from-stone-100 to-stone-200 dark:from-gray-500 dark:to-gray-700 rounded-2xl pb-2 mb-4 w-fit">
                                     <p class="block text-center antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-3xl pt-5 px-6 min-w-56">{"Time period"}</p>
-                                    <p class="block text-center antialiased font-bold text-stone-600 dark:text-neutral-300 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-xl py-2">{&time}</p>
+                                    <p class="block text-center antialiased font-bold text-stone-600 dark:text-neutral-300 text-6xl lg:text-xl py-2">{&time}</p>
                                 </div>
-                                <div class="bg-gradient-to-b from-stone-100 to-stone-200 rounded-2xl pb-2 mb-4 w-fit">
+                                <div class="bg-gradient-to-b from-stone-100 to-stone-200 dark:from-gray-500 dark:to-gray-700 rounded-2xl pb-2 mb-4 w-fit">
                                     <p class="block text-center antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-3xl pt-5 px-6">{"Links"}</p>
                                     <div class="flex flex-row justify-center py-2">
                                         <a href={format!("{}", &url_git)} target="_blank">
@@ -156,7 +156,7 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
                                     </div>
                                 </div>
                                 if let Some(coauthors) = coauthors {
-                                    <div class="bg-gradient-to-b from-stone-100 to-stone-200 rounded-2xl pb-2 mb-4 w-fit">
+                                    <div class="bg-gradient-to-b from-stone-100 to-stone-200 dark:from-gray-500 dark:to-gray-700 rounded-2xl pb-2 mb-4 w-fit">
                                         <p class="block text-center antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-3xl pt-5 px-6">{"Contributers"}</p>
                                         <ul>
                                             { for coauthors.iter().map(|coauthor| html! {
@@ -170,8 +170,8 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
                                     </div>
                                     }
                             </div>
-                            <div class="bg-gradient-to-b from-stone-100 to-stone-200 rounded-2xl lg:min-w-[27rem] lg:h-fit lg:mb-2">
-                                <p class="block text-left antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-3xl pt-5 px-6">{"Technical pillars"}</p>
+                            <div class="bg-gradient-to-b from-stone-100 to-stone-200 dark:from-gray-500 dark:to-gray-700 rounded-2xl lg:min-w-[27rem] lg:h-fit lg:mb-2">
+                                <p class="block text-left antialiased font-extrabold text-gray-700 dark:text-stone-200 text-6xl lg:text-3xl pt-5 px-6">{"Technical pillars"}</p>
                                 <div class="h-min">
                                     <Icons icons={skills.clone()} scale=85 />
                                 </div>
@@ -179,6 +179,8 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
                         </div>
                     </div>
                 </div>
+
+            // Rest of the content
             <SafeHtml html={md_content.clone()} />
             </div>
             </div>
