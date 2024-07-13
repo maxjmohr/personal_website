@@ -16,11 +16,19 @@ pub enum Route {
                             //NotFound,
 }
 
+fn scroll_to_top() {
+	if let Some(window) = web_sys::window() {
+		let mut options = web_sys::ScrollToOptions::new();
+		options.top(0.0);
+		window.scroll_with_scroll_to_options(&options);
+	}
+}
+
 pub fn switch(route: Route) -> Html {
     match route {
         Route::Home => html! { <Home /> },
-        Route::Fynd => html! { <Fynd /> },
-        Route::AutomobileSegmentation => html! { <AutomobileSegmentation /> },
+        Route::Fynd => {scroll_to_top(); html! { <Fynd /> }},
+        Route::AutomobileSegmentation => {scroll_to_top(); html! { <AutomobileSegmentation /> }},
         //Route::NotFound => html! { <PageNotFound /> },
     }
 }

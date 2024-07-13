@@ -175,7 +175,7 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
                             <div class="flex justify-center items-center w-full">
                                 <div class="bg-gradient-to-b from-stone-100 to-stone-200 dark:from-gray-500 dark:to-gray-700 rounded-2xl w-[45rem] lg:w-[27rem] lg:h-fit mb-8 lg:mb-2">
                                     <p class="block text-left antialiased font-extrabold text-gray-700 dark:text-stone-200 text-6xl lg:text-3xl pt-5 px-6">{"Technical pillars"}</p>
-                                    <div class="h-min">
+                                    <div class="h-min mb-3 lg:mb-0">
                                         <Icons icons={skills.clone()} scale=85 />
                                     </div>
                                 </div>
