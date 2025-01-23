@@ -1,7 +1,6 @@
 mod components {
     pub mod bullet;
     pub mod icons;
-    pub mod navbar;
     pub mod project;
     pub mod timeline;
 }
@@ -15,7 +14,6 @@ mod pages {
 mod router;
 mod safehtml;
 
-use crate::components::navbar::Navbar;
 use gloo_utils::document;
 use router::{switch, Route};
 use wasm_bindgen::prelude::*;
@@ -51,7 +49,6 @@ fn app() -> Html {
             class="z-10 absolute w-80 h-80 rounded-full pointer-events-none bg-gradient-to-r from-stone-200 to-transparent dark:from-sky-700 opacity-75 blur-3xl"
         ></div>
 
-        //<Navbar />
         <BrowserRouter>
             <Switch<Route> render={switch} /> // Routes to different pages
         </BrowserRouter>
