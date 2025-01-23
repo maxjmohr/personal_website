@@ -1087,6 +1087,7 @@ dependencies = [
  "gloo 0.5.0",
  "gloo-utils 0.2.0",
  "include_dir",
+ "log",
  "serde",
  "serde_yaml 0.9.34+deprecated",
  "wasm-bindgen",

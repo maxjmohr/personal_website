@@ -1,20 +1,26 @@
 <!doctype html>
-<html lang="en">
-    <head>
+<html lang="en" class="h-full w-full">
+   <head>
         <meta charset="utf-8" />
-        <!-- THE VIEWPORT SHOULD BE ADAPTABLE. I FORGOT TO IMPLEMENT THE LINE BELOW. IF IMPLEMENTED; ALL MOBILE SIZES HAVE TO BE ADAPTED.: -->
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />  <!-- Make view responsive -->
         <title>Max Mohr</title>
-        <link data-trunk rel="css" href="styles/main.css" />
-        <link data-trunk rel="copy-dir" href="res">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-        <link rel="icon" href="res/images/favicon.ico" type="image/x-icon" />
+        <link data-trunk rel="css" href="styles/main.css" />  <!-- Load styles-->
+        <link data-trunk rel="copy-dir" href="res">  <!-- Load resources -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />  <!-- Load AOS animations-->
+        <link rel="icon" href="res/images/favicon.ico" type="image/x-icon" />  <!-- Set favicon -->
+        <!-- Load fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=OCR+A+Std&display=swap" rel="stylesheet">
     </head>
-    <body class="bg-stone-300 dark:bg-stone-600">
+    <body class="z-0 h-full w-full bg-stone-300 dark:bg-slate-900">
+        <!-- External Libraries -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
         <script>
             AOS.init({
-              once: true
+                duration: 2000,
+                easing: 'ease',
+                once: false,
+                mirror: true,
             });
         </script>
     </body>
