@@ -169,7 +169,7 @@ pub fn Home() -> Html {
             <div class="flex justify-start overflow-x-scroll overflow-y-visible pt-4 pb-4 pl-4 pr-4" data-aos="fade-up">
                 { for content_projects_html.iter().cloned()}
                 // More to come card
-                <div class="w-[41rem] h-[48rem] lg:w-96 lg:h-96 flex-shrink-0 mr-10 bg-white dark:bg-gray-800 bg-opacity-70 dark:bg-opacity-70 rounded-2xl lg:hover:scale-105 shadow-md lg:shadow-none lg:hover:shadow-md transition lg:hover:duration-300 ease-in-out">
+                <div class="w-[41rem] h-[48rem] lg:w-96 lg:h-96 shrink-0 mr-10 bg-white dark:bg-gray-800 bg-opacity-70 dark:bg-opacity-70 rounded-2xl lg:hover:scale-105 shadow-md lg:shadow-none lg:hover:shadow-md transition lg:hover:duration-300 ease-in-out">
                     <p class="block text-left pl-8 pr-4 mt-8 mb-6 lg:pl-6 lg:pr-2 lg:mt-6 lg:mb-4 text-stone-600 dark:text-neutral-400 text-4xl lg:text-xl">{"In progress"}</p>
                     <p class="block text-left pl-8 pr-4 lg:pl-6 lg:pr-2 mb-2 antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-3xl leading-[4.2rem]">{"More to come"}</p>
                 </div>

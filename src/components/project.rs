@@ -64,7 +64,7 @@ pub fn ProjectCard(props: &ProjectProps) -> Html {
 
     html! {
         <Link<Route> to={to_route}>
-            <div class="flex flex-col w-[41rem] h-[48rem] lg:w-96 lg:h-96 flex-shrink-0 mr-10 bg-white dark:bg-gray-800 rounded-2xl lg:hover:scale-105 shadow-md lg:shadow-none lg:hover:shadow-md transition lg:hover:duration-300 ease-in-out">
+            <div class="flex flex-col w-[41rem] h-[48rem] lg:w-96 lg:h-96 shrink-0 mr-10 bg-white dark:bg-gray-800 rounded-2xl lg:hover:scale-105 shadow-md lg:shadow-none lg:hover:shadow-md transition lg:hover:duration-300 ease-in-out">
                 <p class="text-left w-full pl-8 pr-4 mt-8 mb-6 lg:pl-6 lg:pr-2 lg:mt-6 lg:mb-4 text-stone-600 dark:text-neutral-400 text-4xl lg:text-xl">{&title}</p>
                 <p class="text-left w-full pl-8 pr-4 lg:pl-6 lg:pr-2 mb-3 antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-3xl leading-[4.2rem]">{&subtitle}</p>
                 <div class="flex-1 flex justify-center items-center mb-8 lg:mb-6 mx-8 lg:mx-6">
@@ -111,7 +111,7 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
 
     html! {
         <> <div class="flex flex-col h-full">
-        <div class="lg:flex-1 bg-gradient-to-b from-teal-200 to-cyan-200 dark:from-teal-800 dark:to-cyan-900
+        <div class="lg:flex-1 bg-linear-to-b from-teal-200 to-cyan-200 dark:from-teal-800 dark:to-cyan-900
         pt-28 lg:pt-20 pl-12 lg:pl-44 pr-12 lg:pr-4 pb-14 lg:pb-0">
             <div class="flex flex-col lg:h-full">
             // Title and subtitle
@@ -135,11 +135,11 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
                         <div class="lg:flex lg:flex-row lg:h-full pt-6 lg:pt-4">
                             <div class="flex flex-col justify-center items-center lg:pr-4">
                             <div class="flex flex-row lg:flex-col justify-center items-center">
-                                <div class="bg-gradient-to-b from-stone-100 to-stone-200 dark:from-gray-500 dark:to-gray-700 rounded-2xl pb-2 mb-6 lg:mb-4 mx-3 lg:mx-0 w-fit">
+                                <div class="bg-linear-to-b from-stone-100 to-stone-200 dark:from-gray-500 dark:to-gray-700 rounded-2xl pb-2 mb-6 lg:mb-4 mx-3 lg:mx-0 w-fit">
                                     <p class="block text-center antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-3xl pt-5 px-6 min-w-56">{"Time period"}</p>
                                     <p class="block text-center antialiased font-bold text-stone-600 dark:text-neutral-300 text-4xl lg:text-xl py-2">{&time}</p>
                                 </div>
-                                <div class="bg-gradient-to-b from-stone-100 to-stone-200 dark:from-gray-500 dark:to-gray-700 rounded-2xl pb-2 mb-6 lg:mb-4 mx-3 lg:mx-0 w-fit">
+                                <div class="bg-linear-to-b from-stone-100 to-stone-200 dark:from-gray-500 dark:to-gray-700 rounded-2xl pb-2 mb-6 lg:mb-4 mx-3 lg:mx-0 w-fit">
                                     <p class="block text-center antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-3xl pt-5 px-6">{"Links"}</p>
                                     <div class="flex flex-row justify-center py-2">
                                         <a href={url_git.to_string()} target="_blank">
@@ -158,7 +158,7 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
                                 </div>
                                 </div>
                                 if let Some(coauthors) = coauthors {
-                                    <div class="bg-gradient-to-b from-stone-100 to-stone-200 dark:from-gray-500 dark:to-gray-700 rounded-2xl pb-2 mb-6 lg:mb-4 w-fit">
+                                    <div class="bg-linear-to-b from-stone-100 to-stone-200 dark:from-gray-500 dark:to-gray-700 rounded-2xl pb-2 mb-6 lg:mb-4 w-fit">
                                         <p class="block text-center antialiased font-extrabold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-6xl lg:text-3xl pt-5 px-6">{"Contributers"}</p>
                                         <ul>
                                             { for coauthors.iter().map(|coauthor| html! {
@@ -173,7 +173,7 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
                                     }
                             </div>
                             <div class="flex justify-center items-center w-full">
-                                <div class="bg-gradient-to-b from-stone-100 to-stone-200 dark:from-gray-500 dark:to-gray-700 rounded-2xl w-[45rem] lg:w-[27rem] lg:h-fit mb-8 lg:mb-2">
+                                <div class="bg-linear-to-b from-stone-100 to-stone-200 dark:from-gray-500 dark:to-gray-700 rounded-2xl w-[45rem] lg:w-[27rem] lg:h-fit mb-8 lg:mb-2">
                                     <p class="block text-left antialiased font-extrabold text-gray-700 dark:text-stone-200 text-6xl lg:text-3xl pt-5 px-6">{"Technical pillars"}</p>
                                     <div class="h-min mb-3 lg:mb-0">
                                         <Icons icons={skills.clone()} scale=85 />
@@ -191,7 +191,7 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
         </div>
 
         // Footer
-        <div class="pt-4 pb-52 lg:pb-6 bg-gradient-to-b from-cyan-200 to-stone-300 dark:from-cyan-900 dark:to-stone-600">
+        <div class="pt-4 pb-52 lg:pb-6 bg-linear-to-b from-cyan-200 to-stone-300 dark:from-cyan-900 dark:to-stone-600">
             <div class="flex justify-center items-center h-16">
                 <a href="https://www.linkedin.com/in/maxjmohr/" target="_blank" class="mr-6 lg:mr-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="w-16 h-16 lg:w-8 lg:h-8 fill-gray-700 dark:fill-stone-300">

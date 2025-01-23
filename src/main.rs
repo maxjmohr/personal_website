@@ -46,7 +46,7 @@ fn app() -> Html {
         <>
         <div
             id="mouse-gradient"
-            class="z-10 absolute w-80 h-80 rounded-full pointer-events-none bg-gradient-to-r from-stone-200 to-transparent dark:from-sky-700 opacity-75 blur-3xl"
+            class="z-10 absolute w-80 h-80 rounded-full pointer-events-none bg-linear-to-r from-stone-200 to-transparent dark:from-sky-700 opacity-75 blur-3xl"
         ></div>
 
         <BrowserRouter>

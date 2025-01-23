@@ -22,8 +22,7 @@ cargo binstall trunk -y
 cargo binstall wasm-opt -y
 
 # Install tailwindcss and other dependencies
-npm install -D tailwindcss
-npm install tailwind-typewriter
+npm install tailwindcss @tailwindcss/cli
 
 # Clean the project
 trunk clean
@@ -33,7 +32,7 @@ cargo clean
 ROOT_DIR=$(pwd)
 
 # Build the tailwind css file
-npx tailwindcss -i ./styles/input.css -o ./styles/main.css
+npx @tailwindcss/cli -i ./styles/input.css -o ./styles/main.css
 
 # Build the main project
 cd $ROOT_DIR
