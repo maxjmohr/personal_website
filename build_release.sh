@@ -23,6 +23,7 @@ cargo binstall wasm-opt -y
 
 # Install tailwindcss and other dependencies
 npm install tailwindcss @tailwindcss/cli
+npm install -D @tailwindcss/typography
 
 # Clean the project
 trunk clean

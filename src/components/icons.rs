@@ -5,24 +5,24 @@ use yew::prelude::*;
 pub struct IconsProps {
     pub icons: Vec<String>,
     #[prop_or_default]
-    pub scale: Option<u8>,
+    pub class: Option<String>,
 }
 
 #[function_component]
 pub fn Icons(props: &IconsProps) -> Html {
-    // Get scale
-    let scale = props.scale.unwrap_or(100);
+    // Get class
+    let class = props.class.clone().unwrap_or_else(|| "flex flex-wrap items-center justify-center gap-2 scale-100".to_string());
     // Convert to lowercase and trim to get icons
     let icons_str: Vec<&str> = props.icons.iter().map(|s| s.trim()).collect();
     let icons: Vec<Html> = icons_str
         .iter()
-        .filter_map(|icon_str| get_icons(icon_str, scale))
+        .filter_map(|icon_str| get_icons(icon_str))
         .collect();
 
     // If icons found, render
     if !icons.is_empty() {
         html! {
-            <div class="flex flex-wrap items-center justify-center" data-aos="fade">
+            <div class={class} data-aos="fade">
                 { icons.into_iter().collect::<Html>() }
             </div>
         }
@@ -31,196 +31,179 @@ pub fn Icons(props: &IconsProps) -> Html {
     }
 }
 
-pub fn get_icons(name: &str, scale: u8) -> Option<Html> {
+pub fn get_icons(name: &str) -> Option<Html> {
     return match name.to_lowercase().as_str() {
         // General
-        "bullet" => Some(html! {<Bullet scale={scale} />}),
+        "bullet" => Some(html! {<Bullet />}),
         // Technical skills - languages
-        "matlab" => Some(html! {<Matlab scale={scale} />}),
-        "python" => Some(html! {<Python scale={scale} />}),
-        "r" => Some(html! {<R scale={scale} />}),
-        "sql" => Some(html! {<SQL scale={scale} />}),
-        "stata" => Some(html! {<Stata scale={scale} />}),
+        "matlab" => Some(html! {<Matlab />}),
+        "python" => Some(html! {<Python />}),
+        "r" => Some(html! {<R />}),
+        "sql" => Some(html! {<SQL />}),
+        "stata" => Some(html! {<Stata />}),
         // Technical skills - frameworks & libraries
-        "arrow" => Some(html! {<Arrow scale={scale} />}),
-        "dash" => Some(html! {<Dash scale={scale} />}),
-        "detectron" => Some(html! {<Detectron scale={scale} />}),
-        "gradio" => Some(html! {<Gradio scale={scale} />}),
-        "huggingface" => Some(html! {<HuggingFace scale={scale} />}),
-        "kafka" => Some(html! {<Kafka scale={scale} />}),
-        "llamaindex" => Some(html! {<LlamaIndex scale={scale} />}),
-        "pytorch" => Some(html! {<PyTorch scale={scale} />}),
-        "scikitlearn" => Some(html! {<ScikitLearn scale={scale} />}),
-        "shiny" => Some(html! {<Shiny scale={scale} />}),
-        "spark" => Some(html! {<Spark scale={scale} />}),
-        "yew" => Some(html! {<Yew scale={scale} />}),
+        "arrow" => Some(html! {<Arrow />}),
+        "dash" => Some(html! {<Dash />}),
+        "detectron" => Some(html! {<Detectron />}),
+        "gradio" => Some(html! {<Gradio />}),
+        "huggingface" => Some(html! {<HuggingFace />}),
+        "kafka" => Some(html! {<Kafka />}),
+        "llamaindex" => Some(html! {<LlamaIndex />}),
+        "pytorch" => Some(html! {<PyTorch />}),
+        "scikitlearn" => Some(html! {<ScikitLearn />}),
+        "shiny" => Some(html! {<Shiny />}),
+        "spark" => Some(html! {<Spark />}),
+        "yew" => Some(html! {<Yew />}),
         // Technical skills - tools
-        "atlassian" => Some(html! {<Atlassian scale={scale} />}),
-        "css" => Some(html! {<CSS scale={scale} />}),
-        "earthengine" => Some(html! {<EarthEngine scale={scale} />}),
-        "git" => Some(html! {<Git scale={scale} />}),
-        "html" => Some(html! {<HTML scale={scale} />}),
-        "informatica" => Some(html! {<Informatica scale={scale} />}),
-        "powerbi" => Some(html! {<PowerBI scale={scale} />}),
-        "oracledb" => Some(html! {<OracleDB scale={scale} />}),
-        "postgresql" => Some(html! {<PostgreSQL scale={scale} />}),
-        "qgis" => Some(html! {<QGIS scale={scale} />}),
-        "tailwind" => Some(html! {<Tailwind scale={scale} />}),
+        "atlassian" => Some(html! {<Atlassian />}),
+        "css" => Some(html! {<CSS />}),
+        "earthengine" => Some(html! {<EarthEngine />}),
+        "git" => Some(html! {<Git />}),
+        "html" => Some(html! {<HTML />}),
+        "informatica" => Some(html! {<Informatica />}),
+        "powerbi" => Some(html! {<PowerBI />}),
+        "oracledb" => Some(html! {<OracleDB />}),
+        "postgresql" => Some(html! {<PostgreSQL />}),
+        "qgis" => Some(html! {<QGIS />}),
+        "tailwind" => Some(html! {<Tailwind />}),
         _ => None,
     };
 }
 
-// Properties to scale each icon
-#[derive(Properties, Clone, PartialEq)]
-pub struct ScaleProps {
-    pub scale: Option<u8>,
-}
-
 #[function_component]
-pub fn Bullet(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Bullet() -> Html {
     html! {
-        <svg class={format!("shrink-0 w-8 h-8 lg:w-5 lg:h-5 text-stone-600 dark:text-neutral-300 text-opacity-95 dark:text-opacity-95 mt-1 scale-{}", scale)} clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg class="shrink-0 w-8 h-8 lg:w-5 lg:h-5 text-stone-600 dark:text-neutral-300 opacity-95 dark:opacity-95 mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path fill="currentColor" d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z"/>
         </svg>
     }
 }
 
 #[function_component]
-pub fn Matlab(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Matlab() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#f06e3e] rounded-xl transition duration-300 scale-{}", scale)} href="https://www.mathworks.com/products/matlab.html" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#f06e3e] lg:group-hover:text-white transition duration-300" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+        <a class="group flex flex-col items-center justify-center w-32 h-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#f06e3e] rounded-2xl transition duration-300 scale-{}" href="https://www.mathworks.com/products/matlab.html" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#f06e3e] lg:group-hover:text-white transition duration-300" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000">
                 <path fill="currentColor" d="M2,17.55l7.97-3.22a20.7,20.7,0,0,1,2.72-2.95c.66-.35,1.9-.16,4.17-2.98,2.2-2.75,2.9-5.1,3.93-5.1,1.63,0,2.83,3.52,4.65,8.85A115.629,115.629,0,0,0,30,24.12c-1.9-1.77-3.52-3.68-5.37-3.63-1.72.04-3.63,2.08-5.72,4.7-1.66,2.1-3.86,3.54-4.72,3.51,0,0-2.22-6.28-4.08-7.3a2.641,2.641,0,0,0-2.39.2L2,17.54Z"/>
                 <path fill="currentColor" d="M19.8,4.02c-.67.9-1.48,2.55-2.94,4.38-2.27,2.82-3.5,2.63-4.17,2.98a19.674,19.674,0,0,0-2.72,2.95l3.3,2.41c2.8-3.82,4.3-7.96,5.47-10.64A13.579,13.579,0,0,1,19.8,4.02Z"/>
                 <path fill="currentColor" d="M20.8,3.3c-2.18,0-3.67,11.48-11.72,17.89,2.26-.37,4.22,5.24,5.12,7.51,4-.68,7.2-8.33,10.43-8.21,1.85.07,3.47,1.86,5.37,3.63C25.66,15,23.63,3.3,20.8,3.3Z"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Matlab"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Matlab"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn Python(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Python() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#4584b6] rounded-xl transition duration-300 scale-{}", scale)} href="https://www.python.org/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#4584b6] lg:group-hover:text-white transition duration-300" wxmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#4584b6] rounded-2xl transition duration-300 scale-{}" href="https://www.python.org/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#4584b6] lg:group-hover:text-white transition duration-300" wxmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path fill="currentColor" d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4 .1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8 .1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3 .1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Python"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Python"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn R(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn R() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#276dc2] rounded-xl transition duration-300 scale-{}", scale)} href="https://www.r-project.org/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#276dc2] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="724" height="561" viewBox="0 0 724 561">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#276dc2] rounded-2xl transition duration-300 scale-{}" href="https://www.r-project.org/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#276dc2] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="724" height="561" viewBox="0 0 724 561">
                 <path fill="currentColor" d="M361.453,485.937 C162.329,485.937 0.906,377.828 0.906,244.469 C0.906,111.109 162.329,3.000 361.453,3.000 C560.578,3.000 722.000,111.109 722.000,244.469 C722.000,377.828 560.578,485.937 361.453,485.937 ZM416.641,97.406 C265.289,97.406 142.594,171.314 142.594,262.484 C142.594,353.654 265.289,427.562 416.641,427.562 C567.992,427.562 679.687,377.033 679.687,262.484 C679.687,147.971 567.992,97.406 416.641,97.406 Z"/>
                 <path fill="currentColor" d="M550.000,377.000 C550.000,377.000 571.822,383.585 584.500,390.000 C588.899,392.226 596.510,396.668 602.000,402.500 C607.378,408.212 610.000,414.000 610.000,414.000 L696.000,559.000 L557.000,559.062 L492.000,437.000 C492.000,437.000 478.690,414.131 470.500,407.500 C463.668,401.969 460.755,400.000 454.000,400.000 C449.298,400.000 420.974,400.000 420.974,400.000 L421.000,558.974 L298.000,559.026 L298.000,152.938 L545.000,152.938 C545.000,152.938 657.500,154.967 657.500,262.000 C657.500,369.033 550.000,377.000 550.000,377.000 ZM496.500,241.024 L422.037,240.976 L422.000,310.026 L496.500,310.002 C496.500,310.002 531.000,309.895 531.000,274.877 C531.000,239.155 496.500,241.024 496.500,241.024 Z"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"R"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"R"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn SQL(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn SQL() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#f80000] rounded-xl transition duration-300 scale-{}", scale)} href="https://www.reddit.com/r/SQL/comments/doukj2/is_sql_considered_codingprogramming/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#f80000] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#f80000] rounded-2xl transition duration-300 scale-{}" href="https://www.reddit.com/r/SQL/comments/doukj2/is_sql_considered_codingprogramming/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#f80000] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path fill="currentColor" d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"SQL"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"SQL"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn Stata(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Stata() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#195f92] rounded-xl transition duration-300 scale-{}", scale)} href="https://www.stata.com/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#195f92] lg:group-hover:text-white transition duration-300" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#195f92] rounded-2xl transition duration-300 scale-{}" href="https://www.stata.com/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#195f92] lg:group-hover:text-white transition duration-300" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
                 <path fill="currentColor" d="m124.9 47.192c-1.7102 0-3.0994 1.3892-3.0994 3.0994s1.3892 3.0997 3.0994 3.0997c1.7103 0 3.0997-1.3894 3.0997-3.0997s-1.3894-3.0994-3.0997-3.0994zm0 0.2663c1.5663 0 2.8334 1.2668 2.8334 2.8332 0 1.5663-1.267 2.8334-2.8334 2.8334-1.5663 0-2.8332-1.2671-2.8332-2.8334 0-1.5663 1.2668-2.8332 2.8332-2.8332zm-1.6879 1.0714v0.18857h0.27426c0.05 0 0.10361 0.0224 0.1252 0.0557 0.11325 0.15835 0.11391 0.33506 0.11391 0.33506v2.327s-6.6e-4 0.17671-0.11391 0.33506c-0.0216 0.0333-0.0752 0.0557-0.1252 0.0557h-0.27426v0.18855h1.5758v-0.18857h-0.27425c-0.05 0-0.10362-0.0224-0.1252-0.0557-0.11326-0.15835-0.11391-0.33506-0.11391-0.33506v-1.0847h0.35738c0.1188 0 0.3451 0.11827 0.39971 0.16343 0.21263 0.15698 0.32705 0.45654 0.35584 1.0752 6e-3 0.12808 0.0681 0.26617 0.18241 0.34918 0.25405 0.17339 0.70716 0.19688 0.99518-0.0377 0.14313-0.13033 0.19235-0.35261 0.1937-0.56031l-0.18471-0.0344s-0.0289 0.48335-0.28683 0.48335c-0.0803 0-0.19419-0.10295-0.20089-0.26451-0.0123-0.29702-0.17138-0.99918-0.97414-1.2143 0.25052 0 0.66509-0.107 0.79917-0.20473 0.20004-0.14762 0.39504-0.3796 0.41254-0.63395l2e-3 -1e-3v-0.14237l-1e-3 -7.7e-4c-0.0296-0.43143-0.57155-0.79866-0.77865-0.79866h-1.8208zm1.0624 0.26989h0.84304c0.17056 0 0.56011 0.19938 0.58546 0.53133 0 0.0115 2e-3 0.0229 2e-3 0.0341v0.0706c0 0.0112-2e-3 0.0227-2e-3 0.0341-0.0253 0.3314-0.41369 0.53067-0.58469 0.53132h-0.84381zm-95.427 3.5584-2.3513 6.3356h7.8816v22.114h6.3472v-22.114h6.3333l2.3513-6.3356zm48.619 0-2.3513 6.3356h7.8819v22.114h6.3469v-22.114h6.3333l2.3516-6.3356zm-49.565 0.0174-17.355 2.5e-4v1e-3c-0.7843 2e-3 -2.3705 6e-3 -2.5363 6e-3 -2.1745 0-4.0423 1.1602-5.5508 2.6802-1.5084 1.52-2.4609 3.2021-2.4609 5.3933v1.2096c4.99e-4 2.1904 0.95288 3.8719 2.4609 5.3915 1.5085 1.52 3.3763 2.6802 5.5508 2.6802 0.1564 0 1.5491 4e-3 2.3919 6e-3v2e-3h8.9407c1.3141 0 2.3771 1.0426 2.4237 2.3549-0.047 1.3123-1.1096 2.3547-2.4237 2.3547h-16.895l-2.3493 6.33h17.319v-1e-3c0.7401-2e-3 2.4434-6e-3 2.6143-6e-3 2.1745 0 4.0423-1.1602 5.5508-2.6802 1.508-1.5197 2.4606-3.2011 2.4611-5.3915v-1.2099c0-2.1912-0.95274-3.873-2.4611-5.393-1.5085-1.52-3.3763-2.6802-5.5508-2.6802-0.1538 0-1.4982-4e-3 -2.3521-6e-3v-2e-3h-8.9805c-1.3141 0-2.3771-1.0426-2.4237-2.3549 0.047-1.3123 1.1096-2.3549 2.4237-2.3549h16.853zm22.363 8e-3 -2.349 6.33h18.476c1.2888 0 2.3356 1.0028 2.4193 2.2795h0.018v2.6e-4h-0.0239v2.4298l-15.31 7e-3c-2.1745 0-4.0422 1.1602-5.5506 2.6802-3.1887 3.5728-3.3403 8.5643 0 11.994 1.5084 1.52 3.3761 2.6802 5.5506 2.6802l21.633 0.0126-0.0364-20.333c0-2.1912-0.95267-3.8733-2.4611-5.3933-1.5085-1.5201-3.3763-2.6802-5.5508-2.6802zm48.619 0-2.3493 6.33h18.476c1.2888 0 2.3353 1.0028 2.4191 2.2795h0.018v2.6e-4h-0.0239v2.4298l-15.31 7e-3c-2.1745 0-4.0424 1.1602-5.5508 2.6802-3.1886 3.5728-3.3402 8.5643 0 11.994 1.5085 1.52 3.3763 2.6802 5.5508 2.6802l21.633 0.0126-0.0364-20.333c0-2.1912-0.95268-3.8733-2.4611-5.3933-1.5085-1.5201-3.3763-2.6802-5.5508-2.6802zm-44.701 17.37h14.622v4.6857l-14.622 0.0239c-1.314 0-2.3771-1.0426-2.4237-2.3549 0.047-1.3123 1.1097-2.3547 2.4237-2.3547zm48.619 0h14.622v4.6857l-14.622 0.0239c-1.3141 0-2.3771-1.0426-2.4237-2.3549 0.0466-1.3123 1.1096-2.3547 2.4237-2.3547z"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Stata"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Stata"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn Arrow(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Arrow() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-black rounded-xl transition duration-300 scale-{}", scale)} href="https://arrow.apache.org/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-black dark:text-gray-400 lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1350.00 1181.25">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-black rounded-2xl transition duration-300 scale-{}" href="https://arrow.apache.org/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-black dark:text-gray-400 lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1350.00 1181.25">
                 <polygon fill="currentColor" points="168.75,168.75 590.62,590.62 168.75,1012.50 168.75,843.75 421.88,590.62 168.75,337.50 168.75,168.75 " />
                 <polygon fill="currentColor" points="464.06,168.75 885.94,590.62 464.06,1012.50 464.06,843.75 717.19,590.62 464.06,337.50 464.06,168.75 " />
                 <polygon fill="currentColor" points="759.38,168.75 1181.25,590.62 759.38,1012.50 759.38,843.75 1012.50,590.62 759.38,337.50 759.38,168.75 " />
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Arrow"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Arrow"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn Dash(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Dash() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#008de4] rounded-xl transition duration-300 scale-{}", scale)} href="https://dash.plotly.com/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#008de4] dark:text-gray-400 lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513.4 416.8">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#008de4] rounded-2xl transition duration-300 scale-{}" href="https://dash.plotly.com/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#008de4] dark:text-gray-400 lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513.4 416.8">
                 <path fill="currentColor" d="M336.25,0H149.35l-15.5,86.6,168.7.2c83.1,0,107.6,30.2,106.9,80.2-.4,25.6-11.5,69-16.3,83.1-12.8,37.5-39.1,80.2-137.7,80.1l-164-.1L76,416.8h186.5c65.8,0,93.7-7.7,123.4-21.3,65.7-30.5,104.8-95.3,120.5-179.9C529.65,89.6,500.65,0,336.25,0"/>
                 <path fill="currentColor" d="M68.7,164.9c-49,0-56,31.9-60.6,51.2C2,241.3,0,251.6,0,251.6H191.4c49,0,56-31.9,60.6-51.2,6.1-25.2,8.1-35.5,8.1-35.5Z"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Dash"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Dash"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn Detectron(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Detectron() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#0081fb] rounded-xl transition duration-300 scale-{}", scale)} href="https://ai.meta.com/tools/detectron2/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#0081fb] lg:group-hover:text-white transition duration-300" viewBox="56.329999999999984 457.15000000000003 2387.3400000000006 1585.74" xmlns="http://www.w3.org/2000/svg">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#0081fb] rounded-2xl transition duration-300 scale-{}" href="https://ai.meta.com/tools/detectron2/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#0081fb] lg:group-hover:text-white transition duration-300" viewBox="56.329999999999984 457.15000000000003 2387.3400000000006 1585.74" xmlns="http://www.w3.org/2000/svg">
                 <path fill="currentColor" d="M314.19 1502.88c0 91.16 20 161.14 46.16 203.48 34.29 55.46 85.43 79 137.57 79 67.24 0 128.76-16.69 247.31-180.66 95-131.42 206.89-315.89 282.19-431.54l127.52-195.93c88.58-136.07 191.11-287.33 308.67-389.86 96-83.69 199.5-130.18 303.69-130.18 174.93 0 341.55 101.37 469.07 291.49 139.56 208.21 207.3 470.48 207.3 741.12 0 160.9-31.71 279.12-85.68 372.52-52.13 90.32-153.75 180.57-324.69 180.57v-257.57c146.37 0 182.89-134.5 182.89-288.42 0-219.34-51.14-462.75-163.8-636.68-79.94-123.37-183.55-198.75-297.54-198.75-123.29 0-222.5 93-334 258.77-59.28 88.09-120.13 195.43-188.46 316.56l-75.22 133.25C1006.09 1638 967.81 1699 892.26 1799.68 759.85 1976 646.77 2042.85 497.92 2042.85c-176.59 0-288.25-76.47-357.41-191.7-56.45-93.89-84.18-217.1-84.18-357.48z"/>
                 <path fill="currentColor" d="M259.65 766.82c118.22-182.23 288.83-309.67 484.51-309.67 113.32 0 226 33.54 343.62 129.6 128.68 105 265.83 278 436.94 563l61.35 102.25c148.11 246.74 232.37 373.68 281.69 433.54 63.42 76.87 107.84 99.79 165.54 99.79 146.37 0 182.89-134.5 182.89-288.42l227.48-7.14c0 160.9-31.71 279.12-85.68 372.52-52.13 90.32-153.75 180.57-324.69 180.57-106.27 0-200.41-23.08-304.52-121.3-80-75.38-173.6-209.29-245.58-329.67l-214.11-357.65c-107.42-179.49-206-313.32-263-373.93C944.73 795.13 865.86 716.43 740 716.43c-101.86 0-188.37 71.48-260.76 180.82z"/>
                 <path fill="currentColor" d="M740 716.43c-101.86 0-188.37 71.48-260.76 180.82-102.37 154.5-165 384.63-165 605.63 0 91.16 20 161.14 46.16 203.48l-219.89 144.79c-56.45-93.89-84.18-217.1-84.18-357.48 0-255.29 70.07-521.37 203.32-726.85 118.22-182.23 288.83-309.67 484.51-309.67z"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Detectron 2"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Detectron 2"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn Gradio(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Gradio() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#F97700] rounded-xl transition duration-300 scale-{}", scale)} href="https://www.gradio.app/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#F97700] lg:group-hover:text-white transition duration-300" viewBox="0 0 256 224" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#F97700] rounded-2xl transition duration-300 scale-{}" href="https://www.gradio.app/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#F97700] lg:group-hover:text-white transition duration-300" viewBox="0 0 256 224" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
                 <g>
                     <path fill="currentColor" d="M119.871013,64.7792989 C124.906082,61.8931919 131.093918,61.8931919 136.128987,64.7792989 L247.782667,128.779299 C258.739111,135.059543 258.739111,150.862535 247.782667,157.142779 L136.128987,221.142779 C131.093918,224.028886 124.906082,224.028886 119.871013,221.142779 L8.21733286,157.142779 C-2.73911095,150.862535 -2.73911095,135.059543 8.21733286,128.779299 L119.871013,64.7792989 Z M127.997488,97.7943642 L49.2136173,142.957936 L127.997488,188.113233 L206.781359,142.957936 L127.997488,97.7943642 Z"></path>
                     <path fill="currentColor" d="M119.871013,2.16458028 C124.906082,-0.721526759 131.093918,-0.721526759 136.128987,2.16458028 L247.782667,66.1645803 C258.739111,72.4448247 258.739111,88.2478159 247.782667,94.5280604 L136.128987,158.52806 C131.093918,161.414167 124.906082,161.414167 119.871013,158.52806 L8.21733286,94.5280604 C-2.73911095,88.2478159 -2.73911095,72.4448247 8.21733286,66.1645803 L119.871013,2.16458028 Z M127.997488,35.1796456 L49.2136173,80.3432173 L127.997488,125.498514 L206.781359,80.3432173 L127.997488,35.1796456 Z"></path>
                     <polygon fill="currentColor" points="120.189741 64.7554936 136.364372 93.1665843 24.4336358 156.889528 8.25900493 128.478437"></polygon>
                 </g>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Gradio"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Gradio"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn HuggingFace(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn HuggingFace() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#ffd21e] rounded-xl transition duration-300 scale-{}", scale)} href="https://huggingface.co/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 transition duration-300" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#ffd21e] rounded-2xl transition duration-300 scale-{}" href="https://huggingface.co/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 transition duration-300" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M230.721 172.7C230.183 170.673 229.313 168.75 228.146 167.008C228.396 166.091 228.587 165.159 228.714 164.217C229.543 158.241 227.471 152.77 223.567 148.537C221.452 146.225 219.185 144.698 216.784 143.761C218.36 137.018 219.157 130.117 219.161 123.193C219.161 120.03 218.982 116.932 218.682 113.88C218.526 112.356 218.337 110.836 218.115 109.32C217.428 104.847 216.408 100.431 215.064 96.11C214.183 93.2707 213.164 90.476 212.01 87.736C210.281 83.6782 208.262 79.75 205.969 75.982C204.465 73.475 202.827 71.0508 201.062 68.72C200.197 67.543 199.296 66.3938 198.358 65.274C195.58 61.898 192.561 58.7277 189.325 55.788C188.25 54.7997 187.145 53.8453 186.01 52.926C184.893 51.9943 183.751 51.0927 182.586 50.222C180.241 48.4766 177.818 46.8392 175.324 45.315C161.543 36.945 145.382 32.145 128.109 32.145C77.817 32.145 37.057 72.907 37.057 123.196C37.055 130.208 37.867 137.196 39.477 144.02C37.317 144.958 35.247 146.42 33.327 148.535C29.424 152.766 27.351 158.217 28.18 164.193C28.306 165.142 28.495 166.082 28.747 167.006C27.5811 168.749 26.7117 170.673 26.174 172.7C24.974 177.261 25.369 181.374 26.894 184.978C25.236 189.688 25.65 194.704 27.809 199.065C29.379 202.25 31.626 204.714 34.396 206.916C37.689 209.534 41.811 211.758 46.783 213.892C52.715 216.422 59.956 218.799 63.249 219.671C71.755 221.873 79.911 223.269 88.177 223.337C99.954 223.446 110.096 220.677 117.357 213.59C120.924 214.027 124.515 214.246 128.109 214.244C131.906 214.236 135.699 213.997 139.467 213.529C146.711 220.661 156.892 223.455 168.712 223.343C176.977 223.277 185.133 221.881 193.617 219.676C196.932 218.804 204.17 216.427 210.105 213.897C215.077 211.76 219.199 209.536 222.514 206.922C225.263 204.719 227.508 202.256 229.079 199.071C231.26 194.709 231.652 189.693 230.017 184.983C231.527 181.379 231.92 177.257 230.721 172.7ZM222.281 184.673C223.952 187.844 224.059 191.427 222.585 194.764C220.349 199.821 214.795 203.805 204.008 208.082C197.3 210.742 191.158 212.443 191.104 212.458C182.232 214.759 174.208 215.928 167.262 215.928C155.76 215.928 147.201 212.754 141.773 206.486C132.594 208.05 123.222 208.103 114.026 206.644C108.591 212.808 100.081 215.928 88.676 215.928C81.729 215.928 73.706 214.759 64.833 212.458C64.779 212.443 58.639 210.742 51.929 208.082C41.143 203.805 35.587 199.824 33.352 194.764C31.878 191.427 31.985 187.844 33.656 184.673C33.81 184.378 33.976 184.091 34.153 183.813C33.1516 182.309 32.4799 180.61 32.182 178.827C31.8842 177.045 31.967 175.22 32.425 173.472C33.089 170.949 34.46 168.851 36.322 167.344C35.425 165.87 34.8365 164.23 34.592 162.522C34.056 158.808 35.289 155.1 38.062 152.076C40.222 149.723 43.275 148.428 46.655 148.428H46.745C44.1965 140.259 42.9044 131.75 42.913 123.193C42.913 76.522 80.749 38.683 127.427 38.683C174.104 38.683 211.94 76.518 211.94 123.193C211.947 131.773 210.646 140.304 208.081 148.492C208.489 148.452 208.889 148.432 209.282 148.431C212.662 148.431 215.716 149.726 217.874 152.079C220.647 155.1 221.881 158.811 221.344 162.525C221.1 164.233 220.511 165.873 219.615 167.347C221.477 168.854 222.849 170.952 223.512 173.475C223.97 175.223 224.053 177.048 223.755 178.831C223.458 180.613 222.786 182.312 221.784 183.816C221.961 184.091 222.129 184.378 222.281 184.673Z" fill="white"/>
                 <path d="M221.784 183.816C222.786 182.312 223.458 180.613 223.756 178.831C224.053 177.048 223.97 175.223 223.512 173.475C222.848 170.952 221.476 168.854 219.615 167.347C220.512 165.873 221.1 164.233 221.344 162.525C221.881 158.811 220.648 155.103 217.874 152.079C215.716 149.726 212.662 148.431 209.282 148.431C208.889 148.431 208.489 148.452 208.081 148.492C210.643 140.304 211.942 131.774 211.933 123.195C211.933 76.5231 174.097 38.6851 127.424 38.6851C80.75 38.6851 42.9099 76.5191 42.9099 123.195C42.9015 131.752 44.1936 140.261 46.742 148.43H46.6519C43.2719 148.43 40.219 149.724 38.06 152.077C35.287 155.098 34.0529 158.81 34.5899 162.523C34.8346 164.231 35.4231 165.872 36.3199 167.346C34.4579 168.852 33.086 170.95 32.422 173.473C31.9642 175.222 31.8817 177.047 32.1799 178.83C32.4781 180.612 33.1501 182.312 34.1519 183.816C33.9739 184.094 33.8099 184.381 33.6549 184.676C31.9849 187.847 31.877 191.43 33.352 194.767C35.588 199.824 41.1419 203.808 51.9289 208.085C58.6359 210.745 64.779 212.446 64.833 212.461C73.705 214.762 81.729 215.931 88.675 215.931C100.081 215.931 108.591 212.811 114.026 206.647C123.222 208.106 132.594 208.052 141.773 206.489C147.201 212.757 155.76 215.931 167.262 215.931C174.208 215.931 182.232 214.762 191.103 212.461C191.158 212.446 197.298 210.745 204.008 208.085C214.795 203.808 220.35 199.824 222.585 194.767C224.059 191.43 223.952 187.847 222.281 184.676C222.129 184.379 221.961 184.091 221.784 183.816ZM110.137 196.997C109.669 197.815 109.168 198.614 108.635 199.391C107.23 201.448 105.382 203.02 103.237 204.188C99.1369 206.424 93.947 207.205 88.675 207.205C80.346 207.205 71.808 205.256 67.023 204.015C66.787 203.954 37.689 195.735 41.373 188.739C41.993 187.562 43.0129 187.092 44.2979 187.092C49.4849 187.092 58.9299 194.816 62.9889 194.816C63.8959 194.816 64.5359 194.43 64.7969 193.488C66.5269 187.284 38.5039 184.676 40.8639 175.692C41.2799 174.102 42.41 173.456 43.998 173.456C50.856 173.455 66.248 185.516 69.467 185.516C69.714 185.516 69.8909 185.443 69.9869 185.291C70.0009 185.268 70.015 185.246 70.028 185.222C71.539 182.727 70.6719 180.913 60.3209 174.573L59.3269 173.968C47.9359 167.074 39.9409 162.925 44.4879 157.975C45.0109 157.404 45.7529 157.151 46.6539 157.151C47.7219 157.151 49.0149 157.508 50.4389 158.108C56.4549 160.645 64.793 167.564 68.276 170.581C68.8239 171.057 69.3683 171.538 69.9089 172.022C69.9089 172.022 74.319 176.608 76.985 176.608C77.599 176.608 78.1199 176.366 78.4729 175.768C80.364 172.58 60.9099 157.838 59.8129 151.755C59.0689 147.634 60.3349 145.546 62.6749 145.546C63.7879 145.546 65.1459 146.02 66.6449 146.971C71.2949 149.922 80.2729 165.35 83.5599 171.352C84.6619 173.363 86.5429 174.213 88.2379 174.213C91.6009 174.213 94.2299 170.87 88.5459 166.622C80.0029 160.23 83.001 149.782 87.078 149.139C87.252 149.111 87.4279 149.097 87.6029 149.097C91.3109 149.097 92.9459 155.486 92.9459 155.486C92.9459 155.486 97.7399 167.524 105.975 175.753C113.447 183.222 114.491 189.351 110.137 196.997ZM136.766 198.407L136.339 198.458L135.611 198.541C135.228 198.581 134.844 198.619 134.459 198.654L134.084 198.688L133.741 198.717L133.255 198.756L132.718 198.795L132.182 198.83L132.063 198.838C131.923 198.846 131.783 198.855 131.641 198.862L131.462 198.872C131.296 198.881 131.13 198.889 130.962 198.896L130.381 198.921L129.854 198.939L129.502 198.949H129.323C129.213 198.949 129.104 198.955 128.994 198.956H128.82C128.71 198.956 128.601 198.956 128.491 198.961L128.043 198.967H127.418C126.927 198.967 126.437 198.962 125.949 198.952L125.553 198.943C125.44 198.943 125.327 198.938 125.216 198.934L124.796 198.922L124.275 198.902L123.805 198.881L123.684 198.876L123.237 198.853C123.112 198.846 122.989 198.84 122.865 198.831L122.576 198.814C122.213 198.791 121.85 198.766 121.487 198.738L121.107 198.707C120.947 198.695 120.787 198.68 120.628 198.666C120.441 198.65 120.254 198.632 120.067 198.614C119.754 198.585 119.441 198.553 119.128 198.519H119.113C123.683 188.324 121.372 178.802 112.137 169.575C106.08 163.526 102.051 154.594 101.215 152.633C99.5229 146.828 95.045 140.375 87.608 140.375C86.979 140.375 86.351 140.425 85.73 140.523C82.472 141.036 79.624 142.911 77.592 145.733C75.396 143.002 73.262 140.831 71.332 139.605C68.422 137.76 65.5179 136.824 62.6889 136.824C59.1579 136.824 56.0019 138.274 53.8019 140.904L53.7459 140.971C53.7039 140.798 53.6639 140.625 53.6229 140.451L53.6179 140.428C53.1992 138.638 52.8477 136.833 52.5639 135.016C52.5639 135.004 52.5639 134.992 52.5579 134.98C52.5359 134.843 52.5159 134.705 52.4949 134.568C52.4334 134.162 52.3757 133.755 52.3219 133.348C52.2979 133.163 52.2719 132.978 52.2489 132.793L52.1809 132.238C52.1589 132.053 52.1409 131.885 52.1209 131.709L52.115 131.665C52.0351 130.945 51.9651 130.225 51.9049 129.503L51.8829 129.226L51.8479 128.754C51.8379 128.625 51.8279 128.495 51.8209 128.365C51.8209 128.334 51.8159 128.304 51.8149 128.275C51.7895 127.913 51.7678 127.55 51.7499 127.187C51.7399 126.998 51.7299 126.81 51.7219 126.62L51.7019 126.124L51.6969 125.974L51.6809 125.517L51.6709 125.128C51.6709 124.973 51.6629 124.818 51.6609 124.663C51.6579 124.508 51.6539 124.338 51.6529 124.174C51.6509 124.01 51.6529 123.848 51.6479 123.685C51.6439 123.521 51.6479 123.358 51.6479 123.195C51.6479 81.3421 85.5789 47.4111 127.436 47.4111C169.292 47.4111 203.222 81.3411 203.222 123.195V124.174C203.222 124.337 203.217 124.501 203.214 124.663C203.214 124.798 203.208 124.931 203.204 125.068C203.204 125.188 203.199 125.309 203.195 125.425C203.195 125.578 203.186 125.731 203.181 125.884V125.896L203.16 126.427C203.153 126.582 203.147 126.738 203.139 126.893L203.134 127.003L203.107 127.499C203.048 128.562 202.967 129.623 202.866 130.683V130.696C202.849 130.87 202.832 131.044 202.813 131.218L202.768 131.629L202.679 132.433L202.628 132.84L202.565 133.319C202.542 133.493 202.519 133.668 202.493 133.841C202.467 134.036 202.438 134.23 202.409 134.424L202.34 134.883L202.258 135.403C202.23 135.576 202.2 135.748 202.168 135.92C202.135 136.093 202.109 136.265 202.079 136.437C202.019 136.781 201.956 137.125 201.89 137.468C201.789 137.981 201.686 138.493 201.58 139.005L201.47 139.512C201.434 139.681 201.395 139.851 201.357 140.02C199.224 137.947 196.399 136.818 193.284 136.818C190.457 136.818 187.55 137.753 184.641 139.598C182.711 140.824 180.578 142.996 178.381 145.726C176.346 142.904 173.498 141.029 170.242 140.516C169.621 140.418 168.993 140.368 168.364 140.368C160.925 140.368 156.45 146.821 154.757 152.626C153.917 154.587 149.887 163.519 143.825 169.577C134.596 178.775 132.268 188.254 136.766 198.407ZM215.007 177.998L214.977 178.087C214.901 178.288 214.813 178.484 214.714 178.674C214.639 178.814 214.558 178.95 214.47 179.082C214.303 179.331 214.12 179.569 213.921 179.793C213.875 179.845 213.831 179.897 213.779 179.948C213.707 180.025 213.634 180.101 213.559 180.175C212.213 181.509 210.161 182.679 207.841 183.752C207.578 183.871 207.311 183.99 207.042 184.11L206.774 184.229C206.595 184.308 206.416 184.386 206.228 184.463C206.049 184.541 205.863 184.619 205.677 184.695L205.119 184.925C203.814 185.462 202.477 185.974 201.173 186.479L200.615 186.696L200.064 186.912C199.697 187.055 199.335 187.198 198.979 187.341L198.448 187.555L197.926 187.768L197.67 187.876C197.499 187.947 197.332 188.018 197.165 188.089C193.328 189.736 190.567 191.411 191.147 193.489C191.163 193.548 191.181 193.604 191.201 193.659C191.253 193.813 191.324 193.958 191.413 194.095C191.465 194.176 191.525 194.253 191.592 194.323C192.274 195.032 193.515 194.92 195.08 194.357C195.3 194.276 195.519 194.192 195.736 194.104L195.872 194.048C196.23 193.896 196.609 193.726 196.996 193.542C197.093 193.496 197.191 193.452 197.289 193.401C199.203 192.465 201.372 191.205 203.524 190.058C204.385 189.593 205.258 189.152 206.142 188.733C208.18 187.774 210.096 187.094 211.636 187.094C212.359 187.094 212.997 187.242 213.529 187.582L213.618 187.641C213.952 187.876 214.232 188.178 214.441 188.528C214.482 188.595 214.522 188.666 214.561 188.739C215.322 190.184 214.685 191.68 213.194 193.147C211.763 194.556 209.537 195.937 207.007 197.215C206.819 197.31 206.631 197.405 206.44 197.498C198.91 201.196 189.049 203.981 188.912 204.016C186.284 204.697 182.526 205.591 178.292 206.26L177.666 206.358L177.563 206.373C177.089 206.445 176.614 206.512 176.138 206.574C175.655 206.639 175.167 206.698 174.676 206.753L174.586 206.763C172.806 206.968 171.019 207.104 169.228 207.169H169.202C168.554 207.192 167.907 207.204 167.259 207.204H166.512C165.524 207.191 164.538 207.146 163.553 207.07C163.53 207.07 163.505 207.07 163.482 207.064C163.129 207.037 162.777 207.004 162.425 206.965C162.06 206.926 161.696 206.882 161.333 206.833C161.094 206.801 160.856 206.765 160.618 206.726C160.376 206.687 160.134 206.647 159.893 206.605L159.564 206.543L159.539 206.538C159.192 206.472 158.847 206.399 158.503 206.319C158.303 206.274 158.104 206.23 157.907 206.176L157.788 206.146C157.69 206.122 157.595 206.096 157.498 206.07L157.445 206.056L157.137 205.966C157.025 205.935 156.913 205.901 156.801 205.868L156.762 205.857L156.471 205.768C156.361 205.734 156.251 205.698 156.142 205.662L155.874 205.573L155.677 205.504C155.487 205.437 155.298 205.368 155.111 205.296L154.933 205.226L154.786 205.168C154.502 205.054 154.22 204.935 153.941 204.81L153.756 204.72L153.725 204.706C153.659 204.675 153.594 204.644 153.528 204.617C153.399 204.555 153.271 204.491 153.144 204.426L153.105 204.407L152.921 204.31C152.594 204.139 152.274 203.957 151.96 203.764L151.788 203.658C151.702 203.605 151.616 203.55 151.532 203.494L151.308 203.346L151.067 203.18L150.923 203.077C150.771 202.969 150.622 202.857 150.476 202.742L150.243 202.563C150.15 202.488 150.058 202.412 149.967 202.335C149.89 202.272 149.815 202.206 149.74 202.14L149.734 202.135C149.653 202.064 149.574 201.993 149.495 201.92C149.417 201.849 149.339 201.777 149.263 201.704L149.254 201.695C149.174 201.619 149.096 201.542 149.019 201.463C148.942 201.385 148.863 201.307 148.788 201.227C148.713 201.148 148.636 201.067 148.562 200.984C148.488 200.902 148.42 200.827 148.35 200.746L148.327 200.719C148.259 200.641 148.192 200.562 148.126 200.481C147.983 200.31 147.844 200.135 147.71 199.956C147.575 199.776 147.443 199.592 147.314 199.405L147.191 199.221C147.027 198.981 146.867 198.739 146.712 198.493C146.596 198.316 146.483 198.138 146.373 197.957C146.302 197.844 146.234 197.73 146.166 197.618L146.138 197.572C146.073 197.462 146.009 197.354 145.947 197.245C145.911 197.186 145.877 197.127 145.845 197.066C145.812 197.004 145.774 196.941 145.739 196.878L145.682 196.779L145.647 196.715C145.58 196.595 145.514 196.474 145.45 196.352C145.42 196.298 145.391 196.244 145.36 196.192L145.271 196.019L145.181 195.848C144.956 195.398 144.743 194.942 144.543 194.48L144.472 194.311C144.426 194.198 144.383 194.086 144.337 193.975C144.315 193.921 144.293 193.868 144.274 193.814C144.167 193.537 144.067 193.257 143.975 192.975C143.942 192.874 143.91 192.775 143.88 192.675C143.808 192.448 143.743 192.219 143.685 191.988C143.614 191.719 143.551 191.448 143.498 191.175C143.487 191.12 143.476 191.065 143.467 191.012C143.415 190.745 143.373 190.476 143.34 190.206C143.332 190.153 143.326 190.1 143.32 190.047L143.303 189.885C143.281 189.673 143.264 189.46 143.254 189.247C143.254 189.193 143.249 189.139 143.247 189.087C143.242 188.981 143.24 188.875 143.239 188.769C143.183 184.496 145.345 180.388 149.968 175.767C158.203 167.54 162.997 155.501 162.997 155.501C162.997 155.501 163.126 154.996 163.394 154.269C163.431 154.168 163.47 154.064 163.514 153.955C163.67 153.548 163.846 153.148 164.041 152.758L164.08 152.683C164.246 152.351 164.428 152.027 164.624 151.712C164.67 151.639 164.714 151.567 164.765 151.494C164.912 151.277 165.067 151.065 165.23 150.86C165.319 150.749 165.416 150.639 165.513 150.532C165.552 150.49 165.59 150.448 165.631 150.408C166.108 149.915 166.653 149.513 167.27 149.299L167.348 149.273C167.4 149.256 167.452 149.24 167.505 149.225C167.566 149.209 167.627 149.195 167.69 149.182L167.719 149.176C167.849 149.15 167.981 149.133 168.114 149.124H168.125C168.194 149.124 168.264 149.117 168.335 149.117C168.424 149.117 168.507 149.117 168.594 149.126C168.684 149.134 168.773 149.144 168.863 149.158C169.605 149.276 170.311 149.718 170.919 150.4C171.15 150.66 171.358 150.94 171.54 151.236C171.66 151.428 171.773 151.631 171.88 151.845C171.923 151.934 171.964 152.016 172.004 152.104C172.108 152.33 172.202 152.56 172.284 152.795C172.479 153.345 172.626 153.911 172.723 154.487C172.807 154.992 172.857 155.502 172.873 156.013C172.881 156.286 172.881 156.563 172.873 156.842C172.819 158.14 172.553 159.421 172.086 160.634C172.044 160.745 171.997 160.857 171.952 160.969C171.86 161.195 171.759 161.417 171.65 161.634C171.569 161.799 171.484 161.965 171.392 162.13C171.332 162.24 171.269 162.35 171.206 162.46C171.045 162.734 170.871 163.006 170.684 163.277L170.571 163.439C170.129 164.055 169.637 164.633 169.099 165.167C168.569 165.698 168.001 166.189 167.4 166.637C166.798 167.083 166.233 167.577 165.711 168.114C164.208 169.691 163.858 171.083 164.196 172.138C164.25 172.304 164.321 172.465 164.407 172.617C164.508 172.791 164.628 172.951 164.764 173.097L164.817 173.152L164.871 173.206C164.925 173.258 164.982 173.309 165.043 173.359L165.103 173.407C165.248 173.519 165.402 173.619 165.563 173.707C165.61 173.732 165.652 173.757 165.705 173.781C165.879 173.866 166.058 173.939 166.242 173.998C166.293 174.015 166.344 174.03 166.396 174.046L166.461 174.063L166.551 174.087L166.628 174.106L166.712 174.124L166.795 174.141L166.874 174.154C166.932 174.164 166.992 174.174 167.052 174.181L167.109 174.19L167.213 174.2L167.277 174.207L167.382 174.214H167.444L167.554 174.22H167.9L167.999 174.214L168.113 174.207L168.252 174.194L168.382 174.179C168.412 174.179 168.442 174.171 168.472 174.165C168.872 174.107 169.264 174.001 169.639 173.849L169.798 173.782C169.887 173.743 169.977 173.702 170.059 173.658C170.235 173.57 170.406 173.47 170.57 173.361C170.799 173.211 171.015 173.043 171.217 172.858C171.265 172.815 171.312 172.769 171.358 172.725C171.381 172.703 171.403 172.682 171.425 172.658C171.469 172.613 171.514 172.569 171.558 172.52C171.878 172.168 172.155 171.78 172.383 171.363C174.34 167.804 176.391 164.298 178.534 160.849L178.828 160.378L179.125 159.907C179.273 159.668 179.423 159.433 179.572 159.199L179.722 158.965C180.22 158.185 180.726 157.41 181.241 156.641L181.546 156.185C182.158 155.278 182.768 154.396 183.373 153.558L183.674 153.143C184.332 152.236 185.017 151.348 185.728 150.482L186.01 150.144C186.057 150.088 186.1 150.032 186.151 149.978C186.244 149.868 186.337 149.761 186.428 149.657C186.474 149.604 186.517 149.552 186.566 149.5L186.834 149.198L186.968 149.051C187.103 148.906 187.235 148.767 187.365 148.634C187.455 148.544 187.538 148.455 187.624 148.371C188.131 147.853 188.69 147.388 189.293 146.985L189.433 146.895C189.567 146.805 189.706 146.721 189.848 146.645C192.212 145.303 194.169 145.204 195.296 146.331C195.978 147.013 196.356 148.144 196.335 149.718C196.335 149.787 196.335 149.857 196.33 149.929V150.006C196.33 150.078 196.324 150.15 196.318 150.223C196.318 150.313 196.308 150.402 196.299 150.492C196.29 150.581 196.285 150.649 196.276 150.729C196.276 150.751 196.272 150.774 196.268 150.798C196.262 150.867 196.253 150.938 196.243 151.009C196.243 151.03 196.243 151.052 196.235 151.074C196.224 151.169 196.21 151.263 196.194 151.357C196.183 151.447 196.168 151.531 196.152 151.619L196.126 151.768C196.1 151.91 196.067 152.05 196.026 152.188C195.948 152.447 195.854 152.7 195.743 152.946C195.588 153.284 195.417 153.613 195.229 153.933C195.125 154.111 195.018 154.286 194.907 154.459C194.793 154.638 194.673 154.819 194.549 155.002C194.233 155.454 193.905 155.897 193.564 156.33L193.408 156.527C192.852 157.22 192.278 157.899 191.686 158.562L191.499 158.772C191.247 159.053 190.991 159.336 190.729 159.62L190.532 159.834C190.401 159.977 190.264 160.12 190.132 160.264C190.001 160.407 189.864 160.552 189.726 160.697L189.315 161.13L188.898 161.566L188.478 162.002C188.196 162.294 187.913 162.586 187.628 162.878C183.573 167.037 179.301 171.182 177.855 173.766C177.758 173.934 177.671 174.108 177.593 174.285C177.387 174.755 177.301 175.157 177.36 175.482C177.379 175.589 177.416 175.691 177.471 175.785C177.552 175.926 177.651 176.056 177.766 176.172C177.819 176.224 177.875 176.272 177.934 176.316C178.232 176.528 178.591 176.637 178.957 176.627H179.071L179.188 176.618L179.305 176.605L179.402 176.591C179.415 176.589 179.429 176.587 179.442 176.583L179.531 176.566L179.554 176.561L179.653 176.54L179.688 176.531C179.723 176.522 179.757 176.513 179.792 176.503C179.827 176.493 179.875 176.48 179.917 176.466C180.093 176.413 180.265 176.35 180.434 176.278C180.523 176.242 180.61 176.203 180.696 176.161C180.741 176.141 180.786 176.12 180.828 176.098L180.962 176.032C181.282 175.866 181.594 175.685 181.898 175.491L182.031 175.401C182.076 175.373 182.121 175.344 182.164 175.312L182.297 175.223L182.368 175.174L182.56 175.039C182.739 174.916 182.906 174.789 183.075 174.66L183.09 174.648L183.359 174.44C183.726 174.15 184.074 173.858 184.39 173.583L184.6 173.399L184.619 173.381L184.729 173.284C184.987 173.052 185.217 172.836 185.408 172.658L185.487 172.581C185.556 172.516 185.619 172.455 185.676 172.403L185.788 172.292L185.828 172.253L185.839 172.242L185.956 172.125L186.03 172.048L186.039 172.041L186.074 172.009L186.118 171.969L186.132 171.956L186.169 171.922L186.373 171.743L186.487 171.641C186.548 171.588 186.607 171.534 186.666 171.479L186.802 171.358C186.827 171.338 186.851 171.316 186.876 171.294L187.019 171.169L187.229 170.984L187.341 170.887C187.776 170.509 188.305 170.052 188.913 169.537L189.162 169.326L189.573 168.981L189.994 168.63C190.544 168.173 191.136 167.688 191.762 167.185L192.173 166.855C192.523 166.576 192.882 166.292 193.246 166.006C193.393 165.891 193.542 165.776 193.694 165.662C194.066 165.373 194.44 165.086 194.817 164.803C195.675 164.155 196.56 163.506 197.456 162.874L197.84 162.606C198.109 162.421 198.377 162.235 198.645 162.054L198.888 161.89C199.367 161.565 199.853 161.248 200.343 160.939L200.586 160.786L200.827 160.636C201.069 160.486 201.309 160.339 201.548 160.196L201.787 160.053L202.265 159.775L202.734 159.506L202.829 159.454L203.2 159.25C203.355 159.166 203.509 159.085 203.663 159.006L203.892 158.888L204.115 158.776C204.193 158.739 204.27 158.7 204.346 158.663C204.848 158.415 205.36 158.187 205.88 157.979C206.021 157.919 206.161 157.865 206.3 157.818L206.71 157.674C206.833 157.633 206.953 157.594 207.068 157.559L207.108 157.547C207.17 157.527 207.232 157.509 207.293 157.493L207.311 157.488C207.439 157.451 207.566 157.419 207.691 157.389H207.7C208.054 157.304 208.414 157.243 208.777 157.206C208.944 157.189 209.111 157.18 209.279 157.181H209.363C209.475 157.181 209.583 157.188 209.69 157.199C209.739 157.199 209.788 157.209 209.836 157.215H209.856C209.904 157.221 209.952 157.228 210 157.239C210.047 157.248 210.095 157.256 210.141 157.267H210.156C210.203 157.277 210.245 157.289 210.294 157.303C210.548 157.374 210.79 157.484 211.012 157.628C211.121 157.699 211.223 157.779 211.317 157.868L211.344 157.894C211.362 157.91 211.379 157.927 211.395 157.944L211.444 157.997C211.846 158.418 212.178 158.901 212.428 159.427L212.466 159.517C212.551 159.717 212.618 159.924 212.666 160.135C212.808 160.781 212.753 161.455 212.508 162.07C212.415 162.318 212.302 162.557 212.169 162.785C211.858 163.309 211.489 163.796 211.07 164.237L210.981 164.332C210.848 164.472 210.71 164.612 210.565 164.752C210.501 164.815 210.434 164.877 210.367 164.94L210.162 165.129L210.055 165.224C209.797 165.454 209.532 165.677 209.263 165.893C209.1 166.025 208.936 166.154 208.77 166.281C208.184 166.729 207.587 167.161 206.979 167.578C206.612 167.83 206.242 168.077 205.869 168.321C204.95 168.924 204.021 169.512 203.083 170.084C201.115 171.294 198.934 172.588 196.609 173.995L196.007 174.36C195.348 174.762 194.726 175.146 194.14 175.512L193.845 175.697L193.287 176.055C192.917 176.292 192.548 176.531 192.179 176.77L191.882 176.966C191.737 177.06 191.593 177.156 191.449 177.252L191.308 177.342L190.876 177.633L190.647 177.79L190.379 177.976L190.13 178.149C189.713 178.444 189.325 178.725 188.968 178.992L188.834 179.094C188.624 179.253 188.416 179.415 188.211 179.58C187.902 179.829 187.62 180.067 187.367 180.296L187.243 180.409C187.172 180.474 187.102 180.539 187.035 180.603C186.989 180.648 186.946 180.693 186.898 180.736L186.834 180.8C186.691 180.944 186.551 181.091 186.416 181.242L186.35 181.318C186.203 181.488 186.075 181.651 185.963 181.81L185.913 181.881C185.825 182.009 185.744 182.141 185.671 182.277C185.652 182.311 185.635 182.345 185.618 182.379L185.569 182.481L185.536 182.555L185.515 182.605L185.498 182.65L185.475 182.711C185.413 182.88 185.37 183.056 185.345 183.234L185.337 183.296L185.331 183.354V183.669C185.331 183.695 185.331 183.721 185.338 183.749L185.343 183.797C185.343 183.823 185.349 183.848 185.353 183.876C185.357 183.902 185.364 183.949 185.372 183.986V183.991C185.379 184.026 185.386 184.06 185.395 184.095C185.404 184.13 185.413 184.17 185.424 184.206C185.443 184.277 185.467 184.347 185.492 184.417C185.508 184.459 185.523 184.5 185.54 184.541C185.54 184.549 185.546 184.558 185.55 184.566L185.586 184.647L185.636 184.758C185.69 184.873 185.749 184.985 185.813 185.094L185.879 185.208L185.947 185.322C185.959 185.341 185.973 185.359 185.988 185.376L186.01 185.399L186.035 185.422L186.061 185.442C186.099 185.469 186.14 185.49 186.183 185.505C186.206 185.513 186.23 185.519 186.254 185.525C186.831 185.655 188.017 185.178 189.593 184.346C189.682 184.298 189.78 184.248 189.875 184.196L190.355 183.934L190.589 183.804C190.756 183.715 190.926 183.614 191.1 183.515L191.417 183.336C193.5 182.137 195.988 180.597 198.56 179.093C198.801 178.952 199.043 178.811 199.285 178.672L199.771 178.361C200.335 178.038 200.902 177.719 201.471 177.404C202.188 177.01 202.91 176.626 203.639 176.254L204.115 176.013C204.431 175.857 204.744 175.705 205.053 175.557C205.651 175.273 206.256 175.003 206.868 174.748L207.203 174.612L207.243 174.596C209.018 173.893 210.627 173.459 211.929 173.459C212.21 173.456 212.492 173.48 212.769 173.528H212.778C212.867 173.544 212.948 173.562 213.031 173.582H213.046C213.259 173.636 213.466 173.713 213.662 173.812C213.937 173.954 214.184 174.143 214.393 174.371C214.489 174.477 214.574 174.592 214.649 174.714C214.789 174.929 214.899 175.162 214.978 175.406C215.01 175.501 215.038 175.594 215.067 175.693C215.278 176.45 215.257 177.253 215.007 177.998Z" fill="#FF9D00"/>
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M203.21 123.685V123.194C203.21 81.34 169.292 47.411 127.435 47.411C85.5791 47.411 51.648 81.342 51.648 123.194V123.358C51.646 123.467 51.645 123.576 51.648 123.685C51.6529 123.848 51.6546 124.011 51.653 124.174L51.6581 124.534L51.661 124.663C51.661 124.723 51.6631 124.782 51.6651 124.842C51.6681 124.937 51.67 125.033 51.67 125.128L51.681 125.517L51.697 125.974L51.702 126.124L51.722 126.597V126.62C51.73 126.805 51.7401 126.989 51.7491 127.173L51.75 127.187C51.76 127.375 51.7701 127.564 51.7821 127.753C51.7921 127.927 51.802 128.101 51.815 128.275L51.8171 128.306C51.8258 128.455 51.8358 128.605 51.847 128.754L51.85 128.794L51.883 129.226L51.8861 129.254C51.8921 129.338 51.898 129.422 51.906 129.503C51.9658 130.224 52.0355 130.945 52.1151 131.664L52.12 131.709L52.181 132.238L52.2491 132.793L52.299 133.17L52.322 133.347C52.3753 133.755 52.433 134.162 52.495 134.568L52.4991 134.595L52.558 134.979C52.8435 136.808 53.1971 138.626 53.618 140.429L53.6231 140.451L53.655 140.586L53.746 140.971L53.802 140.904C56.002 138.274 59.158 136.824 62.689 136.824C65.519 136.824 68.4221 137.76 71.3321 139.605C73.2621 140.831 75.3961 143.002 77.5921 145.733C79.6241 142.911 82.4721 141.035 85.7301 140.523C86.3513 140.425 86.9792 140.376 87.6081 140.375C95.0441 140.375 99.523 146.828 101.215 152.633C102.051 154.594 106.08 163.526 112.156 169.568C121.392 178.795 123.703 188.316 119.132 198.511H119.148C119.459 198.546 119.772 198.578 120.087 198.607C120.274 198.625 120.46 198.643 120.648 198.659L120.714 198.665L121.127 198.7L121.507 198.73C121.869 198.758 122.232 198.784 122.596 198.807L122.885 198.824L123.114 198.838L123.256 198.846L123.703 198.869L123.825 198.874L124.294 198.895L124.816 198.915L125.235 198.927L125.305 198.929C125.394 198.933 125.483 198.936 125.572 198.936L125.668 198.939C126.258 198.953 126.847 198.96 127.437 198.959H128.063L128.51 198.954C128.62 198.949 128.729 198.949 128.84 198.949H129.014L129.165 198.945C129.224 198.943 129.283 198.941 129.343 198.941H129.522L129.873 198.932L130.401 198.914L130.982 198.888C131.15 198.882 131.316 198.873 131.482 198.865L131.661 198.854L131.927 198.84L132.083 198.831L132.201 198.823L132.738 198.788L133.274 198.749L133.761 198.71L134.103 198.681L134.479 198.647C135.107 198.591 135.733 198.525 136.359 198.45L136.786 198.399C132.287 188.247 134.616 178.767 143.813 169.577C149.876 163.519 153.905 154.587 154.745 152.625C156.438 146.821 160.914 140.368 168.352 140.368C168.981 140.368 169.61 140.418 170.231 140.516C173.486 141.028 176.334 142.904 178.369 145.726C180.566 142.996 182.699 140.823 184.63 139.597C187.539 137.753 190.445 136.817 193.272 136.817C196.388 136.817 199.212 137.947 201.345 140.02C201.384 139.851 201.422 139.682 201.459 139.512L201.568 139.006C201.607 138.821 201.646 138.636 201.683 138.451C201.749 138.124 201.815 137.797 201.878 137.467C201.944 137.125 202.007 136.781 202.067 136.437L202.098 136.251C202.117 136.141 202.135 136.031 202.156 135.92C202.19 135.748 202.218 135.576 202.246 135.402L202.257 135.336L202.328 134.883L202.398 134.424V134.42C202.449 134.081 202.497 133.742 202.542 133.403L202.553 133.319L202.616 132.841L202.667 132.433L202.757 131.629L202.792 131.306L202.801 131.218C202.82 131.044 202.838 130.87 202.854 130.696V130.682C202.867 130.544 202.881 130.405 202.893 130.266C202.964 129.478 203.024 128.686 203.072 127.891C203.081 127.761 203.088 127.63 203.096 127.499V127.493L203.122 127.002L203.128 126.892C203.144 126.56 203.158 126.228 203.169 125.896V125.884L203.174 125.754C203.179 125.645 203.183 125.535 203.183 125.425L203.185 125.381C203.189 125.278 203.193 125.172 203.193 125.067L203.196 124.977C203.199 124.872 203.202 124.768 203.202 124.663L203.204 124.574C203.207 124.441 203.21 124.307 203.21 124.174V123.685ZM108.638 199.391C114.64 190.59 114.214 183.984 105.98 175.754C97.7441 167.523 92.951 155.487 92.951 155.487C92.951 155.487 91.1621 148.496 87.0821 149.138C83.0021 149.78 80.0091 160.227 88.5521 166.622C97.0941 173.017 86.8521 177.353 83.5641 171.352C80.2761 165.35 71.299 149.923 66.645 146.972C61.991 144.021 58.718 145.675 59.815 151.757C60.36 154.776 65.4281 159.929 70.1631 164.743C74.9671 169.627 79.428 174.163 78.474 175.768C76.581 178.955 69.9141 172.023 69.9141 172.023C69.9141 172.023 49.038 153.025 44.494 157.976C40.304 162.539 46.765 166.418 56.7211 172.397C57.5671 172.905 58.4391 173.429 59.3321 173.969C70.7231 180.865 71.609 182.684 69.992 185.293C69.395 186.257 65.582 183.968 60.892 181.153C52.897 176.352 42.3551 170.023 40.8661 175.688C39.5781 180.591 47.334 183.595 54.368 186.32C60.228 188.59 65.5881 190.666 64.7991 193.484C63.9821 196.406 59.5531 193.969 54.7121 191.305C49.2771 188.314 43.3221 185.038 41.3731 188.735C37.6901 195.725 66.7831 203.954 67.0231 204.015C76.4231 206.453 100.295 211.619 108.638 199.391ZM147.303 199.391C141.301 190.59 141.727 183.984 149.962 175.754C158.197 167.523 162.99 155.487 162.99 155.487C162.99 155.487 164.779 148.496 168.859 149.138C172.939 149.78 175.932 160.227 167.39 166.622C158.847 173.017 169.089 177.353 172.377 171.352C175.666 165.35 184.637 149.923 189.291 146.972C193.945 144.021 197.22 145.675 196.122 151.757C195.578 154.776 190.509 159.929 185.774 164.744C180.97 169.628 176.509 174.163 177.462 175.768C179.355 178.955 186.027 172.019 186.027 172.019C186.027 172.019 206.902 153.022 211.448 157.973C215.637 162.535 209.176 166.415 199.219 172.394C198.348 172.917 197.478 173.441 196.609 173.966C185.218 180.862 184.332 182.681 185.948 185.289C186.546 186.254 190.359 183.964 195.048 181.149C203.044 176.349 213.586 170.019 215.075 175.685C216.364 180.588 208.607 183.592 201.573 186.317C195.713 188.587 190.353 190.663 191.141 193.481C191.957 196.402 196.385 193.965 201.225 191.301C206.66 188.31 212.616 185.032 214.564 188.732C218.248 195.726 189.15 203.947 188.915 204.007C179.515 206.453 155.643 211.619 147.303 199.391Z" fill="#FFD21E"/>
@@ -228,58 +211,54 @@ pub fn HuggingFace(props: &ScaleProps) -> Html {
                 <path d="M144.097 149.317C139.856 152.659 134.219 154.9 126.878 154.9C119.981 154.9 114.587 152.922 110.443 149.911C111.596 147.572 113.219 145.495 115.211 143.812C117.202 142.128 119.52 140.873 122.018 140.125C123.73 139.614 125.545 145.901 127.423 145.901C129.433 145.901 131.37 139.655 133.189 140.236C137.863 141.738 141.773 144.993 144.097 149.317Z" fill="#FF323D"/>
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M81.2 111.64C80.2312 112.288 79.1173 112.687 77.9572 112.801C76.7971 112.916 75.6267 112.742 74.55 112.295C73.6893 111.94 72.9072 111.418 72.2488 110.759C71.5903 110.101 71.0684 109.319 70.713 108.458C70.267 107.381 70.0935 106.211 70.2082 105.051C70.3228 103.891 70.7219 102.777 71.37 101.808C72.1488 100.642 73.2558 99.7333 74.5512 99.1967C75.8466 98.6601 77.272 98.5197 78.6471 98.7935C80.0223 99.0672 81.2853 99.7427 82.2764 100.734C83.2675 101.726 83.9422 102.99 84.215 104.365C84.4883 105.74 84.3477 107.165 83.8113 108.46C83.2748 109.755 82.3654 110.861 81.2 111.64ZM182.613 111.64C181.644 112.288 180.53 112.687 179.37 112.801C178.209 112.916 177.039 112.742 175.962 112.295C175.101 111.939 174.319 111.418 173.661 110.759C173.003 110.101 172.481 109.319 172.125 108.458C171.68 107.381 171.507 106.211 171.621 105.051C171.736 103.891 172.135 102.777 172.782 101.808C173.364 100.936 174.133 100.205 175.032 99.6658C175.931 99.1269 176.938 98.7942 177.981 98.6917C179.025 98.5891 180.078 98.7193 181.064 99.0728C182.051 99.4264 182.947 99.9944 183.688 100.736C184.68 101.727 185.355 102.99 185.628 104.365C185.902 105.74 185.761 107.165 185.224 108.46C184.687 109.755 183.779 110.861 182.613 111.64Z" fill="#FFAD03"/>
             </svg>
-            <p class="py-2 text-end text-3xl lg:text-lg font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"HuggingFace"}</p>
+            <p class="py-2 text-end text-3xl lg:text-lg font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"HuggingFace"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn Kafka(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Kafka() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-black rounded-xl transition duration-300 scale-{}", scale)} href="https://kafka.apache.org/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-black dark:text-gray-400 lg:group-hover:text-white transition duration-300" width="800px" height="800px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-black rounded-2xl transition duration-300 scale-{}" href="https://kafka.apache.org/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-black dark:text-gray-400 lg:group-hover:text-white transition duration-300" width="800px" height="800px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
                 <path fill="currentColor" d="M16.262,13.293c-0.935,0-1.772,0.414-2.346,1.066l-1.47-1.041c0.156-0.43,0.246-0.891,0.246-1.374 c0-0.475-0.086-0.928-0.237-1.352l1.467-1.03c0.574,0.649,1.409,1.06,2.341,1.06c1.725,0,3.129-1.403,3.129-3.129 s-1.404-3.129-3.129-3.129s-3.129,1.403-3.129,3.129c0,0.309,0.047,0.607,0.13,0.889l-1.468,1.03 C11.183,8.653,10.3,8.121,9.294,7.959V6.19c1.417-0.298,2.485-1.557,2.485-3.061C11.779,1.403,10.375,0,8.65,0 S5.522,1.403,5.522,3.129c0,1.484,1.04,2.728,2.429,3.047v1.792c-1.895,0.333-3.341,1.987-3.341,3.976 c0,1.999,1.46,3.659,3.37,3.981v1.892c-1.403,0.308-2.457,1.56-2.457,3.054C5.522,22.597,6.925,24,8.65,24s3.129-1.403,3.129-3.129 c0-1.495-1.054-2.746-2.457-3.054v-1.892c0.966-0.163,1.84-0.671,2.46-1.431l1.48,1.048c-0.082,0.279-0.128,0.574-0.128,0.88 c0,1.725,1.404,3.129,3.129,3.129s3.129-1.403,3.129-3.129S17.987,13.293,16.262,13.293z M16.262,5.977 c0.837,0,1.517,0.681,1.517,1.517s-0.68,1.517-1.517,1.517c-0.836,0-1.517-0.681-1.517-1.517S15.426,5.977,16.262,5.977z M7.133,3.129c0-0.836,0.68-1.517,1.517-1.517s1.517,0.681,1.517,1.517S9.487,4.646,8.65,4.646S7.133,3.965,7.133,3.129z M10.167,20.871c0,0.836-0.68,1.517-1.517,1.517s-1.517-0.681-1.517-1.517s0.68-1.517,1.517-1.517S10.167,20.035,10.167,20.871z M8.65,14.06c-1.167,0-2.116-0.949-2.116-2.116c0-1.167,0.949-2.116,2.116-2.116c1.167,0,2.116,0.949,2.116,2.116 C10.766,13.111,9.817,14.06,8.65,14.06z M16.262,17.939c-0.837,0-1.517-0.681-1.517-1.517c0-0.836,0.68-1.517,1.517-1.517 s1.517,0.681,1.517,1.517C17.779,17.258,17.099,17.939,16.262,17.939z"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Kafka"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Kafka"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn LlamaIndex(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn LlamaIndex() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#07bed3] rounded-xl transition duration-300 scale-{}", scale)} href="https://www.llamaindex.ai/" target="_blank">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#07bed3] rounded-2xl transition duration-300 scale-{}" href="https://www.llamaindex.ai/" target="_blank">
             <img class="pt-4 px-2 w-36 h-36 lg:w-24 lg:h-24 transition duration-300" src="res/images/icons/llamaindex.png" />
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"LlamaIndex"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"LlamaIndex"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn PyTorch(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn PyTorch() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#ee4c2c] rounded-xl transition duration-300 scale-{}", scale)} href="https://pytorch.org/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#ee4c2c] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0.6 1067.9 90.3 109.1" enable-background="new 0.6 1067.9 90.3 109.1">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#ee4c2c] rounded-2xl transition duration-300 scale-{}" href="https://pytorch.org/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#ee4c2c] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0.6 1067.9 90.3 109.1" enable-background="new 0.6 1067.9 90.3 109.1">
             <g>
                 <path fill="currentColor" d="M77.6,1099.6l-8.1,8.1c13.3,13.3,13.3,34.7,0,47.8c-13.3,13.3-34.7,13.3-47.8,0c-13.3-13.3-13.3-34.7,0-47.8l0,0l21.1-21.1l3-3l0,0v-15.9l-31.8,31.8c-17.7,17.7-17.7,46.3,0,64c17.7,17.7,46.3,17.7,63.7,0C95.3,1145.8,95.3,1117.4,77.6,1099.6z"/>
                 <circle fill="currentColor" cx="61.7" cy="1091.8" r="5.9"/>
             </g>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"PyTorch"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"PyTorch"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn ScikitLearn(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn ScikitLearn() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#9b4600] rounded-xl transition duration-300 scale-{}", scale)} href="https://scikit-learn.org/stable/" target="_blank">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#9b4600] rounded-2xl transition duration-300 scale-{}" href="https://scikit-learn.org/stable/" target="_blank">
             <svg
-                class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 transition duration-300"
+                class="pt-4 px-2 h-28 w-28 transition duration-300"
                 xmlns="http://www.w3.org/2000/svg"
                 version="1.1"
                 id="Layer_1"
@@ -330,17 +309,16 @@ pub fn ScikitLearn(props: &ScaleProps) -> Html {
                 x="153.33279"
                 y="81.945938">{"scikit"}</text>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Scikit-learn"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Scikit-learn"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn Shiny(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Shiny() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#0088da] rounded-xl transition duration-300 scale-{}", scale)} href="https://shiny.posit.co/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#0088da] lg:group-hover:text-white transition duration-300" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 2521 2911" style="enable-background:new 0 0 2521 2911;">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#0088da] rounded-2xl transition duration-300 scale-{}" href="https://shiny.posit.co/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#0088da] lg:group-hover:text-white transition duration-300" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 2521 2911" style="enable-background:new 0 0 2521 2911;">
                 <path fill="currentColor" d="M2420.5,669.8l-953.1-550.4L1260.5,0l-206.9,119.4L100.5,669.8L0,727.7v1455.5l100.5,58l965.1,557.2l195.2,112.5l195.2-112.5l965.1-557.2l99.8-57.6V727.7L2420.5,669.8z"/>
                 <path fill="currentColor" d="M1260.5,2171.6c1-1,2.1-2.1,3.1-3.1h-1C1262.2,2169.5,1261.5,2170.6,1260.5,2171.6z"/>
                 <path fill="#ffffff" class="lg:group-hover:fill-gray-800 transition duration-300" d="M423.8,1568L423.8,1568C412.5,1567.7,420,1568,423.8,1568z M423.5,1568c-11-0.3-6.2,0-2.4,0h5.8h-0.3H423.5C425.9,1568,426.9,1568.4,423.5,1568z M707.9,1400.6c23.6-91.5-87.4-213.4-96.6-225c-0.1-0.1-0.2-0.2-0.3-0.4c-133.2-136.3-64.7-272.4,28.3-257.4c66.9,11,32.3,109.1,68.3,118.7h0.7c21.6,2.1,63.8-49.8,70-67.3c24-67.9-114.6-109.5-156.8-106.7c-84.7,5.1-140.3,51.1-174.3,127c-62.4,139.6,54.2,232.6,124.9,328.4c53.5,72.4,51.1,136.9-14.4,199c-72,68.3-145.2-28.5-154.8-94.7c-8.6-60.7-18.5-100.2-69.3-23c-47,71.7,18.5,159.7,77.7,169C425.3,1569.2,645.7,1617.5,707.9,1400.6z M1628.4,1784.5c-325.2,29.5-803.9,73.4-904.7,425.5c-0.7,2.1-2.4,3.1-4.5,2.4c-1-0.3-1.7-0.7-2.1-1.7C618.3,2041.9,406,1918,209,1923.9c-2.1,0.3-3.8-0.7-4.1-2.7s0.7-3.8,2.7-4.1c507.1-251.8,1025.1-131.1,1572.7-228.9c229.5-60.1,372.1-167.2,449.6-349.4c12.9-22.2,12.2-56.5-23.5-32.1c-55.2,37.4-106.1,91.6-166.1,120.8c-2.7,1.4-5.8,2.7-8.9,3.8c-1,0.3-1.7,1.4-2.1,2.4c-173.9,396.8-657.8,69.7-89.9-13c1.4-0.3,2.4-1.4,2.4-2.4l32-104c0.7-2.1-0.7-3.8-2.4-4.5c-1.4-0.3-3.1,0.3-3.8,1.4c-13,19.2-27.4,37.4-42.9,54.6c-20.2,21.3-36,34.3-48,39.1c-13.7,5.1-28.1,8.2-42.5,8.9c-17.2,1-31.9-5.8-43.2-20.2c-11.3-14.4-17.5-35.7-18.9-63.8c-0.3-4.5-0.3-9.6,0-15.1c0.3-2.1-0.7-3.8-2.4-4.5c-2.1-0.3-3.8,0.7-4.5,2.4c-5.5,10.6-11,20.6-16.5,29.5c-16.1,28.1-36.4,53.9-59.4,76.9c-22.6,22.6-44.6,34.7-64.8,36c-38.1,2.4-58.7-19.2-61.4-64.5c-2.7-43.2,14.4-132.1,51.5-264.5c2.1-5.8,2.7-12,2.4-17.8c-0.7-12-7.5-16.8-21.6-15.8c-16.1,1.4-31.6,7.9-44.3,18.5c-15.8,13.4-28.8,29.9-38.1,48.4c-11.3,20.6-21.3,41.9-30.5,63.5c-9.6,23.7-17.5,48.4-23.7,73.4c-6.9,27.8-12.7,51.1-16.5,69.3c-4.1,18.9-7.9,38.8-11.7,59.4c-2.7,14.4-5.8,32.3-6.5,35l-0.7,2.7c0,0-93.5,6.5-94.3,6.2c-2-16.8,16.7-80.9,18.7-90.6c-17.1,29.9-23.8,39.4-37.6,57.7c-8.9,11.3-18.6,22.1-28.8,32.3c-22.6,22.6-44.6,34.7-64.8,36c-1.4,0-2.7,0-4.1,0c-33.3,0-52.1-26.1-55.2-77.5c-0.7-10.3-1-20.6-0.7-31.2c0.3-2.1-0.7-3.8-2.4-4.5c-2.1-0.3-3.8,0.7-4.5,2.4c-51.8,95-98.5,143.1-141.7,145.8c-38.1,2.4-58.7-20.2-61.8-67.6c-3.4-52.5,11-129.4,42.9-228.2c6.9-24.4,9.9-41.2,9.3-50.1c-1-13.7-7.2-15.4-12.4-15.4h-1.4c-4.5,0.3-14.1,3.1-34.3,15.8c-17.8,11.7-33.3,26.1-46,42.9c-14.8,19.2-26.4,40.8-35,63.5c-8.9,24-16.1,44.9-21.3,62.4s-10.3,39.1-15.4,63.8s-9.6,46-13.7,61.8c-4.1,15.8-8.2,34-12.4,54.9l-0.7,2.7l-90.6,5.8c-2.1,0-3.8-1.4-3.8-3.4c0-0.3,0-0.7,0-1.4l0,0c13.4-46.3,32.3-121.5,56.3-223c24-101.6,46-182.9,63.8-241.2c15.4-50.8,33.6-100.9,54.9-149.3c16.5-37.7,38.8-73.1,65.9-104.3c25.7-28.8,54.6-44.3,85.1-46.3c32.3-2.1,49.4,14.1,51.8,47.4c1.4,22.3-5.1,52.2-19.2,89.6c-25.7,66.2-68.6,143.4-128,229.5c-1.4,1.4-1.4,3.8,0,5.1s3.8,1.4,5.1,0c10.3-7.9,21.3-15.1,32.9-20.9c17.2-8.9,36-14.1,55.6-15.8c36.7-2.4,56.3,14.4,58.7,49.8c1,13-0.3,26.1-4.1,38.4c-3.4,11.3-7.2,24.7-11.7,39.5c-4.1,14.8-7.5,27.1-10.3,36.4c-2.7,9.6-6.2,22.3-10.6,38.4c-4.5,16.1-7.9,30.2-9.9,41.2c-6.2,27.8-8.6,50.1-7.5,66.2c1.4,20.6,9.6,20.6,12.4,20.6h1c34.7-2.1,75.5-62.4,121.8-179.1c0.3-0.7,0.3-1,0.7-1.7c10.6-38.4,24-76.2,40.1-112.5c19.2-42.2,42.5-64.5,70-66.2l54.9-2.7c2.1,0,3.8,1.4,3.8,3.4c0,1-0.3,2.1-1,2.7l0,0c-8.6,8.2-19.9,30.2-33.6,65.5c-14.4,38.1-24.4,64.2-30.9,81.7c-6.5,18.2-14.1,42.9-22,73.8s-11.3,55.6-9.9,74.1c1.7,24.4,11,24.4,14.1,24.4h1c4.8-0.3,13.7-3.8,29.8-18.5c12.4-11.3,23-24,31.9-38.1c8.2-13.4,17.2-30.2,27.1-50.8c9.9-20.6,18.5-38.4,25.7-53.5c7.9-16.1,11-21.6,13-23.7l4.5-8.2c16.8-67.9,24.7-115.6,23-142.1c0-4.5-1-8.9-3.1-13l0,0c-1-1.4-1-3.8,0.7-4.8c0.7-0.3,1.4-0.7,2.1-0.7l38.1-2.4c22.3-1.4,36.4,0,43.6,4.8s11.7,12.7,12,20.9c0,8.2-0.7,16.8-2.4,25c-0.3,2.1,1,3.8,3.1,4.1c1,0.3,2.4-0.3,3.1-1c42.9-44.6,87.5-68.6,133.5-71.4c36.7-2.4,56.6,15.1,58.7,51.8c0.7,11.7,0,23.3-2.4,35s-8.2,34.3-18.5,69.3c-21.6,75.1-31.9,125.6-30.2,150.3c1,17.5,7.9,19.6,13,19.6h1c4.8-0.3,13.7-3.8,29.5-18.9c12.4-11.7,23-24.7,32.3-38.8c9.9-16.1,19.2-32.9,27.4-50.1c9.9-19.9,18.2-37.7,25.4-52.8c2.4-5.5,4.5-9.6,6.2-13c0-0.3,0.3-0.3,0.3-0.7c9.9-41.9,21.6-76.5,35-103.3c15.4-31.6,32.9-52.5,51.5-62.8c18.5-10.3,43.9-16.1,76.5-18.2l0,0c4.1-0.3,7.5,2.7,7.9,6.5c0,0.3,0,0.3,0,0.7c0.3,3.8-1.7,7.9-5.8,13c-23,25-45.3,69.3-66.9,131.8c-21.6,62.4-30.9,114.9-28.5,156.8c1.4,19.2,6.2,29.2,14.4,29.2h0.7c20.2-1.4,46-26.4,75.8-74.8c29.2-46,52.1-95.4,68.6-147.2c2.1-6.9,4.8-16.5,8.6-29.5c3.8-13,6.5-21.6,7.9-26.4s4.1-11.7,7.5-20.2c2.3-6.7,5.7-12.8,9.7-18.5c0.2-0.3,0.4-0.5,0.6-0.8c2.7-3,6.7-7,11.3-12c4.8-5.1,10.3-8.9,16.8-11c16.1-4.8,32.6-7.9,49.4-9.3l38.1-2.4c1.7-0.7,3.8,0.3,4.5,2.1c0.7,1.7-0.3,3.8-2.1,4.5l-0.7,0.7c-17.2,13.4-34,45.3-49.7,95c-13,42.2-24,81.3-32.6,116s-14.1,55.9-16.1,63.5c-2.1,7.5-6.5,26.1-13.4,54.2c-5.1,21.3-9.6,38.8-13.4,52.8c-0.7,1.7,0,3.8,1.7,4.5c1,0.3,2.4,0.3,3.4-0.7c37.4-22.3,71.7-49.1,102.9-79.6c17.5-17.5,156.4-164.1,156.4-71.4C2302.3,1577,1953.6,1755,1628.4,1784.5z M1041.4,812.5c-13.4,0.7-37.1,21.3-72.7,113.2C944,989.2,920,1061.6,897,1141.2c-0.7,2.1,0.7,3.8,2.4,4.5c1.4,0.3,3.1,0,4.1-1.4c61.8-94.4,104.6-172.9,127.3-234.3c14.1-41.9,20.6-69.7,19.9-82c-1-15.1-6.9-15.1-8.6-15.1L1041.4,812.5z M1927.1,1470c-14.3,2.7-190.1,48-172.3,86.9C1775.1,1601,1893.7,1544.8,1927.1,1470z M1318.9,1017.7L1318.9,1017.7c22-1,49.4-9.3,55.9-41.9c3.1-14.8-5.8-31.6-11.3-36.4c-5.5-4.8-13-6.9-23-6.2s-22,6.9-33.3,17.5c-15.1,14.1-14.4,34.3-9.6,47.7C1302.1,1009.8,1310,1017.3,1318.9,1017.7z"/>
@@ -349,74 +327,69 @@ pub fn Shiny(props: &ScaleProps) -> Html {
                 <path fill="currentColor" d="M2420.5,669.8l-953.1-550.4L1260.5,0l-206.9,119.4L100.5,669.8L0,727.7v1455.5l100.5,58l965.1,557.2l195.2,112.5l195.2-112.5l965.1-557.2l99.8-57.6V727.7L2420.5,669.8z M2448.7,2141.8l-63.7,36.8l-965.1,557.2l-159.1,91.7l-159.1-91.7l-965.1-557.2l-64.3-37.1v-1372l64.4-37.1l95.9-55.3l857.2-495l170.7-98.5l170.7,98.5l856.5,494.6l96.6,55.8l64.3,37.1L2448.7,2141.8L2448.7,2141.8z"/>
                 <polygon fill="none" points="2287.7,676.6 1431.2,182 2384.3,732.4"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Shiny"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Shiny"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn Spark(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Spark() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#e15919] rounded-xl transition duration-300 scale-{}", scale)} href="https://spark.apache.org/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#e15919] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#e15919] rounded-2xl transition duration-300 scale-{}" href="https://spark.apache.org/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#e15919] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
                 <path fill="currentColor" d="M57.646.004c-2.269.064-4.51 1.143-6.384 3.223-1.03 1.146-1.905 2.51-2.63 3.855-1.89 3.54-2.262 7.547-2.962 11.43l-3.852 21.81c-.148.856-.532 1.21-1.3 1.455l-28.268 8.98c-2.06.673-4.125 1.543-5.947 2.7-5.558 3.53-6.38 9.338-2.207 14.438 1.842 2.256 4.216 3.843 6.85 4.996l17.603 7.843c.147.08.304.132.463.162l3.717 2.682s-3.7 40.948 3.246 43.781c-.061-.01-.41-.082-.41-.082s.704.761 2.603.537c1.454.27 1.262.226.074-.01 2.583-.334 7.337-2.497 15.578-10.784a47.396 47.396 0 0 0 1.776-1.676l17.8-19.217 4.163 1.465c.15.207.367.34.714.443l19.823 6.031c2.709.836 5.389 1.448 8.277 1.026 5.156-.755 8.951-5 8.9-10.192-.02-2.28-.82-4.339-1.87-6.324l-13.128-24.898c-.418-.787-.405-1.296.196-2l22.054-25.922c1.428-1.703 2.717-3.529 3.465-5.645 1.643-4.67-.482-8.382-5.33-9.289-2.229-.398-4.427-.188-6.6.385l-31.597 8.395c-.93.25-1.39.075-1.895-.772l-12.9-21.434c-.975-1.615-2.14-3.194-3.477-4.527C62.212.89 59.915-.059 57.646.004zm.944 19.736c.51.358.768.727 1.01 1.125l13.88 23.13c.382.628.725.85 1.485.648l24.443-6.497 5.885-1.54c-.087.493-.302.79-.537 1.068l-20.16 23.672c-.57.688-.623 1.17-.194 1.976l12.743 24.16.585 1.237-.015.02-22.727-6.264-.006-.018-4.298-1.205-25.493 28.256 4.663-37.15-4.184-1.82.008-.007-23.674-9.4c.454-.413.86-.585 1.285-.717l28.777-9.096c.676-.21 1.061-.47 1.125-1.242l.403-2.355 3.875-21.807 1.12-6.174z"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Spark"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Spark"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn Yew(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Yew() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#009a5b] rounded-xl transition duration-300 scale-{}", scale)} href="https://yew.rs/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28" viewBox="0 0 75 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#009a5b] rounded-2xl transition duration-300 scale-{}" href="https://yew.rs/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28" viewBox="0 0 75 82" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="38" cy="40" r="25" fill="#B3E1CE"/>
                 <path d="M38.2373 41.0339L14 14" stroke="#444444" stroke-width="6" stroke-linecap="round"/>
                 <path d="M38.2373 41.0339L62.4746 14" stroke="#444444" stroke-width="6" stroke-linecap="round"/>
                 <path d="M38.2373 41.0339L38.2373 69" stroke="#444444" stroke-width="6" stroke-linecap="round"/>
                 <circle cx="38" cy="41" r="7" fill="#009A5B" stroke="#444444" stroke-width="4"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Yew"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Yew"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn Atlassian(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Atlassian() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#2681FF] rounded-xl transition duration-300 scale-{}", scale)} href="https://www.atlassian.com/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#2681FF] lg:group-hover:text-white transition duration-300" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#2681FF] rounded-2xl transition duration-300 scale-{}" href="https://www.atlassian.com/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#2681FF] lg:group-hover:text-white transition duration-300" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
                 <path fill="currentColor" d="M75.7929022,117.949352 C71.973435,113.86918 66.0220743,114.100451 63.4262382,119.292123 L0.791180865,244.565041 C-0.370000214,246.886207 -0.24632242,249.643151 1.11803323,251.85102 C2.48238888,254.058889 4.89280393,255.402741 7.48821365,255.402516 L94.716435,255.402516 C97.5716401,255.468706 100.19751,253.845601 101.414869,251.262074 C120.223468,212.37359 108.82814,153.245434 75.7929022,117.949352 Z"/>
                 <path fill="currentColor" d="M121.756071,4.0114918 C86.7234975,59.5164098 89.0348008,120.989508 112.109989,167.141287 L154.170383,251.262074 C155.438703,253.798733 158.031349,255.401095 160.867416,255.401115 L248.094235,255.401115 C250.689645,255.401339 253.10006,254.057487 254.464416,251.849618 C255.828771,249.64175 255.952449,246.884805 254.791268,244.563639 C254.791268,244.563639 137.44462,9.83670492 134.492768,3.96383607 C131.853481,-1.29371311 125.14944,-1.36519672 121.756071,4.0114918 Z"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Atlassian"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Atlassian"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn CSS(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn CSS() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#2965f1] rounded-xl transition duration-300 scale-{}", scale)} href="https://www.w3schools.com/css/default.asp" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#2965f1] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#2965f1] rounded-2xl transition duration-300 scale-{}" href="https://www.w3schools.com/css/default.asp" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#2965f1] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path fill="currentColor" d="M480 32l-64 368-223.3 80L0 400l19.6-94.8h82l-8 40.6L210 390.2l134.1-44.4 18.8-97.1H29.5l16-82h333.7l10.5-52.7H56.3l16.3-82H480z"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"CSS3"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"CSS3"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn EarthEngine(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn EarthEngine() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#4285f4] rounded-xl transition duration-300 scale-{}", scale)} href="https://earthengine.google.com/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#4285f4] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#4285f4] rounded-2xl transition duration-300 scale-{}" href="https://earthengine.google.com/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#4285f4] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <defs
                 id="defs6" />
             <ellipse
@@ -442,43 +415,40 @@ pub fn EarthEngine(props: &ScaleProps) -> Html {
                 d="M 233.61024,426.42338 C 197.68639,421.7137 164.3661,404.99223 137.53361,378.20824 114.01256,354.72973 98.872267,327.0956 91.039031,293.34618 c -1.743271,-7.51087 -4.793718,-19.56939 -4.747238,-39.018 0.05491,-22.98222 2.543426,-28.61778 6.010987,-39.64359 15.43972,-49.09366 43.80508,-83.33327 87.80623,-105.78785 39.35794,-20.085073 87.78473,-23.555128 130.16859,-9.327331 40.63604,13.641061 77.57833,45.887321 96.89319,84.576301 32.21235,64.52354 19.25646,142.40435 -32.29422,194.12782 -37.06602,37.19028 -89.23385,54.97141 -141.26633,48.14985 z m -47.42331,-24.15047 c -0.23857,-1.04106 -0.77184,-4.74742 -1.18506,-8.23639 -0.68299,-5.76673 -0.37824,-6.71665 3.35124,-10.44613 5.3387,-5.3387 10.09045,-5.34519 32.63164,-0.0446 9.4912,2.23188 23.46448,5.03537 31.05178,6.22994 17.16244,2.70217 59.00915,3.04733 74.21019,0.61211 12.34988,-1.97847 33.00478,-7.50967 38.33402,-10.26551 5.82087,-3.01009 25.47948,-26.54861 23.6775,-28.3506 -0.42962,-0.42963 -7.00609,0.775 -14.61436,2.67693 -26.19932,6.54939 -38.54199,0.34838 -64.17914,-0.4247 -44.36755,-1.33787 -80.82464,-10.66605 -140.55275,-35.96285 -35.75343,-15.14275 -44.59721,-8.77784 -53.60786,0.23282 -6.7826,6.78261 -6.9657,9.98964 -1.17341,20.55362 13.20035,24.07483 35.42144,46.84576 59.4461,60.91706 8.95395,5.24435 13.44166,6.13699 12.61011,2.50826 z M 411.53027,306.6541 c 0.72386,-1.66141 2.19336,-7.2498 3.26556,-12.41866 1.77606,-8.56209 1.75302,-9.54715 -0.25896,-11.0761 -1.21461,-0.923 -3.03333,-1.67819 -4.04161,-1.67819 -3.73974,0 -25.04416,-9.67941 -36.48478,-16.57644 -21.97634,-13.24853 -49.66555,-35.71221 -88.71177,-71.97002 -38.40796,-35.66513 -49.90888,-44.85362 -64.6895,-51.68269 -17.50255,-8.08666 -40.86579,-9.49704 -64.19607,-3.87535 -8.62125,2.0774 -10.94549,3.29781 -16.16318,8.48698 -11.90502,11.83999 -23.09877,27.49907 -30.24473,42.30976 -11.528198,23.89324 -11.031681,40.95022 3.50839,28.60758 11.05179,-9.38156 22.06862,-10.47234 33.17211,-12.37066 7.24727,-1.23902 18.02456,0.4131 26.62906,2.32983 17.75842,3.95586 30.42134,16.86585 76.40615,49.50445 52.05641,36.94805 61.30415,36.91727 96.77806,51.04348 15.319,6.10024 54.81002,2.20047 60.66561,2.32298 1.91599,0.0401 3.53876,-1.05904 4.36566,-2.95695 z m -4.63534,-84.50876 c 4.32314,-3.79578 4.81127,-4.85649 4.22984,-9.19148 -1.03651,-7.72775 -9.62176,-27.44765 -17.37288,-39.90464 -9.14534,-14.69768 -31.65069,-37.75961 -46.02425,-47.16244 -21.21776,-13.88016 -41.43549,-21.99831 -65.56227,-26.325669 -21.49217,-3.854804 -65.91914,-0.935654 -67.71411,4.449259 -0.37225,1.11674 1.93545,1.59572 7.68827,1.59572 35.89556,0 66.54633,9.99126 89.77949,29.26552 13.78903,11.43939 23.4481,22.30252 39.24611,44.13839 26.57067,36.72574 36.98963,47.02989 47.86862,47.34117 1.63574,0.0469 5.17326,-1.84582 7.86118,-4.20583 z"
                 style="fill:#367bf0;fill-opacity:1;stroke-width:1.39689767" />
             </svg>
-            <p class="py-2 text-end text-3xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Earth Engine"}</p>
+            <p class="py-2 text-end text-3xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Earth Engine"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn Git(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Git() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#f1502f] rounded-xl transition duration-300 scale-{}", scale)} href="https://git-scm.com/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#f1502f] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#f1502f] rounded-2xl transition duration-300 scale-{}" href="https://git-scm.com/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#f1502f] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path fill="currentColor" d="M439.6 236.1L244 40.5a28.9 28.9 0 0 0 -40.8 0l-40.7 40.6 51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.2 199v121.9c25.3 12.5 22.3 41.9 9.1 55a34.3 34.3 0 0 1 -48.6 0c-17.6-17.6-11.1-46.9 11.3-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1a28.9 28.9 0 0 0 0 40.8l195.6 195.6a28.9 28.9 0 0 0 40.8 0l194.7-194.7a28.9 28.9 0 0 0 0-40.8z"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Git"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Git"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn HTML(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn HTML() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#f06529] rounded-xl transition duration-300 scale-{}", scale)} href="https://www.w3schools.com/html/default.asp" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#f06529] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#f06529] rounded-2xl transition duration-300 scale-{}" href="https://www.w3schools.com/html/default.asp" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#f06529] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                 <path fill="currentColor" d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"HTML5"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"HTML5"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn Informatica(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Informatica() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#f06529] rounded-xl transition duration-300 scale-{}", scale)} href="https://www.informatica.com/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#f06529] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#f06529] rounded-2xl transition duration-300 scale-{}" href="https://www.informatica.com/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#f06529] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
             <defs
                 id="defs35" />
             <polygon
@@ -512,45 +482,42 @@ pub fn Informatica(props: &ScaleProps) -> Html {
                 style="fill:#ff7d00;fill-rule:evenodd;stroke:none;stroke-width:1"
                 transform="matrix(0.838338,0,0,0.8270135,0,-5.3755877e-4)" />
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Informatica"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Informatica"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn PowerBI(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn PowerBI() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#e9b51c] rounded-xl transition duration-300 scale-{}", scale)} href="https://www.microsoft.com/en-us/power-platform/products/power-bi" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#e9b51c] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#e9b51c] rounded-2xl transition duration-300 scale-{}" href="https://www.microsoft.com/en-us/power-platform/products/power-bi" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#e9b51c] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
                 <path fill="#eda503" class="lg:group-hover:fill-white transition duration-300" d="M38,44H26c-0.552,0-1-0.448-1-1V5c0-0.552,0.448-1,1-1h12c0.552,0,1,0.448,1,1v38    C39,43.552,38.552,44,38,44z"></path>
                 <path fill="#ffca28" class="lg:group-hover:fill-white transition duration-300" d="M30,44H18c-0.552,0-1-0.448-1-1V15c0-0.552,0.448-1,1-1h12c0.552,0,1,0.448,1,1v28    C31,43.552,30.552,44,30,44z"></path>
                 <path fill="#ffe082" class="lg:group-hover:fill-white transition duration-300" d="M22,44H10c-0.552,0-1-0.448-1-1V25c0-0.552,0.448-1,1-1h12c0.552,0,1,0.448,1,1v18    C23,43.552,22.552,44,22,44z"></path>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Power BI"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Power BI"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn OracleDB(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn OracleDB() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#cc5745] rounded-xl transition duration-300 scale-{}", scale)} href="https://www.oracle.com/database/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#c74634] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 560 400" style="enable-background:new 0 0 560 400;">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#cc5745] rounded-2xl transition duration-300 scale-{}" href="https://www.oracle.com/database/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#c74634] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 560 400" style="enable-background:new 0 0 560 400;">
                 <path fill="currentColor" d="M221.4,300c-55.6,0-100-44.4-100-100s44.4-100,100-100h117.2c55.6,0,100,44.4,100,100s-44.4,100-100,100H221.4z M335.6,264.6c36.4,0,64.6-29.3,64.6-64.6c0-36.4-29.3-64.6-64.6-64.6H224.4c-36.4,0-64.6,29.3-64.6,64.6s29.3,64.6,64.6,64.6H335.6z"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Oracle DB"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Oracle DB"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn PostgreSQL(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn PostgreSQL() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#336791] rounded-xl transition duration-300 scale-{}", scale)} href="https://www.postgresql.org/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#336791] lg:group-hover:text-white transition duration-300" viewBox="0 0 432.071 445.383" xmlns="http://www.w3.org/2000/svg">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#336791] rounded-2xl transition duration-300 scale-{}" href="https://www.postgresql.org/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#336791] lg:group-hover:text-white transition duration-300" viewBox="0 0 432.071 445.383" xmlns="http://www.w3.org/2000/svg">
             <g id="orginal" style="fill-rule:nonzero;clip-rule:nonzero;stroke:#000000;stroke-miterlimit:4;"/>
             <g id="Layer_x0020_3" style="fill-rule:nonzero;clip-rule:nonzero;fill:none;stroke:#FFFFFF;stroke-width:12.4651;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;">
                 <path style="fill:#000000;stroke:#000000;stroke-width:37.3953;stroke-linecap:butt;stroke-linejoin:miter;" d="M323.205,324.227c2.833-23.601,1.984-27.062,19.563-23.239l4.463,0.392c13.517,0.615,31.199-2.174,41.587-7c22.362-10.376,35.622-27.7,13.572-23.148c-50.297,10.376-53.755-6.655-53.755-6.655c53.111-78.803,75.313-178.836,56.149-203.322    C352.514-5.534,262.036,26.049,260.522,26.869l-0.482,0.089c-9.938-2.062-21.06-3.294-33.554-3.496c-22.761-0.374-40.032,5.967-53.133,15.904c0,0-161.408-66.498-153.899,83.628c1.597,31.936,45.777,241.655,98.47,178.31    c19.259-23.163,37.871-42.748,37.871-42.748c9.242,6.14,20.307,9.272,31.912,8.147l0.897-0.765c-0.281,2.876-0.157,5.689,0.359,9.019c-13.572,15.167-9.584,17.83-36.723,23.416c-27.457,5.659-11.326,15.734-0.797,18.367c12.768,3.193,42.305,7.716,62.268-20.224    l-0.795,3.188c5.325,4.26,4.965,30.619,5.72,49.452c0.756,18.834,2.017,36.409,5.856,46.771c3.839,10.36,8.369,37.05,44.036,29.406c29.809-6.388,52.6-15.582,54.677-101.107"/>
@@ -567,32 +534,30 @@ pub fn PostgreSQL(props: &ScaleProps) -> Html {
                 <path style="stroke-width:3;" d="M0,60.232"/>
             </g>
             </svg>
-            <p class="py-2 text-end text-3xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"PostgreSQL"}</p>
+            <p class="py-2 text-end text-3xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"PostgreSQL"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn QGIS(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn QGIS() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#589632] rounded-xl transition duration-300 scale-{}", scale)} href="https://www.qgis.org/en/site/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#589632] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 128 128" enable-background="new 0 0 128 128">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#589632] rounded-2xl transition duration-300 scale-{}" href="https://www.qgis.org/en/site/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#589632] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 128 128" enable-background="new 0 0 128 128">
                 <polygon fill="currentColor" points="68.613,69.625 86.891,69.625 71.697,54.625 52.613,54.625 52.613,72.746 68.613,88.548 "/>
                 <polygon fill="currentColor" points="126.613,109.057 94.488,77.625 76.613,77.625 76.613,96.033 107.143,126.625 126.613,126.625 "/>
                 <path fill="currentColor" d="M68.923,101.552c-1.165,0.242-1.769,0.157-4.685,0.157c-20.866,0-38.612-17.158-38.612-39.406c0-22.248,17.551-39.027,38.612-39.027s37.833,16.78,37.833,39.027c0,3.619-0.451,7.099-1.284,10.398L120.1,92.012c4.979-8.726,7.765-18.869,7.765-29.857c0-34.289-27.363-59.963-64.016-59.963C27.363,2.191,0,27.696,0,62.154c0,34.625,27.363,60.638,63.848,60.638c9.417,0,16.069-1.469,23.042-3.761L68.923,101.552z"/>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"QGIS"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"QGIS"}</p>
         </a>
     }
 }
 
 #[function_component]
-pub fn Tailwind(props: &ScaleProps) -> Html {
-    let scale = props.scale.unwrap();
+pub fn Tailwind() -> Html {
     html! {
-        <a class={format!("group flex flex-col items-center justify-center w-52 h-52 lg:w-32 lg:h-32 m-2 bg-white dark:bg-gray-800 lg:hover:bg-[#38bdf8] rounded-xl transition duration-300 scale-{}", scale)} href="https://tailwindcss.com/" target="_blank">
-            <svg class="pt-4 px-2 w-48 h-48 lg:w-28 lg:h-28 text-[#38bdf8] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33">
+        <a class="group flex flex-col items-center justify-center  h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#38bdf8] rounded-2xl transition duration-300 scale-{}" href="https://tailwindcss.com/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#38bdf8] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33">
             <g clip-path="url(#prefix__clip0)">
                 <path fill="currentColor" fill-rule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z" clip-rule="evenodd"/>
             </g>
@@ -602,7 +567,7 @@ pub fn Tailwind(props: &ScaleProps) -> Html {
                 </clipPath>
             </defs>
             </svg>
-            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 lg:text-white lg:dark:text-white lg:text-opacity-0 lg:group-hover:text-opacity-100 lg:dark:text-opacity-0 lg:dark:group-hover:text-opacity-100 transition duration-300 mt-1 lg:mt-0">{"Tailwind"}</p>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Tailwind"}</p>
         </a>
     }
 }

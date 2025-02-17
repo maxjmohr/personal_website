@@ -8,6 +8,7 @@ mod pages {
     pub mod home;
     pub mod projects {
         pub mod automobile_segmentation;
+        pub mod cognitive_biases_llms;
         pub mod fynd;
     }
 }

@@ -1,5 +1,6 @@
 use crate::pages::home::Home;
 use crate::pages::projects::automobile_segmentation::AutomobileSegmentation;
+use crate::pages::projects::cognitive_biases_llms::CognitiveBiasesLLMs;
 use crate::pages::projects::fynd::Fynd;
 use yew::prelude::*;
 use yew_router::prelude::*;
@@ -8,12 +9,15 @@ use yew_router::prelude::*;
 pub enum Route {
     #[at("/")]
     Home,
+    #[at("/automobile_segmentation")]
+    AutomobileSegmentation,
+    #[at("/cognitive_biases_llms")]
+    CognitiveBiasesLLMs,
     #[at("/fynd")]
     Fynd,
-    #[at("/automobile_segmentation")]
-    AutomobileSegmentation, //#[not_found]
-                            //#[at("/404")]
-                            //NotFound,
+    //#[not_found]
+    //#[at("/404")]
+    //NotFound,
 }
 
 fn scroll_to_top() {
@@ -27,8 +31,9 @@ fn scroll_to_top() {
 pub fn switch(route: Route) -> Html {
     match route {
         Route::Home => html! { <Home /> },
-        Route::Fynd => {scroll_to_top(); html! { <Fynd /> }},
         Route::AutomobileSegmentation => {scroll_to_top(); html! { <AutomobileSegmentation /> }},
+        Route::CognitiveBiasesLLMs => {scroll_to_top(); html! { <CognitiveBiasesLLMs /> }},
+        Route::Fynd => {scroll_to_top(); html! { <Fynd /> }},
         //Route::NotFound => html! { <PageNotFound /> },
     }
 }
