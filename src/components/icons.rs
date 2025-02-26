@@ -35,37 +35,38 @@ pub fn get_icons(name: &str) -> Option<Html> {
     return match name.to_lowercase().as_str() {
         // General
         "bullet" => Some(html! {<Bullet />}),
-        // Technical skills - languages
-        "matlab" => Some(html! {<Matlab />}),
-        "python" => Some(html! {<Python />}),
-        "r" => Some(html! {<R />}),
-        "sql" => Some(html! {<SQL />}),
-        "stata" => Some(html! {<Stata />}),
-        // Technical skills - frameworks & libraries
+        // Technical skills
         "arrow" => Some(html! {<Arrow />}),
-        "dash" => Some(html! {<Dash />}),
-        "detectron" => Some(html! {<Detectron />}),
-        "gradio" => Some(html! {<Gradio />}),
-        "huggingface" => Some(html! {<HuggingFace />}),
-        "kafka" => Some(html! {<Kafka />}),
-        "llamaindex" => Some(html! {<LlamaIndex />}),
-        "pytorch" => Some(html! {<PyTorch />}),
-        "scikitlearn" => Some(html! {<ScikitLearn />}),
-        "shiny" => Some(html! {<Shiny />}),
-        "spark" => Some(html! {<Spark />}),
-        "yew" => Some(html! {<Yew />}),
-        // Technical skills - tools
         "atlassian" => Some(html! {<Atlassian />}),
         "css" => Some(html! {<CSS />}),
+        "dash" => Some(html! {<Dash />}),
+        "detectron" => Some(html! {<Detectron />}),
         "earthengine" => Some(html! {<EarthEngine />}),
         "git" => Some(html! {<Git />}),
+        "gradio" => Some(html! {<Gradio />}),
         "html" => Some(html! {<HTML />}),
+        "huggingface" => Some(html! {<HuggingFace />}),
         "informatica" => Some(html! {<Informatica />}),
-        "powerbi" => Some(html! {<PowerBI />}),
+        "kafka" => Some(html! {<Kafka />}),
+        "latex" => Some(html! {<LaTeX />}),
+        "llamaindex" => Some(html! {<LlamaIndex />}),
+        "matlab" => Some(html! {<Matlab />}),
+        "ollama" => Some(html! {<Ollama />}),
         "oracledb" => Some(html! {<OracleDB />}),
         "postgresql" => Some(html! {<PostgreSQL />}),
+        "powerbi" => Some(html! {<PowerBI />}),
+        "python" => Some(html! {<Python />}),
+        "pytorch" => Some(html! {<PyTorch />}),
         "qgis" => Some(html! {<QGIS />}),
+        "r" => Some(html! {<R />}),
+        "scikitlearn" => Some(html! {<ScikitLearn />}),
+        "seaborn" => Some(html! {<Seaborn />}),
+        "shiny" => Some(html! {<Shiny />}),
+        "spark" => Some(html! {<Spark />}),
+        "sql" => Some(html! {<SQL />}),
+        "stata" => Some(html! {<Stata />}),
         "tailwind" => Some(html! {<Tailwind />}),
+        "yew" => Some(html! {<Yew />}),
         _ => None,
     };
 }
@@ -556,7 +557,7 @@ pub fn QGIS() -> Html {
 #[function_component]
 pub fn Tailwind() -> Html {
     html! {
-        <a class="group flex flex-col items-center justify-center  h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#38bdf8] rounded-2xl transition duration-300 scale-{}" href="https://tailwindcss.com/" target="_blank">
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#38bdf8] rounded-2xl transition duration-300 scale-{}" href="https://tailwindcss.com/" target="_blank">
             <svg class="pt-4 px-2 h-28 w-28 text-[#38bdf8] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33">
             <g clip-path="url(#prefix__clip0)">
                 <path fill="currentColor" fill-rule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z" clip-rule="evenodd"/>
@@ -568,6 +569,44 @@ pub fn Tailwind() -> Html {
             </defs>
             </svg>
             <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Tailwind"}</p>
+        </a>
+    }
+}
+
+#[function_component]
+pub fn Ollama() -> Html {
+    html! {
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#000000] rounded-2xl transition duration-300 scale-{}" href="https://ollama.com" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#000000] lg:group-hover:text-white transition duration-300" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 560 400;">
+                <path fill="currentColor" d="M7.905 1.09c.216.085.411.225.588.41.295.306.544.744.734 1.263.191.522.315 1.1.362 1.68a5.054 5.054 0 012.049-.636l.051-.004c.87-.07 1.73.087 2.48.474.101.053.2.11.297.17.05-.569.172-1.134.36-1.644.19-.52.439-.957.733-1.264a1.67 1.67 0 01.589-.41c.257-.1.53-.118.796-.042.401.114.745.368 1.016.737.248.337.434.769.561 1.287.23.934.27 2.163.115 3.645l.053.04.026.019c.757.576 1.284 1.397 1.563 2.35.435 1.487.216 3.155-.534 4.088l-.018.021.002.003c.417.762.67 1.567.724 2.4l.002.03c.064 1.065-.2 2.137-.814 3.19l-.007.01.01.024c.472 1.157.62 2.322.438 3.486l-.006.039a.651.651 0 01-.747.536.648.648 0 01-.54-.742c.167-1.033.01-2.069-.48-3.123a.643.643 0 01.04-.617l.004-.006c.604-.924.854-1.83.8-2.72-.046-.779-.325-1.544-.8-2.273a.644.644 0 01.18-.886l.009-.006c.243-.159.467-.565.58-1.12a4.229 4.229 0 00-.095-1.974c-.205-.7-.58-1.284-1.105-1.683-.595-.454-1.383-.673-2.38-.61a.653.653 0 01-.632-.371c-.314-.665-.772-1.141-1.343-1.436a3.288 3.288 0 00-1.772-.332c-1.245.099-2.343.801-2.67 1.686a.652.652 0 01-.61.425c-1.067.002-1.893.252-2.497.703-.522.39-.878.935-1.066 1.588a4.07 4.07 0 00-.068 1.886c.112.558.331 1.02.582 1.269l.008.007c.212.207.257.53.109.785-.36.622-.629 1.549-.673 2.44-.05 1.018.186 1.902.719 2.536l.016.019a.643.643 0 01.095.69c-.576 1.236-.753 2.252-.562 3.052a.652.652 0 01-1.269.298c-.243-1.018-.078-2.184.473-3.498l.014-.035-.008-.012a4.339 4.339 0 01-.598-1.309l-.005-.019a5.764 5.764 0 01-.177-1.785c.044-.91.278-1.842.622-2.59l.012-.026-.002-.002c-.293-.418-.51-.953-.63-1.545l-.005-.024a5.352 5.352 0 01.093-2.49c.262-.915.777-1.701 1.536-2.269.06-.045.123-.09.186-.132-.159-1.493-.119-2.73.112-3.67.127-.518.314-.95.562-1.287.27-.368.614-.622 1.015-.737.266-.076.54-.059.797.042zm4.116 9.09c.936 0 1.8.313 2.446.855.63.527 1.005 1.235 1.005 1.94 0 .888-.406 1.58-1.133 2.022-.62.375-1.451.557-2.403.557-1.009 0-1.871-.259-2.493-.734-.617-.47-.963-1.13-.963-1.845 0-.707.398-1.417 1.056-1.946.668-.537 1.55-.849 2.485-.849zm0 .896a3.07 3.07 0 00-1.916.65c-.461.37-.722.835-.722 1.25 0 .428.21.829.61 1.134.455.347 1.124.548 1.943.548.799 0 1.473-.147 1.932-.426.463-.28.7-.686.7-1.257 0-.423-.246-.89-.683-1.256-.484-.405-1.14-.643-1.864-.643zm.662 1.21l.004.004c.12.151.095.37-.056.49l-.292.23v.446a.375.375 0 01-.376.373.375.375 0 01-.376-.373v-.46l-.271-.218a.347.347 0 01-.052-.49.353.353 0 01.494-.051l.215.172.22-.174a.353.353 0 01.49.051zm-5.04-1.919c.478 0 .867.39.867.871a.87.87 0 01-.868.871.87.87 0 01-.867-.87.87.87 0 01.867-.872zm8.706 0c.48 0 .868.39.868.871a.87.87 0 01-.868.871.87.87 0 01-.867-.87.87.87 0 01.867-.872zM7.44 2.3l-.003.002a.659.659 0 00-.285.238l-.005.006c-.138.189-.258.467-.348.832-.17.692-.216 1.631-.124 2.782.43-.128.899-.208 1.404-.237l.01-.001.019-.034c.046-.082.095-.161.148-.239.123-.771.022-1.692-.253-2.444-.134-.364-.297-.65-.453-.813a.628.628 0 00-.107-.09L7.44 2.3zm9.174.04l-.002.001a.628.628 0 00-.107.09c-.156.163-.32.45-.453.814-.29.794-.387 1.776-.23 2.572l.058.097.008.014h.03a5.184 5.184 0 011.466.212c.086-1.124.038-2.043-.128-2.722-.09-.365-.21-.643-.349-.832l-.004-.006a.659.659 0 00-.285-.239h-.004z"/>
+            </svg>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Ollama"}</p>
+        </a>
+    }
+}
+
+#[function_component]
+pub fn LaTeX() -> Html {
+    html! {
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#000000] rounded-2xl transition duration-300 scale-{}" href="https://www.latex-project.org/" target="_blank">
+            <svg class="pt-4 px-2 h-28 w-28 text-[#000000] lg:group-hover:text-white transition duration-300" height="500" overflow="scroll" width="1200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500">
+                <path fill="currentColor" d="m5.46 4.23h-.25c-.1 1.02-.24 2.26-2 2.26h-.81c-.47 0-.49-.07-.49-.4v-5.31c0-.34 0-.48.94-.48h.33v-.3c-.36.03-1.26.03-1.67.03-.39 0-1.17 0-1.51-.03v.3h.23c.77 0 .79.11.79.47v5.25c0 .36-.02.47-.79.47h-.23v.31h5.19z" transform="matrix(45 0 0 45 40 47.65)"/>
+                <path fill="currentColor" d="m2.81.16c-.04-.12-.06-.16-.19-.16s-.16.04-.2.16l-1.61 4.08c-.07.17-.19.48-.81.48v.25h1.55v-.25c-.31 0-.5-.14-.5-.34 0-.05.01-.07.03-.14 0 0 .34-.86.34-.86h1.98l.4 1.02c.02.04.04.09.04.12 0 .2-.38.2-.57.2v.25h1.97v-.25h-.14c-.47 0-.52-.07-.59-.27 0 0-1.7-4.29-1.7-4.29zm-.4.71.89 2.26h-1.78z" transform="matrix(45 0 0 45 151.6 40)"/>
+                <path fill="currentColor" d="m6.27 0h-6.09s-.18 2.24-.18 2.24h.24c.14-1.61.29-1.94 1.8-1.94.18 0 .44 0 .54.02.21.04.21.15.21.38v5.25c0 .34 0 .48-1.05.48h-.4v.31c.41-.03 1.42-.03 1.88-.03s1.49 0 1.9.03v-.31h-.4c-1.05 0-1.05-.14-1.05-.48v-5.25c0-.2 0-.34.18-.38.11-.02.38-.02.57-.02 1.5 0 1.65.33 1.79 1.94h.25s-.19-2.24-.19-2.24z" transform="matrix(45 0 0 45 356.35 50.35)"/>
+                <path fill="currentColor" d="m6.16 4.2h-.25c-.25 1.53-.48 2.26-2.19 2.26h-1.32c-.47 0-.49-.07-.49-.4v-2.66h.89c.97 0 1.08.32 1.08 1.17h.25v-2.64h-.25c0 .85-.11 1.16-1.08 1.16h-.89v-2.39c0-.33.02-.4.49-.4h1.28c1.53 0 1.79.55 1.95 1.94h.25l-.28-2.24h-5.6v.3h.23c.77 0 .79.11.79.47v5.22c0 .36-.02.47-.79.47h-.23v.31h5.74z" transform="matrix(45 0 0 45 602.5 150.25)"/>
+                <path fill="currentColor" d="m3.76 2.95 1.37-2c.21-.32.55-.64 1.44-.65v-.3h-2.38v.3c.4.01.62.23.62.46 0 .1-.02.12-.09.23 0 0-1.14 1.68-1.14 1.68l-1.28-1.92c-.02-.03-.07-.11-.07-.15 0-.12.22-.29.64-.3v-.3c-.34.03-1.07.03-1.45.03-.31 0-.93-.01-1.3-.03v.3h.19c.55 0 .74.07.93.35 0 0 1.83 2.77 1.83 2.77l-1.63 2.41c-.14.2-.44.66-1.44.66v.31h2.38v-.31c-.46-.01-.63-.28-.63-.46 0-.09.03-.13.1-.24l1.41-2.09 1.58 2.38c.02.04.05.08.05.11 0 .12-.22.29-.65.3v.31c.35-.03 1.08-.03 1.45-.03.42 0 .88.01 1.3.03v-.31h-.19c-.52 0-.73-.05-.94-.36 0 0-2.1-3.18-2.1-3.18z" transform="matrix(45 0 0 45 845.95 47.65)"/>
+            </svg>
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"LaTeX"}</p>
+        </a>
+    }
+}
+
+#[function_component]
+pub fn Seaborn() -> Html {
+    html! {
+        <a class="group flex flex-col items-center justify-center h-32 w-32 bg-stone-50/50 dark:bg-gray-700/50 lg:hover:bg-[#7DB0BC] rounded-2xl transition duration-300 scale-{}" href="https://seaborn.pydata.org" target="_blank">
+            <img class="pt-4 px-2 w-36 h-36 lg:w-24 lg:h-24 transition duration-300" src="res/images/icons/seaborn.svg" />
+            <p class="py-2 text-end text-4xl lg:text-xl font-bold text-gray-700 dark:text-stone-200 opacity-90 dark:opacity-90 lg:text-slate-50 lg:dark:text-slate-50 lg:opacity-0 lg:group-hover:opacity-100 lg:dark:opacity-0 lg:dark:group-hover:opacity-100 transition duration-300 mt-1 lg:mt-0">{"Seaborn"}</p>
         </a>
     }
 }

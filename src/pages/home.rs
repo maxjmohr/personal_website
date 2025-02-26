@@ -66,11 +66,11 @@ pub fn Home() -> Html {
     content_projects_files.sort_by(|a, b| b.path().cmp(a.path()));
     let content_projects_html: Vec<Html> = content_projects_files
         .iter()
-        .map(|file| {
+        .filter_map(|file| file.contents_utf8().map(|content| {
             html! {
-                <ProjectCard markdown={file.contents_utf8().unwrap()} />
+                <ProjectCard markdown={content} />
             }
-        })
+        }))
         .collect();
 
     html! {
