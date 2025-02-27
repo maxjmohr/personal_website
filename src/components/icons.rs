@@ -74,7 +74,7 @@ pub fn get_icons(name: &str) -> Option<Html> {
 #[function_component]
 pub fn Bullet() -> Html {
     html! {
-        <svg class="shrink-0 w-8 h-8 lg:w-5 lg:h-5 text-stone-600 dark:text-neutral-300 opacity-95 dark:opacity-95 mt-1" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg class="h-7 w-7 mr-2 text-slate-700 dark:text-slate-500" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path fill="currentColor" d="m2.009 12.002c0-5.517 4.48-9.997 9.998-9.997s9.998 4.48 9.998 9.997c0 5.518-4.48 9.998-9.998 9.998s-9.998-4.48-9.998-9.998zm8.211-4.843c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591z"/>
         </svg>
     }

@@ -1,5 +1,6 @@
 mod components {
     pub mod bullet;
+    pub mod footer;
     pub mod icons;
     pub mod project;
     pub mod timeline;
@@ -53,6 +54,7 @@ fn app() -> Html {
         <BrowserRouter>
             <Switch<Route> render={switch} /> // Routes to different pages
         </BrowserRouter>
+
         </>
     }
 }

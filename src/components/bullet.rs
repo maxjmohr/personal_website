@@ -19,9 +19,13 @@ pub fn Bullet(props: &BulletProps) -> Html {
         .iter()
         .map(|&item| {
             html! {
-                <li class="flex items-start space-x-1.5">
-                    <Icons icons={vec!["bullet".to_string()]} />
-                    <span class="leading-tight lg:leading-snug">{ item }</span>
+                <li class="ml-2 flex items-start justify-left">
+                    <div class="mt-1 mr-1">
+                        <Icons icons={vec!["bullet".to_string()]} />
+                    </div>
+                    <div>
+                        <p class="text-xl/9 font-medium text-slate-600 dark:text-slate-400">{ item }</p>
+                    </div>
                 </li>
             }
         })
