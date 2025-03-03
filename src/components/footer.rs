@@ -33,7 +33,7 @@ pub fn Footer() -> Html {
                     </svg>
                 </a>
             </div>
-            <p class="text-lg font-medium text-center text-slate-600 dark:text-slate-400">{"I constructed this website on the basis of the "}
+            <p class="text-lg font-medium text-center text-slate-500 dark:text-slate-600">{"I constructed this website on the basis of the "}
                 <a href="https://yew.rs" target="_blank" class="italic lg:hover:font-bold">{"yew.rs"}</a>
                     {" framework. It is in constant development. For more technical insights feel free to access the "}
                         <a href="https://github.com/maxjmohr/personal_website" target="_blank" class="italic lg:hover:font-bold">{"GitHub repository"}</a>

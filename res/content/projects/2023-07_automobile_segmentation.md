@@ -1,7 +1,7 @@
 ---
 name: AutomobileSegmentation
 title: Image Segmentation & Classification
-subtitle: Segment the automobile of an image and score its design modernity.
+subtitle: Segmenting the automobile of an image and score its design modernity.
 image: automobile_segmentation.png
 time: Jul, 2023
 skills: [python, pytorch, detectron, huggingface, gradio, git]

@@ -48,8 +48,12 @@ pub fn ProjectCard(props: &ProjectProps) -> Html {
 
     let to_route = match name.as_str() {
         "AutomobileSegmentation" => Route::AutomobileSegmentation,
+        "BankingKPIs" => Route::BankingKPIs,
+        "CampaignManagement" => Route::CampaignManagement,
         "CognitiveBiasesLLMs" => Route::CognitiveBiasesLLMs,
         "Fynd" => Route::Fynd,
+        "MLeCommerce" => Route::MLeCommerce,
+        "WebsiteDevelopment" => Route::WebsiteDevelopment,
         _ => panic!("Invalid slug: {}", name),
     };
 
@@ -60,7 +64,7 @@ pub fn ProjectCard(props: &ProjectProps) -> Html {
                     <p class="w-full text-2xl/11 text-slate-600 dark:text-slate-400">{&title}</p>
                     <p class="w-full pt-6 text-4xl/12 font-semibold text-slate-700 dark:text-slate-300">{&subtitle}</p>
                     <div class="pb-6 pr-8 flex-1 flex justify-center items-center">
-                        <img class="object-scale-down rounded-xl" src = {format!("./../../res/images/projects/{}", &image)}/>
+                        <img class="max-h-80 object-scale-down rounded-xl" src = {format!("./../../res/images/projects/{}", &image)}/>
                     </div>
                 </div>
             </div>
@@ -150,6 +154,8 @@ pub fn ProjectSite(props: &ProjectProps) -> Html {
                     prose-a:italic prose-a:font-normal prose-a:hover:font-semibold prose-a:text-slate-600 prose-a:dark:text-slate-400
                     prose-blockquote:border-slate-600 prose-blockquote:dark:text-slate-400
                     prose-img:w-7/10 prose-img:rounded-2xl prose-img:my-0
+                    prose-ul:list-disc prose-ul:marker:text-slate-600 prose-ul:dark:marker:text-slate-400
+                    prose-li:text-xl/9 prose-li:font-normal prose-li:text-justify prose-li:text-slate-600 prose-li:dark:text-slate-400
                 ">
                     <SafeHtml html={md_content.clone()} />
                 </article>

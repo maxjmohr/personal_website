@@ -1,6 +1,5 @@
 use comrak::ComrakOptions;
 use crate::components::footer::Footer;
-use crate::components::icons::Icons;
 use crate::components::project::ProjectCard;
 use crate::components::timeline::{Timeline, TimelineEntry};
 use include_dir::{include_dir, Dir};
@@ -38,6 +37,7 @@ pub fn Home() -> Html {
                     location={entry.location.clone()}
                     time={entry.time.clone()}
                     skills={entry.skills.clone()}
+                    projects={entry.projects.clone()}
                     content={entry.content.clone()}
                 />
             }
@@ -58,6 +58,7 @@ pub fn Home() -> Html {
                     location={entry.location.clone()}
                     time={entry.time.clone()}
                     skills={entry.skills.clone()}
+                    projects={entry.projects.clone()}
                     content={entry.content.clone()}
                 />
             }
@@ -80,7 +81,7 @@ pub fn Home() -> Html {
         <>
         // Main content
         // About me
-        <div id="aboutme" class="relative z-20 h-screen mx-20 grid grid-cols-16 content-center" data-aos="zoom-in">
+        <div id="aboutme" class="relative z-20 h-screen mx-20 min-[2000px]:mx-60 grid grid-cols-16 content-center" data-aos="zoom-in">
             <div class="flex flex-col justify-center col-start-2 col-end-11">
                 <h1 class="w-full text-8xl font-medium text-slate-700 dark:text-slate-300">{"Max Mohr"}</h1>
                 <div class="flex flex-row">
@@ -124,7 +125,7 @@ pub fn Home() -> Html {
         </div>
 
         // Projects
-        <div id="projects" class="relative z-20 h-9/10 mx-24 my-8 rounded-4xl bg-stone-200/50 dark:bg-slate-800/50" data-aos="fade-up">
+        <div id="projects" class="relative z-20 h-9/10 mx-24 min-[2000px]:mx-72 my-8 rounded-4xl bg-stone-200/50 dark:bg-slate-800/50" data-aos="fade-up">
             <h1 class="pt-14 w-full text-center text-4xl font-medium italic text-slate-700 dark:text-slate-300">{"Some of my projects"}</h1>
             <div class="h-9/10 p-16 flex flex-nowrap overflow-x-scroll no-scrollbar">
                 { for content_projects_html.iter().cloned()}
@@ -132,7 +133,7 @@ pub fn Home() -> Html {
         </div>
 
         // Professional experience
-        <div id="profexper" class="relative z-20 mx-24">
+        <div id="profexper" class="relative z-20 mx-24 min-[2000px]:mx-72">
             <h1 class="pt-18 w-full text-center text-4xl font-medium italic text-slate-700 dark:text-slate-300" data-aos="fade-up">{"Professional experience"}</h1>
             <div class="pt-10 flex flex-col gap-y-8">
                 { for content_profexper_timeline.iter().cloned() }
@@ -140,54 +141,10 @@ pub fn Home() -> Html {
         </div>
 
         // Education
-        <div id="educ" class="relative z-20 mx-24">
+        <div id="educ" class="relative z-20 mx-24 min-[2000px]:mx-72 pb-10">
             <h1 class="pt-18 w-full text-center text-4xl font-medium italic text-slate-700 dark:text-slate-300" data-aos="fade-up">{"Education"}</h1>
             <div class="pt-10 flex flex-col gap-y-8">
                 { for content_educ_timeline.iter().cloned() }
-            </div>
-        </div>
-
-        // Technical skills
-        <div id="techskills" class="relative z-20 h-full flex flex-col justify-center pl-12 lg:pl-44 pr-20">
-            <h1 class="text-8xl lg:text-7xl manual_h1" data-aos="fade">{"Technical skills"}</h1>
-            <div class="flex flex-col items-center">
-                <span class="text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-7xl lg:text-5xl font-semibold mb-6 lg:mb-4 text-center" data-aos="fade">{"Programming languages"}</span>
-                <Icons icons={vec![
-                    "matlab".to_string(),
-                    "python".to_string(),
-                    "r".to_string(),
-                    "sql".to_string(),
-                    "stata".to_string()
-                ]}/>
-                <span class="text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-7xl lg:text-5xl font-semibold mt-10 lg:mt-6 mb-6 lg:mb-4 text-center" data-aos="fade">{"Frameworks & libraries"}</span>
-                <Icons icons={vec![
-                    "arrow".to_string(),
-                    "dash".to_string(),
-                    "detectron".to_string(),
-                    "gradio".to_string(),
-                    "huggingface".to_string(),
-                    "kafka".to_string(),
-                    "llamaindex".to_string(),
-                    "pytorch".to_string(),
-                    "scikitlearn".to_string(),
-                    "shiny".to_string(),
-                    "spark".to_string(),
-                    "yew".to_string()
-                ]}/>
-                <span class="text-gray-700 dark:text-stone-200 text-opacity-90 dark:text-opacity-90 text-7xl lg:text-5xl font-semibold mt-10 lg:mt-6 mb-6 lg:mb-4 text-center" data-aos="fade">{"Tools"}</span>
-                <Icons icons={vec![
-                    "atlassian".to_string(),
-                    "css".to_string(),
-                    "earthengine".to_string(),
-                    "git".to_string(),
-                    "html".to_string(),
-                    "informatica".to_string(),
-                    "powerbi".to_string(),
-                    "oracledb".to_string(),
-                    "postgresql".to_string(),
-                    "qgis".to_string(),
-                    "tailwind".to_string()
-                ]}/>
             </div>
         </div>
 

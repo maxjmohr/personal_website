@@ -4,7 +4,7 @@ title: Cognitive Biases in LLMs
 subtitle: Examining the presence of human cognitive biases in the decision-making of language models.
 image: cognitive_biases_heatmap.svg
 time: Jul, 2024 - Jan, 2025
-skills: [python, llamaindex, ollama, postgresql, latex, git]
+skills: [python, llamaindex, ollama, postgresql, latex, seaborn, git]
 url:
 url_git: https://github.com/maxjmohr/MSc_04_Master_Thesis
 ---

@@ -9,8 +9,12 @@ mod pages {
     pub mod home;
     pub mod projects {
         pub mod automobile_segmentation;
+        pub mod banking_kpis;
+        pub mod campaign_management;
         pub mod cognitive_biases_llms;
         pub mod fynd;
+        pub mod ml_ecommerce;
+        pub mod website_development;
     }
 }
 mod router;
@@ -48,7 +52,7 @@ fn app() -> Html {
         <>
         <div
             id="mouse-gradient"
-            class="z-10 absolute w-80 h-80 rounded-full pointer-events-none bg-linear-to-r from-stone-200 to-transparent dark:from-sky-700 opacity-75 blur-3xl"
+            class="z-10 absolute w-80 h-80 rounded-full pointer-events-none bg-linear-to-r from-stone-50 to-transparent dark:from-sky-700 opacity-75 blur-3xl"
         ></div>
 
         <BrowserRouter>
@@ -61,42 +65,48 @@ fn app() -> Html {
 
 /// Function to handle the mouse gradient effect.
 fn setup_mouse_gradient() {
-    // Access the document using gloo_utils
-    let mouse_gradient = document().get_element_by_id("mouse-gradient");
-
-    if let Some(mouse_gradient) = mouse_gradient {
+    if let Some(mouse_gradient) = document().get_element_by_id("mouse-gradient") {
         // Create closure to handle mousemove event
         let closure = Closure::wrap(Box::new(move |e: web_sys::MouseEvent| {
-            let x = e.client_x() as f64; // Convert to f64
-            let y = e.client_y() as f64; // Convert to f64
+            let window = web_sys::window().expect("No window available");
+            let document = window.document().expect("No document available");
 
-            // Get the page scroll position
-            let scroll_x = window().unwrap().scroll_x().unwrap_or(0.0);
-            let scroll_y = window().unwrap().scroll_y().unwrap_or(0.0);
+            let x = e.client_x() as f64;
+            let y = e.client_y() as f64;
 
-            // Adjust the mouse gradient position by subtracting the scroll offset
+            let scroll_x = window.scroll_x().unwrap_or(0.0);
+            let scroll_y = window.scroll_y().unwrap_or(0.0);
+
             let adjusted_x = x + scroll_x - 100.0;
             let adjusted_y = y + scroll_y - 120.0;
 
-            // Apply the transform to the mouse gradient element
-            mouse_gradient
-                .set_attribute(
-                    "style",
-                    &format!("transform: translate({}px, {}px);", adjusted_x, adjusted_y),
-                )
-                .unwrap();
+            // Use requestAnimationFrame for Safari compatibility
+            let callback = Closure::wrap(Box::new(move || {
+                if let Some(gradient) = document.get_element_by_id("mouse-gradient") {
+                    let _ = gradient.set_attribute(
+                        "style",
+                        &format!(
+                            "transform: translate({}px, {}px); will-change: transform;",
+                            adjusted_x, adjusted_y
+                        ),
+                    );
+                }
+            }) as Box<dyn FnMut()>);
+
+            window.request_animation_frame(callback.as_ref().unchecked_ref()).unwrap();
+            callback.forget();
         }) as Box<dyn FnMut(_)>);
 
-        // Attach the mousemove event listener
-        let document = document(); // Ensure document is referenced here
-        document
+        // Attach the event listener
+        document()
             .add_event_listener_with_callback("mousemove", closure.as_ref().unchecked_ref())
             .unwrap();
 
         // Keep the closure alive
-        closure.forget(); // Important: This prevents the closure from being dropped
+        closure.forget();
     }
 }
+
 
 fn main() {
     yew::Renderer::<App>::new().render();
