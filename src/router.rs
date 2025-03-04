@@ -70,7 +70,6 @@ pub fn switch(route: Route) -> Html {
         Route::WebsiteDevelopment => {
             scroll_to_top();
             html! { <WebsiteDevelopment /> }
-        }
-        //Route::NotFound => html! { <PageNotFound /> },
+        } //Route::NotFound => html! { <PageNotFound /> },
     }
 }

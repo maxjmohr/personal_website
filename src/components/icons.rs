@@ -78,7 +78,7 @@ pub fn get_icons(name: &str) -> Option<Html> {
         "visualbasic" => Some(html! {<VisualBasic />}),
         "yew" => Some(html! {<Yew />}),
         &_ => None,
-    };
+    }
 }
 
 #[function_component]
