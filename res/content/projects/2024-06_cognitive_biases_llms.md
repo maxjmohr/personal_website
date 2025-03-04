@@ -12,7 +12,7 @@ url_git: https://github.com/maxjmohr/MSc_04_Master_Thesis
 As I was finishing my master's degree, LLMs were THE hot topic when it came to AI. Each month, new *breakthrough* innovations were presented. With more models and, especially, more capable models, came more users and use cases. While the space of LLMs was growing rapidly, so did the criticisms regarding potential biases and harmful uses. Therefore for my master's thesis, I studied **how much LLMs would exhibit human cognitive biases in their decision-making processes**. With some light research from a previous student project, I took the research one step further to analyze more models, more biases and different prompts. A short description of the methodology and results is in the abstract below.
 
 <a href="./../../res/content/files/MasterThesis.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center justify-left">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="h-6 w-6 mr-1 fill-slate-700 hover:fill-slate-600 dark:fill-slate-600 dark:hover:fill-slate-100"><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 288c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="h-6 w-6 mr-1 fill-slate-700 dark:xl:group-hover:fill-slate-600 dark:fill-slate-600 dark:hover:fill-slate-100"><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 288c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128z"/></svg>
     Access entire masters thesis here
 </a>
 

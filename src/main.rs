@@ -50,9 +50,10 @@ fn app() -> Html {
 
     html! {
         <>
+        // Mouse gradient for desktop
         <div
             id="mouse-gradient"
-            class="lg:z-10 lg:absolute lg:w-80 lg:h-80 lg:rounded-full lg:pointer-events-none lg:bg-linear-to-r lg:from-stone-50 lg:to-transparent lg:dark:from-sky-700 lg:opacity-75 lg:blur-3xl"
+            class="hidden 2xl:block z-10 absolute w-80 h-80 rounded-full pointer-events-none bg-linear-to-r from-stone-50 to-transparent dark:from-sky-700 opacity-75 blur-3xl"
         ></div>
 
         <BrowserRouter>

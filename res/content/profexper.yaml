@@ -9,9 +9,8 @@
   content: |
     Formerly: Working Student (Oct, 2022 - Dec, 2024), Business Analyst (Jun, 2021 - Sep, 2022);
     Projects in the areas of data engineering & governance and data analytics in banking & capital markets;
-    Data engineering & analytics example: Support of the campaign management of an automotive captive through regular and ad hoc reporting and campaign participant selections (SQL & Excel). Constant enhancement of the database model and established a knowledge database (Confluence). Project management via Jira;
-    Data governance example: Revision of existing data governance processes and role allocations (RASIC) as well as clustering of data elements using a new logic and existing hash maps for an automotive captive;
-    AI examples: Internal AI projects on the extraction of banking KPIs (LangGraph, RAG, OCR, Azure) and building modern integrations of data quality detection & correction (anomaly detection, SHAP);
+    Internal explorations of AI use cases such as building modern integrations of data quality detection & correction (anomaly detection, SHAP);
+    Continuous comparisons of modern tools and frameworks;
     Organization of internal communities regarding the operationalization of innovative technologies in order to exploit customer potentials;
     Support in the preparation and presentation of proposals and workshops;
     Support in the realization of recruiting workshops and career fairs
