@@ -34,7 +34,7 @@ pub fn Icons(props: &IconsProps) -> Html {
 }
 
 pub fn get_icons(name: &str) -> Option<Html> {
-    return match name.to_lowercase().as_str() {
+    match name.to_lowercase().as_str() {
         // General
         "bullet" => Some(html! {<Bullet />}),
         // Technical skills
