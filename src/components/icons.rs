@@ -11,7 +11,9 @@ pub struct IconsProps {
 #[function_component]
 pub fn Icons(props: &IconsProps) -> Html {
     // Get class
-    let class = props.class.clone().unwrap_or_else(|| "flex flex-wrap items-center justify-center gap-2 scale-100".to_string());
+    let class = props.class.clone().unwrap_or_else(|| {
+        "flex flex-wrap items-center justify-center gap-2 scale-100".to_string()
+    });
     // Convert to lowercase and trim to get icons
     let icons_str: Vec<&str> = props.icons.iter().map(|s| s.trim()).collect();
     let icons: Vec<Html> = icons_str
@@ -75,7 +77,7 @@ pub fn get_icons(name: &str) -> Option<Html> {
         "tailwind" => Some(html! {<Tailwind />}),
         "visualbasic" => Some(html! {<VisualBasic />}),
         "yew" => Some(html! {<Yew />}),
-        _ => None,
+        &_ => None,
     };
 }
 
@@ -729,4 +731,3 @@ pub fn Azure() -> Html {
         </a>
     }
 }
-

@@ -33,23 +33,44 @@ pub enum Route {
 }
 
 fn scroll_to_top() {
-	if let Some(window) = web_sys::window() {
-		let mut options = web_sys::ScrollToOptions::new();
-		options.top(0.0);
-		window.scroll_with_scroll_to_options(&options);
-	}
+    if let Some(window) = web_sys::window() {
+        let mut options = web_sys::ScrollToOptions::new();
+        options.top(0.0);
+        window.scroll_with_scroll_to_options(&options);
+    }
 }
 
 pub fn switch(route: Route) -> Html {
     match route {
         Route::Home => html! { <Home /> },
-        Route::AutomobileSegmentation => {scroll_to_top(); html! { <AutomobileSegmentation /> }},
-        Route::BankingKPIs => {scroll_to_top(); html! { <BankingKPIs /> }},
-        Route::CampaignManagement => {scroll_to_top(); html! { <CampaignManagement /> }},
-        Route::CognitiveBiasesLLMs => {scroll_to_top(); html! { <CognitiveBiasesLLMs /> }},
-        Route::Fynd => {scroll_to_top(); html! { <Fynd /> }},
-        Route::MLeCommerce => {scroll_to_top(); html! { <MLeCommerce /> }},
-        Route::WebsiteDevelopment => {scroll_to_top(); html! { <WebsiteDevelopment /> }},
+        Route::AutomobileSegmentation => {
+            scroll_to_top();
+            html! { <AutomobileSegmentation /> }
+        }
+        Route::BankingKPIs => {
+            scroll_to_top();
+            html! { <BankingKPIs /> }
+        }
+        Route::CampaignManagement => {
+            scroll_to_top();
+            html! { <CampaignManagement /> }
+        }
+        Route::CognitiveBiasesLLMs => {
+            scroll_to_top();
+            html! { <CognitiveBiasesLLMs /> }
+        }
+        Route::Fynd => {
+            scroll_to_top();
+            html! { <Fynd /> }
+        }
+        Route::MLeCommerce => {
+            scroll_to_top();
+            html! { <MLeCommerce /> }
+        }
+        Route::WebsiteDevelopment => {
+            scroll_to_top();
+            html! { <WebsiteDevelopment /> }
+        }
         //Route::NotFound => html! { <PageNotFound /> },
     }
 }

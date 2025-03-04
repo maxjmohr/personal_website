@@ -1,7 +1,7 @@
-use comrak::ComrakOptions;
 use crate::components::footer::Footer;
 use crate::components::project::ProjectCard;
 use crate::components::timeline::{Timeline, TimelineEntry};
+use comrak::ComrakOptions;
 use include_dir::{include_dir, Dir};
 use yew::prelude::*;
 
@@ -70,11 +70,13 @@ pub fn Home() -> Html {
     content_projects_files.sort_by(|a, b| b.path().cmp(a.path()));
     let content_projects_html: Vec<Html> = content_projects_files
         .iter()
-        .filter_map(|file| file.contents_utf8().map(|content| {
-            html! {
-                <ProjectCard markdown={content} />
-            }
-        }))
+        .filter_map(|file| {
+            file.contents_utf8().map(|content| {
+                html! {
+                    <ProjectCard markdown={content} />
+                }
+            })
+        })
         .collect();
 
     html! {

@@ -52,7 +52,7 @@ fn app() -> Html {
         <>
         <div
             id="mouse-gradient"
-            class="z-10 absolute w-80 h-80 rounded-full pointer-events-none bg-linear-to-r from-stone-50 to-transparent dark:from-sky-700 opacity-75 blur-3xl"
+            class="lg:z-10 lg:absolute lg:w-80 lg:h-80 lg:rounded-full lg:pointer-events-none lg:bg-linear-to-r lg:from-stone-50 lg:to-transparent lg:dark:from-sky-700 lg:opacity-75 lg:blur-3xl"
         ></div>
 
         <BrowserRouter>
@@ -65,7 +65,7 @@ fn app() -> Html {
 
 /// Function to handle the mouse gradient effect.
 fn setup_mouse_gradient() {
-    if let Some(mouse_gradient) = document().get_element_by_id("mouse-gradient") {
+    if let Some(_mouse_gradient) = document().get_element_by_id("mouse-gradient") {
         // Create closure to handle mousemove event
         let closure = Closure::wrap(Box::new(move |e: web_sys::MouseEvent| {
             let window = web_sys::window().expect("No window available");
@@ -93,7 +93,9 @@ fn setup_mouse_gradient() {
                 }
             }) as Box<dyn FnMut()>);
 
-            window.request_animation_frame(callback.as_ref().unchecked_ref()).unwrap();
+            window
+                .request_animation_frame(callback.as_ref().unchecked_ref())
+                .unwrap();
             callback.forget();
         }) as Box<dyn FnMut(_)>);
 
@@ -106,7 +108,6 @@ fn setup_mouse_gradient() {
         closure.forget();
     }
 }
-
 
 fn main() {
     yew::Renderer::<App>::new().render();
