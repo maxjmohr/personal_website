@@ -239,6 +239,9 @@
   .static {
     position: static;
   }
+  .sticky {
+    position: sticky;
+  }
   .z-0 {
     z-index: 0;
   }
@@ -250,6 +253,9 @@
   }
   .z-7 {
     z-index: 7;
+  }
+  .z-9 {
+    z-index: 9;
   }
   .z-10 {
     z-index: 10;
@@ -768,6 +774,9 @@
   .hidden {
     display: none;
   }
+  .inline {
+    display: inline;
+  }
   .inline-flex {
     display: inline-flex;
   }
@@ -779,6 +788,9 @@
   }
   .aspect-video {
     aspect-ratio: var(--aspect-video);
+  }
+  .h-1 {
+    height: calc(var(--spacing) * 1);
   }
   .h-2 {
     height: calc(var(--spacing) * 2);
@@ -897,8 +909,17 @@
   .flex-shrink {
     flex-shrink: 1;
   }
+  .shrink {
+    flex-shrink: 1;
+  }
   .shrink-0 {
     flex-shrink: 0;
+  }
+  .flex-grow {
+    flex-grow: 1;
+  }
+  .grow {
+    flex-grow: 1;
   }
   .basis-1 {
     flex-basis: calc(var(--spacing) * 1);
@@ -1037,6 +1058,11 @@
   }
   .gap-y-10 {
     row-gap: calc(var(--spacing) * 10);
+  }
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .overflow-x-scroll {
     overflow-x: scroll;
@@ -1454,6 +1480,9 @@
   }
   .lowercase {
     text-transform: lowercase;
+  }
+  .uppercase {
+    text-transform: uppercase;
   }
   .italic {
     font-style: italic;

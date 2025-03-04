@@ -34,8 +34,8 @@ pub enum Route {
 
 fn scroll_to_top() {
     if let Some(window) = web_sys::window() {
-        let mut options = web_sys::ScrollToOptions::new();
-        options.top(0.0);
+        let options = web_sys::ScrollToOptions::new();
+        options.set_top(0.0);
         window.scroll_with_scroll_to_options(&options);
     }
 }
