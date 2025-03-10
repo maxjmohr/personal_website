@@ -38,15 +38,6 @@ jobs:
             wasm-opt -Oz -o "$wasm_file" "$wasm_file"
           done
 
-      - name: Upload build artifacts
-        if: github.ref == 'refs/heads/main'
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=personal-website
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-
   clippy:
     name: Run Clippy
     runs-on: ubuntu-latest
