@@ -92,8 +92,8 @@ pub fn Home() -> Html {
                     </pre>
                 </div>
             </div>
-            // Test and links
-            <div class="max-sm:absolute max-sm:bottom-0 pt-0 sm:pt-46 xl:pt-0 pb-20 sm:pb-0 flex flex-col justify-center xl:col-start-2 xl:col-end-11">
+            // Text and links
+            <div class="max-sm:absolute max-sm:bottom-0 pt-0 sm:pt-46 xl:pt-0 pb-32 sm:pb-0 flex flex-col justify-center xl:col-start-2 xl:col-end-11">
                 <h1 class="w-full text-5xl xl:text-8xl font-medium text-slate-700 dark:text-slate-300">{"Max Mohr"}</h1>
                 <div class="flex flex-row">
                     <p class="pt-3 text-xl/7 sm:text-2xl/9 xl:text-3xl/11 text-slate-600 dark:text-slate-400">
@@ -149,7 +149,7 @@ pub fn Home() -> Html {
         </div>
 
         // Projects
-        <div id="projects" class="relative z-20 h-8/10 sm:h-9/10 mx-0 sm:mx-12 lg:mx-24 min-[2000px]:mx-72 my-8 rounded-4xl bg-stone-200/50 dark:bg-slate-800/50" data-aos="fade-up">
+        <div id="projects" class="relative z-20 h-9/10 mx-0 sm:mx-12 lg:mx-24 min-[2000px]:mx-72 my-8 rounded-4xl bg-stone-200/50 dark:bg-slate-800/50" data-aos="fade-up">
             <h1 class="pt-14 w-full text-center text-3xl sm:text-4xl font-medium italic text-slate-700 dark:text-slate-300">{"Some of my projects"}</h1>
             <div class="h-9/10 pt-8 pl-4 sm:p-16 flex flex-nowrap overflow-x-scroll no-scrollbar">
                 { for content_projects_html.iter().cloned()}

@@ -61,10 +61,10 @@ pub fn ProjectCard(props: &ProjectProps) -> Html {
         <Link<Route> to={to_route}>
             <div class="h-9/10 sm:h-full w-xs sm:w-lg shrink-0 mr-4 sm:mr-10 bg-stone-50/50 dark:bg-slate-700/50 rounded-4xl 2xl:hover:scale-105 2xl:hover:shadow-md transition 2xl:hover:duration-300 ease-in-out">
                 <div class="h-full pt-6 sm:pt-10 pl-7 sm:pl-12 pr-2 sm:pr-4 flex flex-col">
-                    <p class="w-full text-lg/9 sm:text-2xl/11 text-slate-600 dark:text-slate-400">{&title}</p>
-                    <p class="w-full pt-3 sm:pt-6 text-2xl/10 sm:text-4xl/12 font-semibold text-slate-700 dark:text-slate-300">{&subtitle}</p>
-                    <div class="pb-2 pr-4 sm:pb-6 sm:pr-8 flex-1 flex justify-center items-center overflow-y-hidden">
-                        <img class="max-h-46 xl:max-h-64 2xl:max-h-80 object-scale-down rounded-xl" src = {format!("./../../res/images/projects/{}", &image)}/>
+                    <p class="w-full text-lg/8 sm:text-2xl/11 text-slate-600 dark:text-slate-400">{&title}</p>
+                    <p class="w-full pt-3 sm:pt-6 text-2xl/9 sm:text-4xl/12 font-semibold text-slate-700 dark:text-slate-300">{&subtitle}</p>
+                    <div class="py-6 pr-4 sm:pb-6 sm:pt-0 sm:pr-8 flex-1 flex justify-center items-center overflow-hidden">
+                        <img class="max-h-46 md:max-h-54 lg:max-h-60 xl:max-h-64 2xl:max-h-80 object-scale-down rounded-xl" src={format!("./../../res/images/projects/{}", &image)}/>
                     </div>
                 </div>
             </div>
