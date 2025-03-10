@@ -1,50 +1,41 @@
-- title: Working Student
-  place: BearingPoint GmbH, Munich (Germany)
-  place_url: https://www.bearingpoint.com/en/?noRedirect=1
-  time: Oct, 2022 - present
-  skills: [Data Analytics, Data Engineering, Artificial Intelligence]
-  color: after:bg-sky-700
+- title: Business Consultant
+  institution: BearingPoint GmbH
+  institution_url: https://www.bearingpoint.com/en/?noRedirect=1
+  institution_image: bearingpoint.png
+  location: Munich, Germany
+  time: Jun, 2021 - present
+  skills: [Data Engineering, Data Analytics, GenAI, Machine Learning, Cloud Computing, Event Streaming]
+  projects: [Data Extraction from PDF and XML, Analytical Campaign Management]
   content: |
-    Further customer projects in the areas of database management and optimization, data analytics, data governance as well as compliance in banking & capital markets;
-    Internal project exploiting potential AI use cases (e.g. Data Quality with AI)
-
-- title: Business Analyst
-  place: BearingPoint GmbH, Munich (Germany)
-  place_url: https://www.bearingpoint.com/en/?noRedirect=1
-  time: Jun, 2021 - Sep, 2022
-  skills: [Data Analytics, Data Engineering, Event Streaming]
-  color: after:bg-sky-600
-  content: |
-    Customer projects in the areas of database management and optimization and data analytics in banking & capital markets;
+    Formerly: Working Student (Oct, 2022 - Dec, 2024), Business Analyst (Jun, 2021 - Sep, 2022);
+    Projects in the areas of data engineering & governance and data analytics in banking & capital markets;
+    Internal explorations of AI use cases such as building modern integrations of data quality detection & correction (anomaly detection, SHAP);
+    Continuous comparisons of modern tools and frameworks;
     Organization of internal communities regarding the operationalization of innovative technologies in order to exploit customer potentials;
-    Support in the preparation of proposals and participation in relevant customer meetings;
-    Regular trainings and courses on programming/programming languages, database technologies as well as soft skills;
+    Support in the preparation and presentation of proposals and workshops;
     Support in the realization of recruiting workshops and career fairs
 
-- title: Self-employed Consultant
-  place: supporting CA Strategy Consultants GmbH, Munich (Germany)
-  place_url: https://commercial-advisory.de/?lang=en
-  time: Aug, 2020 - Sep, 2020
-  skills: [Commercial Due Diligence]
-  color: after:bg-sky-500
-  content: ""
-
 - title: Intern Transactions
-  place: CA Strategy Consultants GmbH, Munich (Germany)
-  place_url: https://commercial-advisory.de/?lang=en
+  institution: CA Strategy Consultants GmbH
+  institution_url: https://commercial-advisory.de/?lang=en
+  institution_image: ca_strategy_consultants.png
+  location: Munich, Germany
   time: Jan, 2020 - Mar, 2020
   skills: [Commercial Due Diligence, Market Entry Strategy]
-  color: after:bg-sky-400
+  projects:
   content: |
     Commercial due diligences on IT- and SAP-consultancy and IT-system house;
-    Market entry strategy for furniture manufacturer
+    Market entry strategy for furniture manufacturer;
+    Supported as self-employed consultant in another CDD (Aug, 2020 - Sep, 2020)
 
 - title: Student Consultant
-  place: Junior Beratung Bayreuth e.V., Bayreuth (Germany)
-  place_url: https://www.jbb-ev.de
+  institution: Junior Beratung Bayreuth e.V.
+  institution_url: https://www.jbb-ev.de
+  institution_image: jbb.png
+  location: Bayreuth, Germany
   time: Oct, 2018 - Apr, 2019
-  skills: [Market and competitors analysis]
-  color: after:bg-sky-300
+  skills: [Student consulting, Market and competitors analysis]
+  projects:
   content: |
     Market and competitors analysis as well as validation of the pricing strategy of a German IT tool;
     Workshops with Horváth & Partners, conference with Ebner Stolz;

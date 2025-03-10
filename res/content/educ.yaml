@@ -1,43 +1,54 @@
 - title: M.Sc. Data Science in Business and Economics
-  place: Eberhard Karls Universität Tübingen, Germany
-  place_url: https://uni-tuebingen.de/en/study/finding-a-course/degree-programs-available/detail/course/data-science-in-business-and-economics-master/
-  time: Oct, 2022 - present
-  skills: [Machine Learning, Deep Learning, Cloud Computing, Efficient Computing, Time Series, Causal Inference]
-  color: after:bg-purple-700
+  institution: Eberhard Karls University Tübingen
+  institution_url: https://uni-tuebingen.de/en/study/finding-a-course/degree-programs-available/detail/course/data-science-in-business-and-economics-master/
+  institution_image: uni_tuebingen.png
+  location: Tübingen, Germany
+  time: Oct, 2022 - Jan, 2025
+  skills: [GenAI & LLMs, Machine Learning, Deep Learning, HPC & Cloud Computing, Time Series, Causal Inference]
+  projects: [Cognitive Biases in LLMs, fynd, Image Segmentation & Classification, Machine Learning Mini Project]
   content: |
-    Gaining fundamental mathematical understanding of machine learning and its interpretability;
-    Focus on practical implementation of deep learning for natural language processing and visual data through frequent assignments;
+    Master's thesis: Cognitive Biases in Large Language Models - An empirical analysis of state-of-the-art models;
+    Developed a travel destination recommender (fynd) in self-organized project;
+    Gaining fundamental mathematical understanding of machine learning algorithms and their interpretability (Python, R, MatLab);
+    Focus on practical implementation of deep learning for natural language processing and visual data through frequent assignments (PyTorch);
     Understanding time series analysis and causality problems in causal inference;
-    Working with big data via parallel computing and cluster/cloud computing;
-    Practical project focused on data engineering and science
+    Working with big data via parallel computing and high performance cluster/cloud computing
 
 - title: B.Sc. Business Administration
-  place: University Bayreuth, Germany
-  place_url: https://www.uni-bayreuth.de/en/bachelor/business-administration
+  institution: University Bayreuth
+  institution_url: https://www.uni-bayreuth.de/en/bachelor/business-administration
+  institution_image: uni_bayreuth.png
+  location: Bayreuth, Germany
   time: Oct, 2017 - Mar, 2021
-  skills: [Business Informatics, Finance, Crypto]
-  color: after:bg-purple-600
+  skills: [Business Informatics, Finance, Crypto Assets]
+  projects:
   content: |
-    Finished with Bachelor's thesis on taxonomy for crypto assets;
+    Bachelor's thesis: Shedding Light on the Digital Asset Ecosystem – A Taxonomy for Digital Assets;
     Minored in business informatics and finance;
-    Gained diverse knowledge from accounting, legal, taxation and others;
+    Gained financial knowledge in accounting, legal, taxation, controlling and others;
     Participated in workshops as part of the CareerDays with PwC, BrandTrust and RAPS
 
 - title: Semester abroad
-  place: Dublin Business School, Ireland
-  place_url: https://www.dbs.ie
+  institution: Dublin Business School
+  institution_url: https://www.dbs.ie
+  institution_image: dbs.webp
+  location: Dublin, Ireland
   time: Sep, 2019 - Dec, 2019
   skills: [IT, Management, Psychology]
-  color: after:bg-purple-500
+  projects:
   content: |
-    Used the semester abroad to expand knowledge in areas that were not highlighted as much in Bayreuth
+    Used the semester abroad to expand knowledge in areas that were not highlighted as much in Bayreuth;
+    Focus on psychology, IT networking and management
 
 - title: Abitur
-  place: Otfried-Preußler-Gymnasium Pullach, Germany
-  place_url: https://www.opg-pullach.de
+  institution: Otfried-Preußler-Gymnasium Pullach
+  institution_url: https://www.opg-pullach.de
+  institution_image: opg.png
+  location: Munich, Germany
   time: Sep, 2009 - Jun, 2017
   skills: [business@school, Supersonic Flight]
-  color: after:bg-purple-400
+  projects:
   content: |
     Electives were English, economics + law and music;
-    Selected seminars in senior classes were business@school by BCG (from business analysis to own business plan) and a seminar thesis on supersonic flight
+    Practical seminar: business@school by BCG (from business analysis to own business plan);
+    Theoretical seminar thesis on supersonic flight

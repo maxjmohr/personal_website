@@ -14,17 +14,18 @@ pub fn Bullet(props: &BulletProps) -> Html {
     // Split content string using semicolon as separator
     let content: Vec<&str> = props.content.split(';').map(|s| s.trim()).collect();
 
-    // Scale if necessary
-    let scale = props.scale.unwrap_or(100);
-
     // Generate list items for each content string
     let list_items: Vec<Html> = content
         .iter()
         .map(|&item| {
             html! {
-                <li class="flex items-start space-x-1.5">
-                    <Icons icons={vec!["bullet".to_string()]} scale={scale}/>
-                    <span class="leading-tight lg:leading-snug">{ item }</span>
+                <li class="sm:ml-2 flex items-start justify-left">
+                    <div class="mt-1 sm:mr-1">
+                        <Icons icons={vec!["bullet".to_string()]} />
+                    </div>
+                    <div>
+                        <p class="text-lg/8 sm:text-xl/9 font-medium text-slate-600 dark:text-slate-400">{ item }</p>
+                    </div>
                 </li>
             }
         })

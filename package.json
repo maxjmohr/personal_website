@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "tailwind-typewriter": "^1.0.1"
+    "tailwindcss": "^4.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16"
   }
 }

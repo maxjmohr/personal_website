@@ -1,31 +1,59 @@
 on: push
 
-name: Build and test
-
 jobs:
-  build_and_test:
+  build:
+    name: Build and Optimize
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Add wasm32 target
-        run: rustup target add wasm32-unknown-unknown
-      - name: Install Trunk
-        run: cargo install --locked trunk
-      - name: Clean
-        run: cargo clean
-      - name: Build
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust and dependencies
+        run: |
+          rustup target add wasm32-unknown-unknown
+          cargo install --locked trunk
+          curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+          cargo binstall wasm-opt -y
+
+      - name: Install Node.js and Tailwind CSS
+        run: |
+          npm install tailwindcss @tailwindcss/cli
+          npm install -D @tailwindcss/typography
+
+      - name: Clean project
+        run: |
+          trunk clean
+          cargo clean
+
+      - name: Build Tailwind CSS
+        run: |
+          npx @tailwindcss/cli -i ./styles/input.css -o ./styles/main.css
+
+      - name: Build Rust WASM project
         run: trunk build --release --verbose
 
+      - name: Optimize WASM files
+        run: |
+          find dist/ -name "*.wasm" | while read wasm_file; do
+            wasm-opt -Oz -o "$wasm_file" "$wasm_file"
+          done
+
   clippy:
+    name: Run Clippy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Clippy
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        run: rustup update stable
+      - name: Run Clippy
         run: cargo clippy --all-features -- -D warnings
 
   format:
+    name: Check Formatting
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Format
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        run: rustup update stable
+      - name: Run Format Check
         run: cargo fmt --all -- --check
